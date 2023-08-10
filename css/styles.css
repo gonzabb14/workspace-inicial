@@ -188,3 +188,16 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+.loginasd {
+  max-width: 142px;
+  color: aliceblue;
+  border-radius: 0.5rem;
+  display: block;
+  padding: 0.5rem 1rem;
+  transition: all 0.5s;
+}
+
+.loginasd:hover {
+  background-color:aliceblue;
+}
