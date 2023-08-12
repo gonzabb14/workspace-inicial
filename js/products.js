@@ -25,7 +25,7 @@ async function fetchProducts() {
             const productContainer = document.createElement('div');
 
             const productPrice = document.createElement('p');
-            productPrice.textContent = `Precio: ${product.price}`;
+            productPrice.textContent = `Precio: ${product.cost}`;
 
             const productDescription = document.createElement('p');
             productDescription.textContent = product.description;
