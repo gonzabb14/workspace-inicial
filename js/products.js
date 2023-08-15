@@ -25,7 +25,7 @@ async function fetchProducts() {
             const productContainer = document.createElement('div');
 
             const productPrice = document.createElement('p');
-            productPrice.textContent = `Precio: ${product.price}`;
+            productPrice.textContent = `Precio: $${product.cost}`;
 
             const productDescription = document.createElement('p');
             productDescription.textContent = product.description;
@@ -41,6 +41,8 @@ async function fetchProducts() {
 
     } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
+        // En caso de que la id del producto sea null te redirige a "categories.html".
+        window.location = "categories.html";
     }
 }
 
