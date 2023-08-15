@@ -74,14 +74,12 @@ nav a {
   
 }
 .product {
-  
   border: 1px solid #fdfdfd;
   padding: 10px;
   margin-bottom: 10px;
   border-radius:10px;
   background-color: #e0ddd8ce;
   transition: all 0.20s;
-
 }
 .product img {
   position: relative;
@@ -93,7 +91,7 @@ nav a {
 }
 
   .product:hover{
-    transform: scale(0.9);
+    transform: scale(1.1);
 }
 .product h2 {
   font-size: 1.6rem;
