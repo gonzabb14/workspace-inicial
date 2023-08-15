@@ -15,21 +15,39 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <!-- <link href="css/styles.css" rel="stylesheet" /> -->
     <link rel="stylesheet" href="./css/login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
   </head>
 
   <body>
     <div class="container">
+
+      <form id="formulario" action="./index.html">
+
       <form action="index.html">
+
         <div class="formulario">
+          <img src="./img/backgroundLogin.png" alt="" />
           <h3>Account Login</h3>
-          <input type="email" placeholder="Email*" required name="email" />
           <input
-            type="password"
-            placeholder="Contraseña"
+            type="email"
+            placeholder="Email*"
             required
-            name="contraseña"
-            id="password"
+            name="email"
+            id="email"
           />
+          <div class="eye-password">
+            <input
+              type="password"
+              placeholder="Contraseña*"
+              required
+              name="contraseña"
+              id="password"
+            />
+            <i class="fas fa-eye" id="togglePassword"></i>
+          </div>
           <input type="submit" value="Enviar" />
         </div>
       </form>
