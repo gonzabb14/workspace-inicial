@@ -53,7 +53,7 @@ nav a {
 }
 
 .jumbotron-heading {
-  font-weight: 300;
+  font-weight:10px;
 }
 
 .jumbotron .container {
@@ -66,7 +66,46 @@ nav a {
 .jumbotron .lead {
   font-size: 38px;
 }
+#container-product{
+  padding: 10%;
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,auto));
+  gap:2rem;
+  
+}
+.product {
+  border: 1px solid #fdfdfd;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius:10px;
+  background-color: #e0ddd8ce;
+  transition: all .40;
+}
+.product img {
+  max-width: 250px;
+  height: auto;
+  transition: all .40;
+}
+.product img:hover{
+  transform: scale(0.9);
+}
+  .product:hover{
+    transform: scale(0.9);
+}
+.product h2 {
+  font-size: 1.6rem;
+  margin: 4px 0;
+  color: #100101;
+}
 
+.product p {
+  margin: 5px 0;
+  color: #908a8a;
+}
+
+.product-description {
+  font-style:initial;
+}
 footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -187,4 +226,17 @@ a.custom-card:hover {
 
 .checked {
   color: orange;
+}
+
+.loginasd {
+  max-width: 142px;
+  color: aliceblue;
+  border-radius: 0.5rem;
+  display: block;
+  padding: 0.5rem 1rem;
+  transition: all 0.5s;
+}
+
+.loginasd:hover {
+  background-color:aliceblue;
 }
