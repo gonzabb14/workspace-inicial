@@ -5,10 +5,10 @@ document.addEventListener("DOMContentLoaded", function(){
     });
     document.getElementById("juguetes").addEventListener("click", function() {
         localStorage.setItem("catID", 102);
-        window.location = "products.html"
+        window.location = "products2.html"
     });
     document.getElementById("muebles").addEventListener("click", function() {
         localStorage.setItem("catID", 103);
-        window.location = "products.html"
+        window.location = "products3.html"
     });
 });

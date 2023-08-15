@@ -1,16 +1,7 @@
 async function fetchProducts() {
     try {
-
-        const response = await fetch('https://japceibal.github.io/emercado-api/cats_products/101.json');
+        const response = await fetch('https://japceibal.github.io/emercado-api/cats_products/107.json');
         if (!response.ok) throw new Error('Network response was not ok');
-
-        const response = await fetch('https://japceibal.github.io/emercado-api/cats_products/' + localStorage.catID + '.json');
-
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-
-
         const data = await response.json();
         const container = document.getElementById('container-product');
 
