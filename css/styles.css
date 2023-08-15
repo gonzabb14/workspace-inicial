@@ -74,21 +74,24 @@ nav a {
   
 }
 .product {
+  
   border: 1px solid #fdfdfd;
   padding: 10px;
   margin-bottom: 10px;
   border-radius:10px;
   background-color: #e0ddd8ce;
-  transition: all .40;
+  transition: all 0.20s;
+
 }
 .product img {
-  max-width: 250px;
+  position: relative;
+  right: -5%;
+  margin: 10px;
+  width: 80%;
   height: auto;
-  transition: all .40;
+
 }
-.product img:hover{
-  transform: scale(1.1);
-}
+
   .product:hover{
     transform: scale(1.1);
 }
