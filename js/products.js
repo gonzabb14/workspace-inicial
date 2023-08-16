@@ -12,60 +12,52 @@ async function fetchProducts() {
 
         data.products.forEach(product => {
             const productElement = document.createElement('div');
-            productElement.classList.add('product'); // Agrega una clase para dar estilo si es necesario
+            productElement.classList.add('product');
 
             const productImage = document.createElement('img');
-            productImage.src = product.image; // Asigna la URL de la imagen del producto
-            productImage.alt = product.name; // Asigna el nombre del producto como alternativa
-
+            productImage.src = product.image;
+            productImage.alt = product.name;
 
             const productName = document.createElement('h2');
             productName.textContent = product.name;
 
-            const productContainer = document.createElement('div');
-
             const productPrice = document.createElement('p');
-            productPrice.textContent = `Precio: $${product.cost}`;
+            productPrice.textContent = `Precio: ${product.cost}`;
+
+            const addButton = document.createElement('button');
+            addButton.textContent = 'Agregar';
+            addButton.classList.add('boton-agregar-carrito');
+
+            const viewButton = document.createElement('button');
+            viewButton.textContent = 'Ver';
+            viewButton.classList.add('boton-ver-producto');
 
             const productDescription = document.createElement('p');
             productDescription.textContent = product.description;
 
-            const buttonsDiv = document.createElement('div');
-
-            const viewButton = document.createElement('button');
-            viewButton.textContent = 'Ver Producto';
-            viewButton.addEventListener('click', () => {
-                // colocar acción al hacer clic en "Ver Producto"
-                
-            });
-
-            const buyButton = document.createElement('button');
-            buyButton.textContent = 'Comprar';
-            buyButton.addEventListener('click', () => {
-                // colocar acción al hacer clic en "Comprar"
-                
-            });
-
-            buttonsDiv.appendChild(viewButton);
-            buttonsDiv.appendChild(buyButton);
-
+            const productContainer = document.createElement('div');
             productContainer.appendChild(productName);
             productContainer.appendChild(productPrice);
+            productContainer.appendChild(addButton);
+            productContainer.appendChild(viewButton);
+
             productElement.appendChild(productImage);
             productElement.appendChild(productContainer);
             productElement.appendChild(productDescription);
 
             container.appendChild(productElement);
-        });
 
+            addButton.addEventListener('click', () => {
+                // Lógica para agregar el producto al carrito
+            });
+
+            viewButton.addEventListener('click', () => {
+                // Lógica para mostrar más detalles del producto
+            });
+        });
     } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
-        // En caso de que la id del producto sea null te redirige a "categories.html".
-        window.location = "categories.html";
     }
 }
 
 fetchProducts();
-
-  
-  
