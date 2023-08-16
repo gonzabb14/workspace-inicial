@@ -12,3 +12,22 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "products.html"
     });
 });
+
+////////////////////////////////////////////////////////////////////VALIDACION DE USUARIOS //////////////////////////////////////////////////////////////////////////////////////
+
+
+const userToken = localStorage.getItem('userToken');
+
+if (!userToken) {
+
+  const loginForm = document.querySelector('#Formulario');
+  loginForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const temporaryToken = 'temporary123';
+    localStorage.setItem('userToken', temporaryToken);
+    window.location.href = 'index.html';
+  });
+
+} else {
+  window.location.href = 'index.html';
+}
