@@ -66,37 +66,49 @@ nav a {
 .jumbotron .lead {
   font-size: 38px;
 }
-#container-product{
+#container-product {
   padding: 10%;
-  display:grid;
-  grid-template-columns: repeat(auto-fit,minmax(200px,auto));
-  gap:2rem;
-  
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+  gap: 2rem;
+
 }
+
 .product {
   border: 1px solid #fdfdfd;
   padding: 10px;
   margin-bottom: 10px;
-  border-radius:10px;
-  background-color: #e0ddd8ce;
-  transition: all 0.20s;
+  border-radius: 10px;
+  background-color: #ffffffce;
+  transition: all .40;
 }
+
 .product img {
-  position: relative;
-  right: -5%;
-  margin: 10px;
-  width: 80%;
+  max-width: 250px;
   height: auto;
-
+  transition: all .40;
 }
 
-  .product:hover{
-    transform: scale(1.1);
+
+
+.product:hover {
+  transform: scale(1.1);
 }
+
 .product h2 {
   font-size: 1.6rem;
   margin: 4px 0;
   color: #100101;
+}
+
+.product button {
+  color: white;
+  font-size: 1rem;
+  display: flexbox;
+  border-radius: 20px;
+  border-color: white;
+  position: relative;
+  background-color: rgb(243, 170, 11);
 }
 
 .product p {
@@ -105,7 +117,7 @@ nav a {
 }
 
 .product-description {
-  font-style:initial;
+  font-style: initial;
 }
 footer {
   padding-top: 3rem;
