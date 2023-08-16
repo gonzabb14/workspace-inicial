@@ -30,6 +30,25 @@ async function fetchProducts() {
             const productDescription = document.createElement('p');
             productDescription.textContent = product.description;
 
+            const buttonsDiv = document.createElement('div');
+
+            const viewButton = document.createElement('button');
+            viewButton.textContent = 'Ver Producto';
+            viewButton.addEventListener('click', () => {
+                // colocar acción al hacer clic en "Ver Producto"
+                
+            });
+
+            const buyButton = document.createElement('button');
+            buyButton.textContent = 'Comprar';
+            buyButton.addEventListener('click', () => {
+                // colocar acción al hacer clic en "Comprar"
+                
+            });
+
+            buttonsDiv.appendChild(viewButton);
+            buttonsDiv.appendChild(buyButton);
+
             productContainer.appendChild(productName);
             productContainer.appendChild(productPrice);
             productElement.appendChild(productImage);
