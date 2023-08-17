@@ -20,7 +20,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  background-color: #ffffff;
+  background-color: rgb(248, 249, 250);
   border-radius: 5%;
   padding: 2rem 2rem;
 }
@@ -31,6 +31,7 @@ body {
   object-fit: cover;
   margin-bottom: 0.5rem;
   border-radius: 5px;
+  box-shadow: none;
 }
 
 input[type="email"],
