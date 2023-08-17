@@ -110,11 +110,16 @@ nav a {
 .product button {
   color: white;
   font-size: 1rem;
-  display: flexbox;
   border-radius: 20px;
-  border-color: white;
+  margin-right: 10px;
+  border: 2px solid white;
   position: relative;
   background-color: rgb(243, 170, 11);
+  transition: all 0.1s;
+}
+
+.product button:active {
+  border: 2px solid rgb(124, 122, 122);
 }
 
 .product p {
