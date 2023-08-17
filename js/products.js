@@ -52,11 +52,12 @@ async function fetchProducts() {
             });
 
             viewButton.addEventListener('click', () => {
-                // Lógica para mostrar más detalles del producto
+                window.location.href = "product-info.html"
             });
         });
     } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
+        window.location.href = "categories.html";
     }
 }
 
