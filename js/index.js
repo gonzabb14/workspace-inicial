@@ -1,3 +1,8 @@
+const usuarioLogueado = localStorage.getItem('usuarioLogueado') === 'true';
+if (!usuarioLogueado) {
+    window.location.href = 'login.html';
+}
+
 document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("autos").addEventListener("click", function() {
         localStorage.setItem("catID", 101);
@@ -13,21 +18,3 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 });
 
-////////////////////////////////////////////////////////////////////VALIDACION DE USUARIOS //////////////////////////////////////////////////////////////////////////////////////
-
-
-const userToken = localStorage.getItem('userToken');
-
-if (!userToken) {
-
-  const loginForm = document.querySelector('#Formulario');
-  loginForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const temporaryToken = 'temporary123';
-    localStorage.setItem('userToken', temporaryToken);
-    window.location.href = 'index.html';
-  });
-
-} else {
-  window.location.href = 'index.html';
-}
