@@ -22,7 +22,7 @@ async function fetchProducts() {
             productName.textContent = product.name;
 
             const productPrice = document.createElement('p');
-            productPrice.textContent = `Precio: ${product.cost}`;
+            productPrice.textContent = `Precio: ${product.currency} ${product.cost}`;
 
             const addButton = document.createElement('button');
             addButton.textContent = 'Agregar';
