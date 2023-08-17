@@ -261,3 +261,9 @@ a.custom-card:hover {
 .loginasd:hover {
   background-color:aliceblue;
 }
+
+@media (max-width: 991px) {
+ #inicio-sesion {
+  top: 35%;
+ } 
+}
