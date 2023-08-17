@@ -1,3 +1,8 @@
+const usuarioLogueado = localStorage.getItem('usuarioLogueado') === 'true';
+if (!usuarioLogueado) {
+    window.location.href = 'login.html';
+}
+
 document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("autos").addEventListener("click", function() {
         localStorage.setItem("catID", 101);
@@ -12,3 +17,4 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "products.html"
     });
 });
+
