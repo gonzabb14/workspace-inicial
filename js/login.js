@@ -1,3 +1,5 @@
+document.getElementById("register").classList.add("displayOff");
+//document.getElementById("inisio-de-sesion").classList.remove("displayOff")
 
 const inputEmail = document.querySelector("#email");
 const inputPassword = document.querySelector("#password");
@@ -20,3 +22,15 @@ document.getElementById('formulario').addEventListener('submit', function(e){
     localStorage.setItem('usuarioLogueado', 'true');
     window.location.href = 'index.html';
 });
+
+document.getElementById("btnRecuperar").addEventListener("click", function(e){
+  e.preventDefault();
+  document.getElementById("register").classList.remove("displayOff");
+  document.getElementById("inicio-de-sesion").classList.add("displayOff");
+})
+
+document.getElementById("recuperar").addEventListener("click", function(e){
+  if (document.getElementsByName("email").requiered){
+  document.getElementById("register").classList.add("displayOff");
+  document.getElementById("inicio-de-sesion").classList.remove("displayOff");}
+})

@@ -22,14 +22,14 @@
   </head>
 
   <body>
-    <div class="container">
+    <div id="inicio-de-sesion" class="container">
 
       <form id="formulario" action="./index.html">
 
       <form action="index.html">
 
-        <div class="formulario">
-          <img src="./img/backgroundLogin.png" alt="" />
+        <div style="padding-bottom: 10px ;" class="formulario">
+          <img src="./img/backgroundLogin.jpg" alt="" />
           <h3>Account Login</h3>
           <input
             type="email"
@@ -48,11 +48,43 @@
             />
             <i class="fas fa-eye" id="togglePassword"></i>
           </div>
-          <input type="submit" value="Enviar" />
+          <input type="submit" value="Iniciar Sesión" />
+          <a id="btnRecuperar" style="
+                  display: flex;
+                  justify-content: end;
+
+                  color: black;
+                  text-decoration: none;
+        " href=""><p  class="registroRestablecer" style="margin: 0px;">¿No recuerdas tu contraseña?</p></a>
+        <a class="registroRestablecer" style="
+                  display: flex;
+                  justify-content: end;
+                  color: black;
+                  text-decoration: none;
+        " href="">Registrarse</a>
+        </div>
+        
+      </form>
+    </div>
+    <div id="register" class="container">
+      <form id="formulario-recuperar" action="">
+        <div style="padding-bottom: 10px ;" class="formulario">
+          <img src="./img/backgroundLogin.jpg" alt="" />
+          <h3>Send Mail</h3>
+          <input
+            type="email"
+            placeholder="Email*"
+            required
+            name="email"
+            id="email"
+          />
+          <input id="recuperar" type="submit" value="Recuperar" />
+          <h1></h1>
         </div>
       </form>
     </div>
 
+    
     <!-- <footer class="text-muted">
       <div class="container">
         <p class="float-end">
