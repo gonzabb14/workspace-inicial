@@ -276,3 +276,10 @@ a.custom-card:hover {
   top: 35%;
  } 
 }
+
+.userlogged {
+  text-decoration: none;
+  color: white;
+  position: absolute;
+  right: 20px;
+}
