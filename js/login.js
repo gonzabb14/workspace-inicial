@@ -14,12 +14,9 @@ eye.addEventListener("click", () => {
 });
 
 document.getElementById('formulario').addEventListener('submit', function(e){
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
-  if ( email === 'example@example.com' && password ===  'password' ){
+  const email = document.getElementById('email');
+  const password = document.getElementById('password');
+    localStorage.setItem("usuario", email.value);
     localStorage.setItem('usuarioLogueado', 'true');
     window.location.href = 'index.html';
-  } else {
-    alert('Credenciales incorrectas')
-}
 });
