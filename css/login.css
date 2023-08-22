@@ -20,7 +20,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  background-color: rgb(248, 249, 250);
+  background-color: #dfdfdf;
   border-radius: 5%;
   padding: 2rem 2rem;
 }
@@ -80,4 +80,12 @@ input[type="submit"]:hover {
   background: none;
   color: #000;
   border: 2px solid #000;
+}
+
+.registroRestablecer:hover {
+  -webkit-text-stroke: 0.5px black;
+}
+
+.displayOff {
+  display: none;
 }
