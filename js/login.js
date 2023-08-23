@@ -27,8 +27,10 @@ document.getElementById('formulario').addEventListener('submit', function(e){
     if (email === user.email && password === user.contraseña) {
       localStorage.setItem("usuarioLogueado", 'true');
       window.location.href = 'index.html';
-    } else {
+    } else if (user.email === email){
       alert("Contraseña incorrecta");
+    } else {
+      alert("Usuario no registrado");
     }
   } else {
     alert("Usuario no registrado");
