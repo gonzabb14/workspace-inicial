@@ -56,17 +56,16 @@
                   color: black;
                   text-decoration: none;
         " href=""><p  class="registroRestablecer" style="margin: 0px;">¿No recuerdas tu contraseña?</p></a>
-        <a class="registroRestablecer" style="
+        <a id="btnRegistro" class="registroRestablecer" style="
                   display: flex;
                   justify-content: end;
                   color: black;
                   text-decoration: none;
         " href="">Registrarse</a>
         </div>
-        
       </form>
     </div>
-    <div id="register" class="container">
+    <div id="recuperarContraseña" class="container">
       <form id="formulario-recuperar" action="">
         <div style="padding-bottom: 10px ;" class="formulario">
           <img src="./img/backgroundLogin.jpg" alt="" />
@@ -83,7 +82,51 @@
         </div>
       </form>
     </div>
+    <div id="register" class="container">
+      <form id="formulario-recuperar" action="">
+        <div style="padding-bottom: 10px ;" class="formulario">
+          <img src="./img/backgroundLogin.jpg" alt="" />
+          <h3>Register</h3>
+          <input
+            type="text"
+            placeholder="Nombre*"
+            required
 
+          />
+          <input
+            type="text"
+            placeholder="Apellido*"
+            required
+
+          />
+          <input
+            type="email"
+            placeholder="Email*"
+            required
+
+          />
+          <input
+            type="email"
+            placeholder="Repetir Email*"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Contraseña*"
+            required
+
+          />
+          <input
+            type="password"
+            placeholder="Repetir Contraseña*"
+            required
+
+          />
+          <input id="recuperar" type="submit" value="Recuperar" />
+          <h1></h1>
+        </div>
+      </form>
+    </div>
     
     <!-- <footer class="text-muted">
       <div class="container">

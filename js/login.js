@@ -1,3 +1,4 @@
+document.getElementById("recuperarContraseña").classList.add("displayOff");
 document.getElementById("register").classList.add("displayOff");
 //document.getElementById("inisio-de-sesion").classList.remove("displayOff")
 
@@ -24,13 +25,19 @@ document.getElementById('formulario').addEventListener('submit', function(e){
 });
 
 document.getElementById("btnRecuperar").addEventListener("click", function(e){
-  e.preventDefault();
-  document.getElementById("register").classList.remove("displayOff");
+  e.preventDefault(); // hace que la web no se resetee porque el btnRecuperar es una etiqueta del tipo a, tiene href.
+  document.getElementById("recuperarContraseña").classList.remove("displayOff");
   document.getElementById("inicio-de-sesion").classList.add("displayOff");
 })
 
 document.getElementById("recuperar").addEventListener("click", function(e){
   if (document.getElementsByName("email").requiered){
-  document.getElementById("register").classList.add("displayOff");
+  document.getElementById("recuperarContraseña").classList.add("displayOff");
   document.getElementById("inicio-de-sesion").classList.remove("displayOff");}
+})
+
+document.getElementById("btnRegistro").addEventListener("click", function(e){
+  e.preventDefault();
+  document.getElementById("register").classList.remove("displayOff");
+  document.getElementById("inicio-de-sesion").classList.add("displayOff");
 })
