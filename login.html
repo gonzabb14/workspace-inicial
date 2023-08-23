@@ -20,17 +20,12 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
     />
   </head>
-
   <body>
     <div id="inicio-de-sesion" class="container">
-
       <form id="formulario" action="./index.html">
-
-      <form action="index.html">
-
         <div style="padding-bottom: 10px ;" class="formulario">
           <img src="./img/backgroundLogin.jpg" alt="" />
-          <h3>Account Login</h3>
+          <h3>Iniciar Sesión</h3>
           <input
             type="email"
             placeholder="Email*"
@@ -48,7 +43,7 @@
             />
             <i class="fas fa-eye" id="togglePassword"></i>
           </div>
-          <input type="submit" value="Iniciar Sesión" />
+          <input id="btnIniciarSesion" type="submit" value="Iniciar Sesión" />
           <a id="btnRecuperar" style="
                   display: flex;
                   justify-content: end;
@@ -69,7 +64,7 @@
       <form id="formulario-recuperar" action="">
         <div style="padding-bottom: 10px ;" class="formulario">
           <img src="./img/backgroundLogin.jpg" alt="" />
-          <h3>Send Mail</h3>
+          <h3>Mandar mail de recuperación</h3>
           <input
             type="email"
             placeholder="Email*"
@@ -83,46 +78,47 @@
       </form>
     </div>
     <div id="register" class="container">
-      <form id="formulario-recuperar" action="">
+      <form id="formulario-registrar" action="">
         <div style="padding-bottom: 10px ;" class="formulario">
           <img src="./img/backgroundLogin.jpg" alt="" />
-          <h3>Register</h3>
+          <h3>Registrarse</h3>
           <input
             type="text"
             placeholder="Nombre*"
             required
-
+            name="usuario-nombre"
           />
           <input
             type="text"
             placeholder="Apellido*"
             required
-
+            name="usuario-apellido"
           />
           <input
             type="email"
             placeholder="Email*"
             required
-
+            name="usuario-email"
           />
           <input
             type="email"
             placeholder="Repetir Email*"
             required
+            name="usuario-repetirEmail"
           />
           <input
             type="password"
             placeholder="Contraseña*"
             required
-
+            name="usuario-contraseña"
           />
           <input
             type="password"
             placeholder="Repetir Contraseña*"
             required
-
+            name="usuario-repetirContraseña"
           />
-          <input id="recuperar" type="submit" value="Recuperar" />
+          <input id="registro" type="submit" value="Recuperar" />
           <h1></h1>
         </div>
       </form>
