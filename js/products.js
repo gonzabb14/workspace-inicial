@@ -9,9 +9,9 @@ async function fetchProducts() {
         const data = await response.json();
 
         const container = document.getElementById('container-product');
-        let contenedor = document.getElementById("queProductoEs");
-        contenedor.id = "centrar"
-        let parrafo = document.createElement("p");
+        const contenedor = document.getElementById("queProductoEs");
+        contenedor.classList.add("centrar");
+        const parrafo = document.createElement("p");
         parrafo.innerHTML = "Verás aquí todos los productos de la categoría " + data.catName;
         
         
@@ -74,12 +74,12 @@ async function fetchProducts() {
         });
     } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
-        window.location.href = "categories.html";
+        //window.location.href = "categories.html";
     }
 }
 
 //botón precio ascendente
-let botonsito1 = document.getElementById("as");
+const botonsito1 = document.getElementById("as");
 botonsito1.addEventListener("click", function(e) {
     const contenedor1 = document.getElementById('container-product');
     const elementos = contenedor1.getElementsByClassName("product");
@@ -93,6 +93,7 @@ botonsito1.addEventListener("click", function(e) {
        contenedor1.appendChild(element)
     });
 });
+
 
 //botón precio descendente
 let botonsito2 = document.getElementById("ds");
@@ -129,27 +130,40 @@ botonsito3.addEventListener("click", function(e) {
 
 const botonsito4 = document.getElementById("FiltrarPrecio");
 //botón filtrar
-botonsito4.addEventListener("click", function(e){
-    
+botonsito4.addEventListener("click", (e) => {
     const contenedor1 = document.getElementById('container-product');
     const elementos = contenedor1.getElementsByClassName("product");
-    const min = document.getElementById("minPrice").value;
+
+    let min = 0;
+    min = document.getElementById("minPrice").value;
     const max = document.getElementById("maxPrice").value;
 
+    const elementosArray = Array.from(elementos);
     if (min < max) {
-        const elementosArray = Array.from(elementos);
-
-        let array = elementosArray.filter((a) => parseInt(a.id) <= max && parseInt(a.id) >= min);
-        contenedor1.innerHTML = "";
-
-        array.forEach(element => {
-            contenedor1.appendChild(element);
+        elementosArray.forEach(element => {
+            const elementId = parseInt(element.id);
+            if (elementId >= min && elementId <= max) {
+                element.classList.remove("ocultar");
+            } else {
+                element.classList.add("ocultar");
+            }
         });
-    } else {
-        alert("min tiene que ser menor o igual que max");
     }
+
 });
 
+document.getElementById("btnLimpiar2").addEventListener("click", (e) => {
+    e.preventDefault();
+    const contenedor1 = document.getElementById('container-product');
+    const elementos = contenedor1.getElementsByClassName("product");
+    const elementosArray = Array.from(elementos);
+    document.getElementById("minPrice").value = null;
+    document.getElementById("maxPrice").value = null;
+
+    elementosArray.forEach(element => {
+        element.classList.remove("ocultar");
+    });
+});
 
 
 fetchProducts();

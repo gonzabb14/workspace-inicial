@@ -84,8 +84,8 @@ nav a {
   flex-direction: column;
   align-items: center;
   border-radius: 7px;
-  transition: all .40s;
-
+  transition: all .20s;
+  cursor:pointer;
 }
 
 .product img {
@@ -99,9 +99,7 @@ nav a {
 
 
 .product:hover {
-  transform: scale(1.1);
-  box-shadow: 10px 10px 1.5rem;
-  
+  transform: scale(1.01);
 }
 
 .product h2 {
@@ -284,9 +282,13 @@ a.custom-card:hover {
   right: 20px;
 }
 
-#centrar {
+.centrar {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
+}
+
+.ocultar {
+  display: none;
 }
