@@ -139,7 +139,7 @@ botonsito4.addEventListener("click", function(e){
     if (min < max) {
         const elementosArray = Array.from(elementos);
 
-        let array = elementosArray.filter((a) => parseInt(a.id) <= max && parseInt(a.id) <= min);
+        let array = elementosArray.filter((a) => parseInt(a.id) <= max && parseInt(a.id) >= min);
         contenedor1.innerHTML = "";
 
         array.forEach(element => {
