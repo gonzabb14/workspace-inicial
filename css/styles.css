@@ -283,3 +283,10 @@ a.custom-card:hover {
   position: absolute;
   right: 20px;
 }
+
+#centrar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
