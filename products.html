@@ -40,6 +40,27 @@
     </div>
   </nav>
   <main class="pb-5 container">
+    <div id="queProductoEs">
+      <h1>Productos</h1>
+    </div>
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <div style="display: flex; justify-content:space-around; width: 50vw;" id="filtros">
+      <input class="btn-check" id="as" type="radio" name="option">
+      <label class="btn btn-light" for="as">Ascendente</label>
+      <input class="btn-check"  id="ds" type="radio" name="option">
+      <label class="btn btn-light" for="ds">Descendente</label>
+      <input class="btn-check"  id="rel" type="radio" name="option">
+      <label class="btn btn-light" for="rel">Relevancia</label>
+    </div>
+    <div id="filtros">
+      <input id="minPrice" type="number" placeholder="min">
+      <label for="minPrice"></label>
+      <input id="maxPrice" type="number" placeholder="max">
+      <label for="maxPrice"></label>
+      <input type="submit" name="" id="FiltrarPrecio" value="Filtrar">
+      <a id="btnLimpiar2" href="">Limpiar</a>
+    </div>
+    </div>
     <div id="container-product">
       
       </div>
