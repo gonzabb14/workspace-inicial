@@ -31,6 +31,7 @@ async function fetchProducts() {
 
             const productName = document.createElement('h2');
             productName.textContent = product.name;
+            productName.classList.add("titulo");
 
             const productPricee = document.createElement('p');
             productPricee.textContent = `${product.cost}`;
@@ -168,12 +169,12 @@ document.getElementById("btnLimpiar2").addEventListener("click", (e) => {
 
 document.getElementById("buscar").addEventListener("keydown", (e) => {
     if (e.keyCode === 13) {
-        const queBuscar = document.getElementById("buscar").value;
+        const queBuscar = document.getElementById("buscar").value.toLowerCase();
         const contenedor1 = document.getElementById('container-product');
         const elementos = contenedor1.getElementsByClassName("product");
         const elementosArray = Array.from(elementos);
         elementosArray.forEach(element => {
-            if (/*element.getElementsByTagName("h2")[0].innerHTML.includes(queBuscar) || */element.getElementsByClassName("descripcion")[0].innerHTML.includes(queBuscar)) {
+            if (element.getElementsByClassName("titulo")[0].innerHTML.toLowerCase().includes(queBuscar) || element.getElementsByClassName("descripcion")[0].innerHTML.toLowerCase().includes(queBuscar)) {
                 element.classList.remove("ocultar");
             } else {
                 element.classList.add("ocultar");
