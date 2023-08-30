@@ -48,6 +48,7 @@ async function fetchProducts() {
             viewButton.classList.add('boton-ver-producto');
 
             const productDescription = document.createElement('p');
+            productDescription.classList.add("descripcion");
             productDescription.textContent = product.description;
 
             const productContainer = document.createElement('div');
@@ -165,5 +166,20 @@ document.getElementById("btnLimpiar2").addEventListener("click", (e) => {
     });
 });
 
+document.getElementById("buscar").addEventListener("keydown", (e) => {
+    if (e.keyCode === 13) {
+        const queBuscar = document.getElementById("buscar").value;
+        const contenedor1 = document.getElementById('container-product');
+        const elementos = contenedor1.getElementsByClassName("product");
+        const elementosArray = Array.from(elementos);
+        elementosArray.forEach(element => {
+            if (/*element.getElementsByTagName("h2")[0].innerHTML.includes(queBuscar) || */element.getElementsByClassName("descripcion")[0].innerHTML.includes(queBuscar)) {
+                element.classList.remove("ocultar");
+            } else {
+                element.classList.add("ocultar");
+            }
+        });
+    }
+});
 
 fetchProducts();
