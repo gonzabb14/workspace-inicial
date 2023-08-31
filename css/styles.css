@@ -75,7 +75,7 @@ nav a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, auto));
   gap: 2rem;
-
+  justify-content: center;
 }
 
 .product {
@@ -86,6 +86,7 @@ nav a {
   border-radius: 7px;
   transition: all .20s;
   cursor:pointer;
+  width: 250px;
 }
 
 .product img {
