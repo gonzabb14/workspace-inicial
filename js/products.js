@@ -44,6 +44,7 @@ async function fetchProducts() {
 
             const productName = document.createElement('h2');
             productName.textContent = product.name;
+            productName.classList.add("titulo");
 
             const productPricee = document.createElement('p');
             productPricee.textContent = `${product.cost}`;
@@ -61,6 +62,7 @@ async function fetchProducts() {
             viewButton.classList.add('boton-ver-producto');
 
             const productDescription = document.createElement('p');
+            productDescription.classList.add("descripcion");
             productDescription.textContent = product.description;
 
             const productContainer = document.createElement('div');
@@ -182,5 +184,18 @@ document.getElementById("btnLimpiar2").addEventListener("click", (e) => {
     });
 });
 
+document.getElementById("buscar").addEventListener("input", (e) => {
+    const queBuscar = document.getElementById("buscar").value.toLowerCase();
+    const contenedor1 = document.getElementById('container-product');
+    const elementos = contenedor1.getElementsByClassName("product");
+    const elementosArray = Array.from(elementos);
+    elementosArray.forEach(element => {
+        if (element.getElementsByClassName("titulo")[0].innerHTML.toLowerCase().includes(queBuscar) || element.getElementsByClassName("descripcion")[0].innerHTML.toLowerCase().includes(queBuscar)) {
+            element.classList.remove("ocultar");
+        } else {
+            element.classList.add("ocultar");
+        }
+    });
+});
 
 fetchProducts();
