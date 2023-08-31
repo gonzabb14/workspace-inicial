@@ -59,7 +59,7 @@ document.getElementById("btnRegistro").addEventListener("click", function(e){
   document.getElementById("inicio-de-sesion").classList.add("displayOff");
 });
 
-document.getElementById("formulario-registrar").addEventListener("click", function(e){
+document.getElementById("registro").addEventListener("click", function(e){
   let nombre = document.getElementsByName("usuario-nombre")[0].value;
   let apellido = document.getElementsByName("usuario-apellido")[0].value;
   let email = document.getElementsByName("usuario-email")[0].value;
