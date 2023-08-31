@@ -99,10 +99,10 @@ document.addEventListener("DOMContentLoaded", function(e){
         let usuarioLogin = document.createElement("a");
         usuarioLogin.classList = "userlogged";
         usuarioLogin.href = "my-profile.html"
-        usuarioLogin.innerHTML = localStorage.usuario;
+        usuarioLogin.innerHTML = JSON.parse(localStorage.getItem("registroUsuario")).email;
         barraNavegacion[0].appendChild(usuarioLogin);
-    
     }
+
 
     getJSONData(CATEGORIES_URL).then(function(resultObj){
         if (resultObj.status === "ok"){
