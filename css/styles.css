@@ -20,10 +20,13 @@ nav a {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  transition: all .40s;
 }
-.bd-placeholder-img:hover {
-  transform: scale(1.1);
+
+.col-md-4:hover {
+  transform:scale(1.1);
+}
+.col-md-4 {
+  transition: all .40s;
 }
 
 @media (min-width: 768px) {
