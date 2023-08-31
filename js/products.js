@@ -171,20 +171,18 @@ document.getElementById("btnLimpiar2").addEventListener("click", (e) => {
     });
 });
 
-document.getElementById("buscar").addEventListener("keydown", (e) => {
-    if (e.keyCode === 13) {
-        const queBuscar = document.getElementById("buscar").value.toLowerCase();
-        const contenedor1 = document.getElementById('container-product');
-        const elementos = contenedor1.getElementsByClassName("product");
-        const elementosArray = Array.from(elementos);
-        elementosArray.forEach(element => {
-            if (element.getElementsByClassName("titulo")[0].innerHTML.toLowerCase().includes(queBuscar) || element.getElementsByClassName("descripcion")[0].innerHTML.toLowerCase().includes(queBuscar)) {
-                element.classList.remove("ocultar");
-            } else {
-                element.classList.add("ocultar");
-            }
-        });
-    }
+document.getElementById("buscar").addEventListener("input", (e) => {
+    const queBuscar = document.getElementById("buscar").value.toLowerCase();
+    const contenedor1 = document.getElementById('container-product');
+    const elementos = contenedor1.getElementsByClassName("product");
+    const elementosArray = Array.from(elementos);
+    elementosArray.forEach(element => {
+        if (element.getElementsByClassName("titulo")[0].innerHTML.toLowerCase().includes(queBuscar) || element.getElementsByClassName("descripcion")[0].innerHTML.toLowerCase().includes(queBuscar)) {
+            element.classList.remove("ocultar");
+        } else {
+            element.classList.add("ocultar");
+        }
+    });
 });
 
 fetchProducts();
