@@ -23,10 +23,10 @@ nav a {
 }
 
 .col-md-4:hover {
-  transform:scale(1.1);
+  transform:scale(1.01);
 }
 .col-md-4 {
-  transition: all .40s;
+  transition: all .20s;
 }
 
 @media (min-width: 768px) {
