@@ -148,8 +148,11 @@ botonsito4.addEventListener("click", (e) => {
     const elementos = contenedor1.getElementsByClassName("product");
 
     let min = 0;
+    let max = document.getElementById("maxPrice").value;
     min = document.getElementById("minPrice").value;
-    const max = document.getElementById("maxPrice").value;
+    if (max == "") {
+        max = 999999999999;
+    }
 
     const elementosArray = Array.from(elementos);
     if (min < max) {
@@ -164,6 +167,7 @@ botonsito4.addEventListener("click", (e) => {
     }
 
 });
+
 
 document.getElementById("btnLimpiar2").addEventListener("click", (e) => {
     e.preventDefault();
