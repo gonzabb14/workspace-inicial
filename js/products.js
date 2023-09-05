@@ -11,6 +11,11 @@
         barraNavegacion[0].appendChild(usuarioLogin);
     }
 
+function setProductID(id){
+    localStorage.setItem("ProductID",id);
+    window.location.href = "product-info.html";
+}
+
 async function fetchProducts() {
     try {
         const response = await fetch('https://japceibal.github.io/emercado-api/cats_products/' + localStorage.catID + '.json');
@@ -28,64 +33,24 @@ async function fetchProducts() {
         parrafo.innerHTML = "Verás aquí todos los productos de la categoría " + data.catName;
         
         
-
+        let htmlContentToAppend = "";
+        document.getE
         data.products.forEach(product => {
-            const productElement = document.createElement('div');
-            productElement.classList.add('product');
-            productElement.id = product.cost;
-
-            const productImage = document.createElement('img');
-            productImage.src = product.image;
-            productImage.alt = product.name;
-
-            const soldCount = document.createElement("p");
-            soldCount.classList.add("vendidos");
-            soldCount.textContent = product.soldCount;
-
-            const productName = document.createElement('h2');
-            productName.textContent = product.name;
-            productName.classList.add("titulo");
-
-            const productPricee = document.createElement('p');
-            productPricee.textContent = `${product.cost}`;
-            productPricee.style ="display:none";
-
-            const productPrice = document.createElement('p');
-            productPrice.textContent = `Precio: ${product.currency} ${product.cost}`;
-
-            const addButton = document.createElement('button');
-            addButton.textContent = 'Agregar';
-            addButton.classList.add('boton-agregar-carrito');
-
-            const viewButton = document.createElement('button');
-            viewButton.textContent = 'Ver';
-            viewButton.classList.add('boton-ver-producto');
-
-            const productDescription = document.createElement('p');
-            productDescription.classList.add("descripcion");
-            productDescription.textContent = product.description;
-
-            const productContainer = document.createElement('div');
-            productContainer.appendChild(productName);
-            productContainer.appendChild(productPrice);
-            productContainer.appendChild(productPricee);
-            productContainer.appendChild(addButton);
-            productContainer.appendChild(viewButton);
-            productElement.appendChild(soldCount);
-
-            productElement.appendChild(productImage);
-            productElement.appendChild(productContainer);
-            productElement.appendChild(productDescription);
-
-            container.appendChild(productElement);
-
-            addButton.addEventListener('click', () => {
-                // Lógica para agregar el producto al carrito
-            });
-
-            viewButton.addEventListener('click', () => {
-                window.location.href = "product-info.html"
-            });
+            htmlContentToAppend += `
+            <div class="product" id="${product.id}">
+                <p class="vendidos">${product.soldCount}</p>
+                <img src="${product.image}" alt="${product.name}">
+                <div>
+                    <h2 class="titulo">${product.name}</h2>
+                    <p>Precio: ${product.currency}${product.cost}</p>
+                    <p style="display: none;">${product.cost}</p>
+                    <button class="boton-agregar-carrito">Agregar</button>
+                    <button onclick="setProductID(${product.id})" class="boton-ver-producto">Ver</button>
+                </div>
+            </div>
+            `
+            document.getElementById("container-product").innerHTML = htmlContentToAppend;
+            
         });
     } catch (error) {
         console.error('There was a problem with the fetch operation:', error);

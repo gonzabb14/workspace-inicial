@@ -1,0 +1,23 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#container-product {
+
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+
+ 
+}
+
+#product-information {
+    border: 1px solid black;
+    border-radius: 0.5%;
+    min-width: 700px;
+    min-height: 500px;
+}
