@@ -118,17 +118,18 @@ function agregarProducto(product, categoria) {
         </div>
         <div class="test-divs" style="margin-top: 30px;">
             <p style="font-size:1.4rem;">Comentar</p>
-            <form>
+            <form style="display:flex; flex-direction:column;">
                 <p>Tu opinión:</p>
                 <textarea style="width:500px; height:100px;"></textarea>
                 <p>Tu puntuación:</p>
-                <select>
+                <select style="width:35px;">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
+                <button style="width:60px; margin-top:10px; border-radius:10%; background-color:#4343ffeb;">Enviar</button>
             </form>
         </div>
     </div>
