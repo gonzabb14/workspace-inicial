@@ -311,7 +311,7 @@ body, html {
 #container-product2 {
 
   display: flex;
-  
+    
   justify-content: center; /* Centrar horizontalmente */
   align-items: center; /* Centrar verticalmente */
   margin: 0;
@@ -320,8 +320,16 @@ body, html {
 }
 
 #product-information {
-  border: 1px solid black;
+  border: 0px solid black;
   border-radius: 0.5%;
   min-width: 700px;
   min-height: 500px;
+}
+
+.test {
+  margin: 0;
+}
+
+.test-divs {
+  margin: 20px 10px 0px 10px;
 }
