@@ -120,16 +120,16 @@ function agregarProducto(product, categoria) {
             <p style="font-size:1.4rem;">Comentar</p>
             <form style="display:flex; flex-direction:column;">
                 <p>Tu opinión:</p>
-                <textarea style="width:500px; height:100px;"></textarea>
+                <textarea style="width:500px; height:100px;" id="comentario-hecho"></textarea>
                 <p>Tu puntuación:</p>
-                <select style="width:35px;">
+                <select id="calificacion-dada" style="width:35px;">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
-                <button style="width:60px; margin-top:10px; border-radius:10%; background-color:#4343ffeb;">Enviar</button>
+                <button style="width:60px; margin-top:10px; border-radius:10%; background-color:#4343ffeb;" id="boton-enviar-datos">Enviar</button>
             </form>
         </div>
     </div>
@@ -140,6 +140,57 @@ function agregarProducto(product, categoria) {
     document.getElementById("container-product").innerHTML = htmlContentToAppend;
     agregarImagenes();
     agregarComentarios();
+    document.getElementById("boton-enviar-datos").addEventListener("click", (e) => {
+        e.preventDefault();
+        const comentario = document.getElementById("comentario-hecho").value;
+        const score = document.getElementById("calificacion-dada").value;
+
+        console.log(comentario, score);
+        
+        const user = JSON.parse(localStorage.registroUsuario);
+        console.log(user.nombre);
+
+        const fechaActual = new Date();
+
+        const año = fechaActual.getFullYear(); // Obtiene el año actual
+        const mes = fechaActual.getMonth() + 1; // Obtiene el mes actual (0-11, por lo que sumamos 1)
+        const dia = fechaActual.getDate(); // Obtiene el día del mes
+        const hora = fechaActual.getHours(); // Obtiene la hora del día (0-23)
+        const minutos = fechaActual.getMinutes(); // Obtiene los minutos (0-59)
+        const segundos = fechaActual.getSeconds(); // Obtiene los segundos (0-59)
+
+        
+        //console.log();
+
+        //console.log(año+'-'+mes+'-'+dia);
+
+        document.getElementById("comentarios").innerHTML += `
+        <div class="test-divs" style="border: 1px solid black; margin: 0px;  border: 0.5px solid #897d7d38;">
+            <div style="display: flex; flex-direction: row;">
+                <p class="test"><strong>${user.nombre+ " " + user.apellido}</strong></p>
+                <p style="margin: 0px 10px 0px 10px;">-</p>
+                <p>${año}-${mes < 10 ? '0' + mes : mes}-${dia < 10 ? '0' + dia : dia} ${hora < 10 ? '0' + hora : hora}:${minutos < 10 ? '0' + minutos : minutos}:${segundos < 10 ? '0' + segundos : segundos}</p>
+                <p style="margin: 0px 10px 0px 10px;">-</p>
+                <div class="calificaciones">
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+            </div>
+            <p class="test">${comentario}</p>
+        </div>
+        `;
+
+        const estrellitas = document.getElementsByClassName("calificaciones")[document.getElementsByClassName("calificaciones").length-1].getElementsByTagName("span");
+        for (let h = 0; h < score; h++) {
+            estrellitas[h].classList.add("checked");
+        }
+
+        document.getElementById("comentario-hecho").value = '';
+        document.getElementById("calificacion-dada").selectedIndex = 0;
+    })
 }
 
 
@@ -174,3 +225,4 @@ fetch('https://japceibal.github.io/emercado-api/cats_products/' + localStorage.c
     .catch(error => {
         console.log("Hubo un problema con la petición Fetch:" + error.message);
     });
+
