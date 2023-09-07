@@ -35,25 +35,6 @@ nav a {
   }
 }
 
-.jumbotron {
-  height: 50vh;
-  padding: 5em inherit;
-  margin-bottom: 0;
-  background-color: #53C0FB;
-  background: url('../img/cover_back.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: black;
-  font-weight: bold;
-}
-
-@media (min-width: 768px) {
-  .jumbotron {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-}
 
 .jumbotron p:last-child {
   margin-bottom: 0;
@@ -295,4 +276,83 @@ a.custom-card:hover {
 
 .ocultar {
   display: none;
+}
+
+#asd{
+  background-color: #0087F7;
+  width: 10%;
+  border-radius: 20px;
+
+}
+
+ul, ol {
+  list-style:none;
+}
+
+.nav-item > li {
+  float:left;
+}
+
+.nav-item li a {
+  background-color:#f80d0d;
+  color:#fff;
+  text-decoration:none;
+  padding:10px 12px;
+  display:block;
+  margin: 10px;
+  width: 200px;
+
+}
+.nav-link{ background-color: orange;
+  color:#fff;
+  text-decoration:none;
+  padding:10px 12px;
+  display:block;
+  margin: 10px;
+  width: 200px;
+
+}
+
+.nav-item li a:hover {
+  background-color:#434343;
+}
+
+.nav-item li ul {
+  display:none;
+  position:absolute;
+  min-width:140px;
+}
+
+.nav-item li:hover > ul {
+  display:block;
+}
+
+.nav-item li ul li {
+  position:relative;
+}
+
+.nav-item li ul li ul {
+  right:-140px;
+  top:0px;
+}
+#buscador{
+  background-color: #ffffff66;
+  width: 100%;
+  height:350;
+  text-align: center;
+}
+#buscador input{
+ margin:175px;
+ border-radius: 30px;
+ box-shadow:5px 1px 0 0 orange;
+ width: 30rem;
+ height: 40px;
+}
+#video-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  z-index: -1; 
 }
