@@ -4,14 +4,13 @@
 .site-header {
   font-family: 'Verdana', serif !important;
 }
-
+body{
+  background:none;
+}
 .jumbotron .display-4 {
   font-weight: bold;
 }
 
-nav a {
-  text-decoration: none;
-}
 
 .bd-placeholder-img {
   font-size: 1.125rem;
@@ -46,7 +45,7 @@ nav a {
 
 .jumbotron .container {
   max-width: 40rem;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(230, 13, 13, 0.5);
   border-radius: 10px;
   text-shadow: 1px 1px 2px grey;
 }
@@ -277,82 +276,170 @@ a.custom-card:hover {
 .ocultar {
   display: none;
 }
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
-#asd{
-  background-color: #0087F7;
-  width: 10%;
-  border-radius: 20px;
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    background:none;
 }
 
-ul, ol {
-  list-style:none;
+body {
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    
 }
 
-.nav-item > li {
-  float:left;
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 110px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(17px);
+    --webkit-backdrop-filter: blur(17px);
+    border-right: 1px solid rgba(255, 255, 255, 0.7);
+    transition: width 0.3s ease;
 }
 
-.nav-item li a {
-  background-color:#f80d0d;
-  color:#fff;
-  text-decoration:none;
-  padding:10px 12px;
-  display:block;
-  margin: 10px;
-  width: 200px;
-
-}
-.nav-link{ background-color: orange;
-  color:#fff;
-  text-decoration:none;
-  padding:10px 12px;
-  display:block;
-  margin: 10px;
-  width: 200px;
-
+.sidebar:hover {
+    width: 260px;
 }
 
-.nav-item li a:hover {
-  background-color:#434343;
+.sidebar .logo {
+    color: #000;
+    display: flex;
+    align-items: center;
+    padding: 25px 10px 15px;
 }
 
-.nav-item li ul {
-  display:none;
-  position:absolute;
-  min-width:140px;
+.logo img {
+    width: 43px;
+    border-radius: 50%;
 }
 
-.nav-item li:hover > ul {
-  display:block;
+.logo h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-left: 15px;
+    display: none;
 }
 
-.nav-item li ul li {
-  position:relative;
+.sidebar:hover .logo h2 {
+  transform: scale(1.01);
 }
 
-.nav-item li ul li ul {
-  right:-140px;
-  top:0px;
+.sidebar .links {
+    list-style: none;
+    margin-top: 20px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    height: calc(100% - 140px);
 }
-#buscador{
-  background-color: #ffffff66;
-  width: 100%;
-  height:350;
-  text-align: center;
+
+.sidebar .links::-webkit-scrollbar {
+    display: none;
 }
-#buscador input{
- margin:175px;
- border-radius: 30px;
- box-shadow:5px 1px 0 0 orange;
- width: 30rem;
- height: 40px;
+
+.links li {
+    display: flex;
+    border-radius: 4px;
+    align-items: center;
 }
-#video-fondo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 90%;
-  z-index: -1; 
+
+.links li:hover {
+    cursor: pointer;
+    background: #fff;
+}
+
+.links h4 {
+    color: #222;
+    font-weight: 500;
+    display: none;
+    margin-bottom: 10px;
+}
+
+.sidebar:hover .links h4 {
+    display: block;
+}
+
+.links hr {
+    margin: 10px 8px;
+    border: 1px solid #4c4c4c;
+}
+
+.sidebar:hover .links hr {
+    border-color: transparent;
+}
+
+.links li span {
+    padding: 12px 10px;
+}
+
+.links li a {
+    padding: 10px;
+    color: #000;
+    display: none;
+    font-weight: 500;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.sidebar:hover .links li a {
+    display: block;
+}
+
+.links .logout-link {
+    margin-top: 20px;
+}
+#videoFondo{
+    position: fixed;
+    margin-top:0;
+    width:100%;
+    z-index:-1;
+}
+.inicio{
+    color: #fff;
+    margin-left: 30%;
+    margin-right: 30%;
+    top:0;
+    padding-top: 10%;
+    background: #ffffff00;
+
+}
+.inicio h1{
+    padding-left:50px;
+    font-size:50px;
+}
+.inicio h1 strong{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(50, 6, 6);
+    font-size:80px;
+}
+.inicio b{
+    color: red;
+    font-size: 80px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.inicio h3{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:  18px;
+    padding-left: 100px;
+}
+.inicio .search{
+    background: #fff;
+    border-radius:10px;
+    font-size:16px;
+    width:500px;
+    height: 40px;
+    box-shadow:0 6px 14px 0 rgb(169, 168, 166);
+    border-color:rgba(255, 166, 0, 0);
 }

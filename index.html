@@ -1,127 +1,91 @@
 <!DOCTYPE html>
-<html lang="es">
+
+<html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <title>eMercado - Todo lo que busques está aquí</title>
-
-    <link
-      href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
-      rel="stylesheet"
-    />
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>inicio</title>
+  
   </head>
-
-<body>
-  <nav  id="asd" class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav" style="justify-content: center;">
-        <ul class="navbar-nav w-100 justify-content-between" style="max-width: 50vw;">
-          <li class="nav-item">
-            <a class="nav-link active" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
-          </li>
-        </ul>
-        <ul id="inicio-sesion" style="position: absolute; margin: 0 auto; min-width: 200px; right: 0;">
-
+  <body>
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="material-symbols-outlined">JAP </span>
+        <h2 href="index.html">Inicio</h2>
+      </div>
+      <ul class="links">
+        <h4>Main Menu</h4>
+        <li>
+          <span class="material-symbols-outlined">dashboard</span>
+          <a href="categories.html">Categorias</a>
+        </li>
+        <li>
+          <span class="material-symbols-outlined">shopping_cart</span>
+          <a href="cart.html">Carrito</a>
+        </li>
+        <li>
+          <span class="material-symbols-outlined">chat</span>
+          <a href="sell.html">Contacto</a>
+        </li>
+        <hr>
+        <h4>Advanced</h4>
+        <li>
+          <span class="material-symbols-outlined">person</span>
+          <a href="#">Comentarios</a>
+        </li>
+        <li>
+          <span class="material-symbols-outlined">group</span>
+          <a href="#">Desarrollo </a>
+        </li>
+        <li>
+          <span class="material-symbols-outlined">ambient_screen</span>
+          <a href="#">Magic Build</a>
+        </li>
+        <li>
+          <span class="material-symbols-outlined">pacemaker</span>
+          <a href="#">Theme Maker</a>
+        </li>
+        <li>
+          <span class="material-symbols-outlined">monitoring</span>
+          <a href="#">Analicis</a>
+        </li>
+        <hr>
+        <h4>Account</h4>
+        <li>
+          <span class="material-symbols-outlined">bar_chart</span>
+          <a href="#">Overview</a>
+        </li>
+        <li>
+          <span class="material-symbols-outlined">mail</span>
+          <a href="#">Message</a>
+        </li>
+        <li>
+          <span class="material-symbols-outlined">settings</span>
+          <a href="#">Settings</a>
+        </li>
+        <li class="logout-link">
+          <span class="material-symbols-outlined">logout</span>
+          <a href="#">Logout</a>
+        </li>
       </ul>
-      </div>
+    </aside>
+<main> 
+    <div class="Fondo">
+    <video autoplay muted loop id="videoFondo">
+        <source src="img/red.mp4" type="video/mp4">>
+    </video>
     </div>
-  </nav>
-  <main>
-    <div class="album py-5 bg-light">
-      <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav" style="justify-content: center;">
-      </div>
+    <div class="inicio">
+            <h1>¡Bienvenidos a <br><strong>JAP</strong> <b>e</b>-commerce</h1>
+        <h3>Todo lo que busques y más</h3>
+          <input class="search" type="search" placeholder="Buscar..."></input>
     </div>
-    </nav>
-    <main>
-      <div class="jumbotron text-center"></div>
-      <div class="album py-5 bg-light">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4">
-              <div
-                class="card mb-4 shadow-sm custom-card cursor-active"
-                id="autos"
-              >
-                <img
-                  class="bd-placeholder-img card-img-top"
-                  src="img/cars_index.jpg"
-                  alt="Imgagen representativa de la categoría 'Autos'"
-                />
-                <h3 class="m-3">Autos</h3>
-                <div class="card-body">
-                  <p class="card-text">
-                    Los mejores precios en autos 0 kilómetro, de alta y media
-                    gama.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div
-                class="card mb-4 shadow-sm custom-card cursor-active"
-                id="juguetes"
-              >
-                <img
-                  class="bd-placeholder-img card-img-top"
-                  src="img/toys_index.jpg"
-                  alt="Imgagen representativa de la categoría 'Juguetes'"
-                />
-                <h3 class="m-3">Juguetes</h3>
-                <div class="card-body">
-                  <p class="card-text">
-                    Encuentra aquí los mejores precios para niños/as de
-                    cualquier edad.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div
-                class="card mb-4 shadow-sm custom-card cursor-active"
-                id="muebles"
-              >
-                <img
-                  class="bd-placeholder-img card-img-top"
-                  src="img/furniture_index.jpg"
-                  alt="Imgagen representativa de la categoría 'Muebles'"
-                />
-                <h3 class="m-3">Muebles</h3>
-                <div class="card-body">
-                  <p class="card-text">
-                    Muebles antiguos, nuevos y para ser armados por uno mismo.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <a class="btn btn-light btn-lg btn-block" href="categories.html"
-              >Y mucho más!</a
-            >
-          </div>
-        </div>
-      </div>
-    </main>
+   
+     </div>
+
+  
     <footer class="text-muted">
       <div class="container">
         <p class="float-end">
@@ -138,5 +102,6 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/index.js"></script>
     <script src="js/init.js"></script>
+    <script src="js/fondo.js"></script>
   </body>
 </html>
