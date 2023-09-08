@@ -1,134 +1,214 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>inicio</title>
-  
-  </head>
-  <body>
-
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAP</title>
+  <link rel="stylesheet" href="css/inicio.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+</head>
+<body>
     <aside class="sidebar">
-      <div class="logo">
-        <span class="material-symbols-outlined">JAP </span>
-        <h2 href="index.html">Inicio</h2>
-      </div>
-      <ul class="links">
-        <h4>Main Menu</h4>
-        <li>
-          <span class="material-symbols-outlined">dashboard</span>
-          <a href="categories.html">Categorias</a>
-        </li>
-        <li>
-          <span class="material-symbols-outlined">shopping_cart</span>
-          <a href="cart.html">Carrito</a>
-        </li>
-        <li>
-          <span class="material-symbols-outlined">chat</span>
-          <a href="sell.html">Contacto</a>
-        </li>
-        <hr>
-        <h4>Advanced</h4>
-        <li>
-          <span class="material-symbols-outlined">person</span>
-          <a href="#">Comentarios</a>
-        </li>
-        <li>
-          <span class="material-symbols-outlined">group</span>
-          <a href="#">Desarrollo </a>
-        </li>
-        <li>
-          <span class="material-symbols-outlined">ambient_screen</span>
-          <a href="#">Magic Build</a>
-        </li>
-        <li>
-          <span class="material-symbols-outlined">pacemaker</span>
-          <a href="#">Theme Maker</a>
-        </li>
-        <li>
-          <span class="material-symbols-outlined">monitoring</span>
-          <a href="#">Analicis</a>
-        </li>
-        <hr>
-        <h4>Account</h4>
-        <li>
-          <span class="material-symbols-outlined">bar_chart</span>
-          <a href="#">Overview</a>
-        </li>
-        <li>
-          <span class="material-symbols-outlined">mail</span>
-          <a href="#">Message</a>
-        </li>
-        <li>
-          <span class="material-symbols-outlined">settings</span>
-          <a href="#">Settings</a>
-        </li>
-        <li class="logout-link">
-          <span class="material-symbols-outlined">logout</span>
-          <a href="#">Logout</a>
-        </li>
-      </ul>
-    </aside>
-<main> 
-    <nav class="navbar">
-      <div class="nav-search">
-      
-        <input class="search" type="search" name="buscar" id="search" placeholder="buscar">
-        <!--<div class="button">
-          <button>sales</button>
-          <button>1</button>
-          <button>1</button>
-          <button>1</button>
-        </div>-->
+        <div class="logo">
+          <span class="material-symbols-outlined">menu</span>
+          <h2 href="#">Inicio</h2>
+        </div>
+        <ul class="links-sidebar">
+          <h4>Mi Menu</h4>
+          <li>
+            <span class="material-symbols-outlined">dashboard</span>
+            <a href="categories.html">Categorias</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined">shopping_cart</span>
+            <a href="cart.html">Carrito</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined">chat</span>
+            <a href="sell.html">Contacto</a>
+          </li>
+          <hr>
+          <h4>Avanzado</h4>
+          <li>
+            <span class="material-symbols-outlined">person</span>
+            <a href="#">Diseño</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined">group</span>
+            <a href="#">Desarrollo </a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined">ambient_screen</span>
+            <a href="#">App</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined">pacemaker</span>
+            <a href="#">Busquedas Recientes</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined">monitoring</span>
+            <a href="#">Análicis</a>
+          </li>
+          <hr>
+          <h4>Cuenta</h4>
+          <li>
+            <span class="material-symbols-outlined">bar_chart</span>
+            <a href="#">Overview</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined">mail</span>
+            <a href="#">Mail</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined">settings</span>
+            <a href="#">Envios</a>
+          </li>
+          <li class="logout-link">
+            <span class="material-symbols-outlined">logout</span>
+            <a href="#">Salir</a>
+          </li>
+        </ul>
+      </aside>
 
-      </div>
-
-    </nav>
-    <div class="Fondo">
-    <video autoplay muted loop id="videoFondo">
-        <source src="img/red.mp4" type="video/mp4">>
-    </video>
-    </div>
-    <div class="inicio">
-            <h1>¡Bienvenidos a <br><strong>JAP</strong> <b>e</b>-commerce</h1>
-        <h3>Todo lo que busques y más</h3>
-      
-    </div>
-   
-    <div class="contenedor-card">
-      <h1>Contenedor Externo</h1>
-      <div class="contenedor-card-medio">
-          <h2>Contenedor Medio</h2>
-          <div class="card1">
-              <img src="img/autos.jpeg" href="categories.html" width="320px"> Autos</img>
-
+    
+    <header>
+      <nav class="navbar">
+        <div class="nav-logo">
+          <a href="#"><img src="img/login.png" alt="logo"></a>
+        </div>
+        <div class="address">
+          <a href="#" class="deliver">Entrega</a>
+          <div class="map-icon">
+            <span class="material-symbols-outlined">location_on</span>
+            <a href="#" class="location">Uruguay</a>
           </div>
-          <div class="card1">
-            <img src="img/juego.jpeg" href="categories.html" width="320px"> Juguetes</img>
-          <div class="card1">
-            <img src="img/casa.jpeg" href="categories.html" width="320px"> Articulos de hogar</img>
-           </div>
-           <div class="card1">
-               <p>Este es el contenido del contenedor interno.</p>
-           </div>
+        </div>
+
+        <div class="nav-search">
+          <select class="select-search">
+            <option href="index.html">Todo</option>
+            <option href="categories.html">Categories</option>
+            <option href="sell.html">JAP Dispcitivo</option>
+          </select>
+          <input type="text" placeholder="Search JAP e-commerce" class="search-input">
+          <div class="search-icon">
+            <span class="material-symbols-outlined">search</span>
+          </div>
+        </div>
+
+        <div class="sign-in">
+         <a href="#"> <p>Hola! inicia</p>
+          <span> Registri &amp; Tu cuenta</span></a>
+        </div>
+
+        <div class="returns">
+          <a href="#"><p>Volver</p>
+            <span>&amp; Ordenes</span></a>
+        </div>
+
+        <div class="cart">
+          <a href="#">
+            <span class="material-symbols-outlined cart-icon">shopping_cart</span>
+            </a>
+            <p>Carrito</p>
+        </div>
+      </nav>
+      
+      <div class="banner">
+        <div class="banner-content">
+          <div class="panel">
+            
+          </div>
+  
+          <ul class="links">
+            <li><a href="#">Ofertas</a></li>
+            <li><a href="#">Atencion al Cliente</a></li>
+            <li><a href="#">Registro</a></li>
+            <li><a href="#">Tarjetas Regalo</a></li>
+            <li><a href="#">Vender</a></li>
+          </ul>
+          <div class="deals">
+            <a href="#">Sobre Nosotros</a>
+          </div>
+        </div>
       </div>
-  </div>
-</main>
+    </header>
+
+    <section class="hero-section">
+    <video class="videoFondo" src="img/red.mp4" autoplay muted loop></video>
+    </section>
+    <section class="shop-section">
+      <div class="shop-images">
+        <div class="shop-link">
+          <h3>Autos &amp;</h3>
+          <img src="img/autos.jpeg" alt="card">
+          <a href="categories.html">ir</a>
+        </div>
+        <div class="shop-link">
+          <h3>Juguetes</h3>
+          <img src="img/juego.jpeg" alt="card">
+          <a href="categories.html">ir</a>
+        </div>
+        <div class="shop-link">
+          <h3>Hogar</h3>
+          <img src="img/casa.jpeg" alt="card">
+          <a href="categories.html">ir</a>
+        </div>
+        <div class="shop-link">
+          <h3>Electronicos</h3>
+          <img src="img/prod50925_2.jpg" alt="card">
+          <a href="categories.html">ir</a>
+        </div>
+      </div>
+    </section>
+
     <footer class="text-muted">
       <div class="container">
         <p class="float-end">
-          <a href="#">Volver arriba</a>
-        </p>
-        <p>
-          Este sitio forma parte de
-          <a href="https://jovenesaprogramar.edu.uy/" target="_blank"
-            >Jovenes a Programar</a
-          >
-        </p>
+          <a href="#">Volver arriba</a> <p>
+            Este sitio forma parte de
+            <a href="https://jovenesaprogramar.edu.uy/" target="_blank"
+              >Jovenes a Programar</a
+            >
+          </p>
       </div>
+        <a href="#" class="footer-title">
+          Volver al inicio
+        </a>
+        <div class="footer-items">
+          <ul>
+            <h3> Conocenos!</h3>
+            <li><a href="#">Sobre Nosostros</a></li>
+            <li><a href="#">Careras</a></li>
+            <li><a href="#">Prensa</a></li>
+            <li><a href="#">JAP Educa</a></li>
+          </ul>
+          <ul>
+            <h3>Conectate</h3>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+          <ul>
+            <h3>Comienza ya</h3>
+            <li><a href="#">Vender en JAP</a></li>
+            <li><a href="#">Crea y proyecta tu marca</a></li>
+            <li><a href="#">Ventas Globales</a></li>
+            <li><a href="#">Afiliate hoy</a></li>
+            <li><a href="#">Normas JAP</a></li>
+            <li><a href="#">Anuncia tus prodctos</a></li>
+            <li><a href="#">Marketing</a></li>
+          </ul>
+          <ul>
+            <h3>Let Us Help You</h3>
+            <li><a href="#">COVID-19 y JAP</a></li>
+            <li><a href="#">Tu cuenta</a></li>
+            <li><a href="#">Politicas de proteccion</a></li>
+            <li><a href="#">Descarga la App </a></li>
+            <li><a href="#">Ayuda</a></li>
+          </ul>
+        </div>
     </footer>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/index.js"></script>
