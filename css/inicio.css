@@ -288,6 +288,7 @@ header {
 
 .hero-section {
   height: 400px;
+  background-image: url("");
   background-position: center;
   background-size: cover;
 }
