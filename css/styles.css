@@ -257,9 +257,24 @@ a.custom-card:hover {
   color: inherit;
   text-decoration: inherit;
 }
+img, svg {
+  padding-left: 5px;
+}
 
 .checked {
-  color: orange;
+  color: gold;
+}
+#calificacion-dada:hover {
+color: gold;
+}
+#boton-enviar-datos2:hover {
+  transform: scale(1.03);
+  color: antiquewhite;
+  background-color: #4343ffeb
+}
+#boton-enviar-datos2 {
+  transition: all 0.10s;
+  background-color: #4343ffeb;
 }
 
 .loginasd {
@@ -332,4 +347,72 @@ body, html {
 
 .test-divs {
   margin: 20px 10px 0px 10px;
+}
+
+.a {
+  color: #fff;
+}
+#texto {
+  color: aliceblue;
+}
+
+img {
+  padding-left: 5px;
+}
+
+#calificacion-dada {
+  color: grey;
+  transition: all 0.3s;
+}
+#calificacion-dada:focus {
+  color: gold;
+}
+
+.star {
+  font-size: 24px;
+  /* Tamaño de la estrella */
+  display: none;
+  /* Oculta la estrella inicialmente */
+  animation-duration: 1s;
+  /* Duración de la animación */
+}
+
+@keyframes jumpStar {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+    /* Animación hacia arriba */
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+#boton-enviar-datos {
+  position: absolute;
+  bottom: 600px;
+}
+
+#mensaje {
+  background-color: #f2f2f2;
+  color: #333;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 300px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 10px;
+  transition: all 0.20s;
+}
+#boton-enviar-datos2 {
+  margin-left: 23.5%;
+  position: relative;
+  bottom: 60px;
+  left: 1px;
+  width: 60px;
+  border-radius: 10%;
 }
