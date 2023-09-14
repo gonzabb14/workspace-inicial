@@ -267,12 +267,12 @@ img, svg {
 #calificacion-dada:hover {
 color: gold;
 }
-#boton-enviar-datos2:hover {
+#boton-enviar-datos:hover {
   transform: scale(1.03);
   color: antiquewhite;
   background-color: #4343ffeb
 }
-#boton-enviar-datos2 {
+#boton-enviar-datos {
   transition: all 0.10s;
   background-color: #4343ffeb;
 }
@@ -368,15 +368,6 @@ img {
   color: gold;
 }
 
-.star {
-  font-size: 24px;
-  /* Tamaño de la estrella */
-  display: none;
-  /* Oculta la estrella inicialmente */
-  animation-duration: 1s;
-  /* Duración de la animación */
-}
-
 @keyframes jumpStar {
   0% {
     transform: translateY(0);
@@ -392,8 +383,8 @@ img {
   }
 }
 #boton-enviar-datos {
-  position: absolute;
-  bottom: 600px;
+  position: relative;
+  right: 4px;
 }
 
 #mensaje {
@@ -406,13 +397,4 @@ img {
   text-align: center;
   margin: 0 auto;
   margin-top: 10px;
-  transition: all 0.20s;
-}
-#boton-enviar-datos2 {
-  margin-left: 23.5%;
-  position: relative;
-  bottom: 60px;
-  left: 1px;
-  width: 60px;
-  border-radius: 10%;
 }

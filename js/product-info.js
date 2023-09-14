@@ -130,7 +130,7 @@ const usuarioLogueado = localStorage.getItem('usuarioLogueado') === 'true';
                     <option value="4">4★</option>
                     <option value="5">5★</option>
                 </select>
-                <button style="width: 0px; margin-top:10px; background-color: transparent; border:none; border-radius:10%;" id="boton-enviar-datos"></button>
+                <button style="width: 60px; margin-top:10px; border-radius:10%;" id="boton-enviar-datos">Enviar</button>
             </form>
         </div>
     </div>
@@ -143,7 +143,7 @@ const usuarioLogueado = localStorage.getItem('usuarioLogueado') === 'true';
         document.getElementById("container-product").innerHTML = htmlContentToAppend;
         agregarImagenes();
         agregarComentarios();
-        document.getElementById("boton-enviar-datos2").addEventListener("click", (e) => {
+        document.getElementById("boton-enviar-datos").addEventListener("click", (e) => {
             e.preventDefault();
             const comentario = document.getElementById("comentario-hecho").value;
             const score = document.getElementById("calificacion-dada").value;
@@ -161,6 +161,7 @@ const usuarioLogueado = localStorage.getItem('usuarioLogueado') === 'true';
             const hora = fechaActual.getHours(); // Obtiene la hora del día (0-23)
             const minutos = fechaActual.getMinutes(); // Obtiene los minutos (0-59)
             const segundos = fechaActual.getSeconds(); // Obtiene los segundos (0-59)
+            
 
         
             //console.log();
@@ -192,8 +193,15 @@ const usuarioLogueado = localStorage.getItem('usuarioLogueado') === 'true';
 
             document.getElementById("comentario-hecho").value = '';
             document.getElementById("calificacion-dada").selectedIndex = 0;
+                    const mensaje = document.getElementById("mensaje")
+    mensaje.innerHTML = '¡Gracias por su comentario!';
+    mensaje.style.display = 'block';
+    mensaje.classList.add('alert');
+    setTimeout(function () {
+        mensaje.style.display = 'none';
+    }, 3000);
         })
-    }
+};
 
 
 
@@ -227,12 +235,3 @@ const usuarioLogueado = localStorage.getItem('usuarioLogueado') === 'true';
         .catch(error => {
             console.log("Hubo un problema con la petición Fetch:" + error.message);
         });
-        document.getElementById('boton-enviar-datos2').addEventListener('click', function () {
-const mensaje = document.getElementById("mensaje")
-    mensaje.innerHTML = '¡Gracias por su comentario!';
-    mensaje.style.display = 'block';
-    mensaje.classList.add('alert');
-    setTimeout(function () {
-        mensaje.style.display = 'none';
-    }, 3000);
-    });
