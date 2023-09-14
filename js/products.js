@@ -59,8 +59,8 @@ async function fetchProducts() {
 }
 
 //botón precio ascendente
-const botonsito1 = document.getElementById("as");
-botonsito1.addEventListener("click", function(e) {
+const button1 = document.getElementById("as");
+button1.addEventListener("click", function(e) {
     const contenedor1 = document.getElementById('container-product');
     const elementos = contenedor1.getElementsByClassName("product");
 
@@ -76,8 +76,8 @@ botonsito1.addEventListener("click", function(e) {
 
 
 //botón precio descendente
-let botonsito2 = document.getElementById("ds");
-botonsito2.addEventListener("click", function(e) {
+let button2 = document.getElementById("ds");
+button2.addEventListener("click", function(e) {
     const contenedor1 = document.getElementById('container-product');
     const elementos = contenedor1.getElementsByClassName("product");
 
@@ -91,10 +91,10 @@ botonsito2.addEventListener("click", function(e) {
     });
 });
 
-let botonsito3 = document.getElementById("rel");
+let button3 = document.getElementById("rel");
 
 //botón relevancia
-botonsito3.addEventListener("click", function(e) {
+button3.addEventListener("click", function(e) {
 
     const contenedor1 = document.getElementById('container-product');
     const elementos = contenedor1.getElementsByClassName("product");
@@ -108,9 +108,9 @@ botonsito3.addEventListener("click", function(e) {
     });
 });
 
-const botonsito4 = document.getElementById("FiltrarPrecio");
+const button4 = document.getElementById("FiltrarPrecio");
 //botón filtrar
-botonsito4.addEventListener("click", (e) => {
+button4.addEventListener("click", (e) => {
     const contenedor1 = document.getElementById('container-product');
     const elementos = contenedor1.getElementsByClassName("product");
 
