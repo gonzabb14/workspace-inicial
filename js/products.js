@@ -15,7 +15,6 @@ function setProductID(id){
     localStorage.setItem("ProductID",id);
     window.location.href = "product-info.html";
 }
-
 async function fetchProducts() {
     try {
         const response = await fetch('https://japceibal.github.io/emercado-api/cats_products/' + localStorage.catID + '.json');
@@ -31,10 +30,9 @@ async function fetchProducts() {
         contenedor.classList.add("centrar");
         const parrafo = document.createElement("p");
         parrafo.innerHTML = "Verás aquí todos los productos de la categoría " + data.catName;
-        
-        
+
         let htmlContentToAppend = "";
-        document.getE
+
         data.products.forEach(product => {
             htmlContentToAppend += `
             <div class="product" id="${product.id}">
@@ -42,21 +40,61 @@ async function fetchProducts() {
                 <img src="${product.image}" alt="${product.name}">
                 <div>
                     <h2 class="titulo">${product.name}</h2>
+                    <p class="descripcion">${product.description}</p>
                     <p>Precio: ${product.currency}${product.cost}</p>
                     <p style="display: none;">${product.cost}</p>
                     <button class="boton-agregar-carrito">Agregar</button>
                     <button onclick="setProductID(${product.id})" class="boton-ver-producto">Ver</button>
                 </div>
             </div>
-            `
-            document.getElementById("container-product").innerHTML = htmlContentToAppend;
-            
+            `;
         });
+
+        // Agregar todos los elementos al contenedor al final del bucle
+        container.innerHTML = htmlContentToAppend;
+
+        // Aplicar la función de búsqueda después de cargar los productos
+        applySearchFilter();
     } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
         //window.location.href = "categories.html";
     }
 }
+
+function applySearchFilter() {
+    const queBuscar = document.getElementById("buscar").value.toLowerCase();
+    const contenedor1 = document.getElementById('container-product');
+    const elementos = contenedor1.getElementsByClassName("product");
+    const elementosArray = Array.from(elementos);
+
+    elementosArray.forEach(element => {
+        const titulo = element.querySelector(".titulo").textContent.toLowerCase();
+
+        if (titulo.includes(queBuscar)) {
+            element.classList.remove("ocultar");
+        } else {
+            element.classList.add("ocultar");
+        }
+    });
+
+    // Ordenar los elementos visibles por título
+    const elementosVisibles = elementosArray.filter(element => !element.classList.contains("ocultar"));
+    elementosVisibles.sort((a, b) => {
+        const tituloA = a.querySelector(".titulo").textContent.toLowerCase();
+        const tituloB = b.querySelector(".titulo").textContent.toLowerCase();
+        return tituloA.localeCompare(tituloB);
+    });
+
+    // Limpiar el contenedor y agregar los elementos ordenados
+    contenedor1.innerHTML = "";
+    elementosVisibles.forEach(element => {
+        contenedor1.appendChild(element);
+    });
+}
+
+// Llama a fetchProducts() al cargar la página
+fetchProducts();
+
 
 //botón precio ascendente
 const button1 = document.getElementById("as");
@@ -150,17 +188,22 @@ document.getElementById("btnLimpiar2").addEventListener("click", (e) => {
 });
 
 document.getElementById("buscar").addEventListener("input", (e) => {
-    const queBuscar = document.getElementById("buscar").value.toLowerCase();
+    const queBuscar = e.target.value.toLowerCase();
     const contenedor1 = document.getElementById('container-product');
     const elementos = contenedor1.getElementsByClassName("product");
     const elementosArray = Array.from(elementos);
+
     elementosArray.forEach(element => {
-        if (element.getElementsByClassName("titulo")[0].innerHTML.toLowerCase().includes(queBuscar) || element.getElementsByClassName("descripcion")[0].innerHTML.toLowerCase().includes(queBuscar)) {
+        const titulo = element.querySelector(".titulo").textContent.toLowerCase();
+        const descripcion = element.querySelector(".descripcion").textContent.toLowerCase();
+
+        if (titulo.includes(queBuscar) || descripcion.includes(queBuscar)) {
             element.classList.remove("ocultar");
         } else {
             element.classList.add("ocultar");
         }
     });
 });
+
 
 fetchProducts();
