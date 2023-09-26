@@ -81,7 +81,8 @@ nav a {
   justify-content: center;
 }
 
-.product {
+.product,
+.rProduct {
   border: 1px solid black;
   display: flex;
   flex-direction: column;
@@ -113,7 +114,8 @@ nav a {
   color: #100101;
 }
 
-.product button {
+.product button, 
+.boton-ver-producto{
   color: white;
   font-size: 1rem;
   border-radius: 20px;
