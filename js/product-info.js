@@ -35,7 +35,7 @@ function agregarImagenes() {
 }
 
 function agregarComentarios() {
-    fetch("https://japceibal.github.io/emercado-api/products/" + localStorage.ProductID + ".json")
+    fetch("https://japceibal.github.io/emercado-api/products_comments/" + localStorage.ProductID + ".json")
         .then(response => {
             if (response.ok) {
                 response.json().then(data => {
