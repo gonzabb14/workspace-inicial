@@ -16,7 +16,7 @@ if (usuarioLogueado){
     nombre.innerHTML = "Nombre: " +user.nombre + " " + user.apellido;
     email.innerHTML = "Email: " +user.email;
 
-    document.getElementById("borrar-usuario").addEventListener("click", function(e){
+    document.getElementById("cerrar-sesion").addEventListener("click", function(e){
         localStorage.clear();
         location.reload(); //refresca la web así te manda al login
     })
