@@ -5,15 +5,38 @@ function agregarImagenes() {
         .then(response => {
             if (response.ok) {
                 response.json().then(data => {
-                    let imagenes = ``;
-                    data.images.forEach(element => {
-                        imagenes += `<img style="width: 150px;" src="${element}"></img>`;
+                    let imagenes = `<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">`;
+
+                    // Agregar indicadores para cada imagen
+                    for (let i = 0; i < data.images.length; i++) {
+                        imagenes += `<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${i}" ${i === 0 ? 'class="active"' : ''} aria-label="Slide ${i + 1}"></button>`;
+                    }
+
+                    imagenes += `</div>
+                        <div class="carousel-inner">`;
+
+                    // Agregar cada imagen al carrusel
+                    data.images.forEach((element, index) => {
+                        imagenes += `<div class="carousel-item${index === 0 ? ' active' : ''}">
+                            <img style="width: 400px;" src="${element}" alt="Imagen ${index + 1}">
+                        </div>`;
                     });
+
+                    imagenes += `</div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>`;
+                      
                     document.getElementById("imagenes").innerHTML = imagenes;
-                    //console.log(array);
-                })
-            }
-            else {
+                });
+            } else {
                 console.log("Respuesta de red OK pero respuesta HTTP no OK");
             }
         })
@@ -21,6 +44,7 @@ function agregarImagenes() {
             console.log("Hubo un problema con la petición Fetch (agregar imagenes):" + error.message);
         });
 }
+
 
 function agregarComentarios() {
     fetch("https://japceibal.github.io/emercado-api/products_comments/" + localStorage.ProductID + ".json")

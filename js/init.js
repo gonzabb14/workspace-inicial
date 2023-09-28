@@ -60,6 +60,11 @@ if (!usuarioLogueado) {
           <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
           <li><a class="dropdown-item" onclick="localStorage.clear();
           location.reload();">Cerrar sesión</a></li>
+          <div id:"modos"><label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+          </label><p class="textmode">Modo noche</p>
+          </div>
         </ul>
       </li>
     </ul>
@@ -71,3 +76,35 @@ function setProductID(id){
   localStorage.setItem("ProductID",id);
   window.location.href = "product-info.html";
 }
+const colorSwitch = document.querySelector('.switch input[type="checkbox"]');
+const textMode = document.querySelector(".textmode");
+
+// Función para cambiar el tema
+function cambiaTema(ev) {
+    if (ev.target.checked) {
+        document.body.classList.add('dark-mode');
+        // Guardar la preferencia en el localStorage
+        localStorage.setItem('modoNoche', 'true');
+    } else {
+        document.body.classList.remove('dark-mode');
+        // Guardar la preferencia en el localStorage
+        localStorage.setItem('modoNoche', 'false');
+    }
+}
+
+// Recuperar la preferencia del localStorage al cargar la página
+const modoNocheGuardado = localStorage.getItem('modoNoche');
+if (modoNocheGuardado === 'true') {
+    colorSwitch.checked = true;
+    cambiaTema({ target: colorSwitch }); // Llamar a la función para aplicar el tema
+}
+
+colorSwitch.addEventListener('change', cambiaTema);
+
+
+// en el htlm:
+// <div id:"modos"><label class="switch">
+//           <input type="checkbox">
+//           <span class="slider round"></span>
+//           </label><p class="textmode">Modo noche</p>
+//           </div>
