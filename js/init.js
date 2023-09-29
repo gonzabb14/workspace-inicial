@@ -58,13 +58,14 @@ if (!usuarioLogueado) {
         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
           <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
           <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-          <li><a class="dropdown-item" onclick="localStorage.clear();
-          location.reload();">Cerrar sesión</a></li>
           <div id:"modos"><label class="switch">
           <input type="checkbox">
           <span class="slider round"></span>
           </label><p class="textmode">Modo noche</p>
           </div>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" onclick="localStorage.clear();
+          location.reload();">Cerrar sesión</a></li>
         </ul>
       </li>
     </ul>
