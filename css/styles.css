@@ -431,7 +431,7 @@ img {
 .sun svg {
   border-radius: 0%;
   position: absolute;
-  top: -1px;
+  top: -0.5px;
   left: 24.5px;
   z-index: 1;
   width: 24px;
@@ -479,7 +479,7 @@ img {
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #001629;
 }
 
 input:focus + .slider {
@@ -514,8 +514,4 @@ input:checked + .slider:before {
   background-color:#1A1C1E;
   border:1px solid white;
   color:white;
-}
-#modos{
- display: flex; 
- align-self: center;
 }
