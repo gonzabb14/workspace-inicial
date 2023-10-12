@@ -62,6 +62,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("comprar").addEventListener("click", (event) => {
         event.preventDefault();
         const mensaje = document.getElementById("mensaje_compra")
+        const formulario = document.getElementById("form_compra")
+        formulario.reset();
         mensaje.innerHTML = '¡Gracias por su compra!';
         mensaje.style.display = 'block';
         mensaje.classList.add('alert');
