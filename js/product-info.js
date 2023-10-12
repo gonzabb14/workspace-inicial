@@ -19,7 +19,7 @@ function agregarImagenes() {
                     // Agregar cada imagen al carrusel
                     data.images.forEach((element, index) => {
                         imagenes += `<div class="carousel-item${index === 0 ? ' active' : ''}">
-                            <img style="width: 400px;" src="${element}" alt="Imagen ${index + 1}">
+                            <img src="${element}" alt="Imagen ${index + 1}">
                         </div>`;
                     });
 
@@ -124,8 +124,8 @@ function relatedProducts() {
 
 function agregarProducto(product, categoria) {
     let htmlContentToAppend = `
-    <div id="container-product2">
-        <div id="product-information">
+    <div class=" col-sm-12 id="container-product2">
+        <div class="cotainer col-md-4 col-sm-4" id="product-information">
             <h2>${product.name}</h2>
             <hr>
             <div class="test-divs">
@@ -159,7 +159,7 @@ function agregarProducto(product, categoria) {
             <p style="font-size:1.4rem;">Comentar</p>
             <form style="display:flex; flex-direction:column;">
                 <p>Tu opinión:</p>
-                <textarea style="width:500px; height:100px;" id="comentario-hecho"></textarea>
+                <textarea style="height:100px;" id="comentario-hecho"></textarea>
                 <p>Tu puntuación:</p>
                 <select id="calificacion-dada" style="width:50px;">
                     <option value="1">1★</option>
