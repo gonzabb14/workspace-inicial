@@ -582,17 +582,14 @@ input:checked + .slider:before {
   
 }
 
-#cantidad {
+.cantidad {
   width: 40px;
     height: 30px;
     margin-top: 30px;
     margin-left: 10px;
     border: solid;
-    border-radius: 5px
-}
-
-#cantidad {
-  border-width: 2px;
+    border-radius: 5px;
+    border-width: 2px;
 }
 
 
