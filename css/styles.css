@@ -110,6 +110,10 @@ nav a {
   width: 250px;
 }
 
+.rProduct:hover {
+  transform: scale(1.01);
+}
+
 .product img {
   border-radius: 7px 7px 0px 0px;
   padding: 0px;
@@ -141,6 +145,10 @@ nav a {
   position: relative;
   background-color: rgb(243, 170, 11);
   transition: all 0.1s;
+}
+
+.boton-ver-producto:hover {
+  transform: scale(1.05);
 }
 
 .product button:active {
@@ -356,6 +364,10 @@ body, html {
   border-radius: 0.5%;
   min-width: 100%;
   min-height: 500px;
+}
+
+#product-information:hover {
+  transform: scale(1);
 }
 
 
@@ -673,3 +685,4 @@ input:checked + .slider:before {
 #form6Example7 {
   resize: none;
 }
+

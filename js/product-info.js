@@ -100,10 +100,9 @@ function relatedProducts() {
                 response.json().then(data => {
                     let related = ``;
                     data.relatedProducts.forEach(element => {
-                        related += `<div class=rProduct>
+                        related += `<div onclick="setProductID(${element.id})" class=rProduct>
                         <img style="width: 150px;" src="${element.image}">
                         <p class="test">${element.name}</p>
-                        <button onclick="setProductID(${element.id})" class="boton-ver-producto">Ver</button>
                         </div>
                         `;
                     });
