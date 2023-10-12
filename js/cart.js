@@ -1,22 +1,25 @@
-const USER_ID = "25801";
-const CART_URL = CART_INFO_URL + USER_ID + ".json";
-const PRODUCT_LIST = document.getElementsByClassName("cart_list")[0];
+document.addEventListener("DOMContentLoaded", function () {
 
-console.log(CART_URL);
+    const USER_ID = "25801";
+    const CART_URL = CART_INFO_URL + USER_ID + ".json";
+    const PRODUCT_LIST = document.getElementsByClassName("cart_list")[0];
+    const buy = document.getElementById('comprar')
 
-fetch(CART_URL)
-    .then(response => response.json())
-    .then(data => {
+    console.log(CART_URL);
 
-        const image = data.articles[0].image;
-        const name = data.articles[0].name;
-        const count = data.articles[0].count;
-        const currency = data.articles[0].currency;
-        const unitCost = data.articles[0].unitCost;
+    fetch(CART_URL)
+        .then(response => response.json())
+        .then(data => {
 
-        console.log(image, name, count, currency, unitCost);
+            const image = data.articles[0].image;
+            const name = data.articles[0].name;
+            const count = data.articles[0].count;
+            const currency = data.articles[0].currency;
+            const unitCost = data.articles[0].unitCost;
 
-        let product = `
+            console.log(image, name, count, currency, unitCost);
+
+            let product = `
             <li class="cart_item clearfix">
                 <div class="cart_item_image"><img src="${image}" alt=""></div>
                 <div class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
@@ -34,24 +37,36 @@ fetch(CART_URL)
                     </div>
                     <div class="cart_item_total cart_info_col">
                         <div class="cart_item_title">Total</div>
-                        <div id="total" class="cart_item_text">${currency}${count*unitCost}</div>
+                        <div id="total" class="cart_item_text">${currency}${count * unitCost}</div>
                     </div>
                 </div>
             </li>
         `;
 
-        document.getElementById("order_total_amount").innerHTML = currency + unitCost*count;
-       // console.log(document.getElementById("order_total_amount").innerHTML = currency + count*unitCost);
+            document.getElementById("order_total_amount").innerHTML = currency + unitCost * count;
+            // console.log(document.getElementById("order_total_amount").innerHTML = currency + count*unitCost);
 
-        PRODUCT_LIST.innerHTML = product;
+            PRODUCT_LIST.innerHTML = product;
 
-        document.getElementById("cantidad").addEventListener("click", function(e) {
-            console.log(document.getElementById("cantidad").value);
-            document.getElementById("total").innerHTML = currency + unitCost*document.getElementById("cantidad").value;
+            document.getElementById("cantidad").addEventListener("click", function (e) {
+                console.log(document.getElementById("cantidad").value);
+                document.getElementById("total").innerHTML = currency + unitCost * document.getElementById("cantidad").value;
   
-            //cambiar cuando se añada la funcion de agregar mas productos
-            document.getElementById("order_total_amount").innerHTML = currency + unitCost*document.getElementById("cantidad").value;
-        });
+                //cambiar cuando se añada la funcion de agregar mas productos
+                document.getElementById("order_total_amount").innerHTML = currency + unitCost * document.getElementById("cantidad").value;
+            });
 
+        })
+        .catch(error => console.log(error.message));
+    
+    document.getElementById("comprar").addEventListener("click", (event) => {
+        event.preventDefault();
+        const mensaje = document.getElementById("mensaje_compra")
+        mensaje.innerHTML = '¡Gracias por su compra!';
+        mensaje.style.display = 'block';
+        mensaje.classList.add('alert');
+        setTimeout(function () {
+            mensaje.style.display = 'none';
+        }, 3000);
     })
-    .catch(error => console.log(error.message));
+});

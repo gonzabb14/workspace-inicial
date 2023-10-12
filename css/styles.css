@@ -389,7 +389,7 @@ img {
   right: 4px;
 }
 
-#mensaje {
+.alert {
   background-color: #f2f2f2;
   color: #333;
   padding: 10px;
