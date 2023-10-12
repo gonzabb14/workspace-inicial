@@ -340,5 +340,3 @@ fetch('https://japceibal.github.io/emercado-api/cats_products/' + localStorage.c
     .catch(error => {
         console.log("Hubo un problema con la petición Fetch:" + error.message);
     });
-
-export {añadirProductoAlCarrito};
