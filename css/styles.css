@@ -34,7 +34,7 @@ nav a {
     font-size: 3.5rem;
   }
 }
-
+ @media (min-width: 1200px) {
 .jumbotron {
   height: 50vh;
   padding: 5em inherit;
@@ -47,11 +47,28 @@ nav a {
   color: black;
   font-weight: bold;
 }
+ }
+
+ @media (max-width: 1199px) {
+   .jumbotron {
+     height: 50vh;
+     padding: 5em inherit;
+     margin-bottom: 0;
+     background-color: #53C0FB;
+     background: url('../img/cover_back.png');
+     background-size: contain;
+     background-position: center;
+     background-repeat: no-repeat;
+     color: black;
+     font-weight: bold;
+   }
+ }
+
 
 @media (min-width: 768px) {
   .jumbotron {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    /* padding-top: 6rem;
+    padding-bottom: 6rem; */
   }
 }
 
@@ -326,12 +343,10 @@ body, html {
 }
 
 #container-product2 {
-
-  display: flex;
     
   justify-content: center; /* Centrar horizontalmente */
   align-items: center; /* Centrar verticalmente */
-  margin: 0;
+  margin: auto;
   padding: 0;
 
 }
@@ -339,9 +354,18 @@ body, html {
 #product-information {
   border: 0px solid black;
   border-radius: 0.5%;
-  min-width: 700px;
+  min-width: 100%;
   min-height: 500px;
 }
+
+
+  /* #product-information {
+      border: 0px solid black;
+      border-radius: 0.5%;
+      min-width: 100%;
+      min-height: 100%;
+    } */
+  
 
 .test {
   margin: 0;
@@ -571,6 +595,7 @@ input:checked + .slider:before {
   border-width: 2px;
 }
 
+
 .CartBtn {
   width: 140px;
   height: 40px;
@@ -635,4 +660,16 @@ input:checked + .slider:before {
 .CartBtn:active {
   transform: scale(0.95);
   transition-duration: .5s;
+}
+
+#comentario-hecho {
+  resize: none;
+}
+
+.calificaciones {
+  width: 200px;
+}
+
+#form6Example7 {
+  resize: none;
 }
