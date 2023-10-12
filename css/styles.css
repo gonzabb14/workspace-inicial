@@ -602,3 +602,7 @@ input:checked + .slider:before {
 .calificaciones {
   width: 200px;
 }
+
+#form6Example7 {
+  resize: none;
+}
