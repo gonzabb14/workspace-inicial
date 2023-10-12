@@ -272,7 +272,6 @@ color: gold;
 #boton-enviar-datos:hover {
   transform: scale(1.03);
   color: antiquewhite;
-  background-color: #4343ffeb
 }
 #boton-enviar-datos {
   transition: all 0.10s;
