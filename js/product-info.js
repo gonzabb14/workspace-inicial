@@ -214,6 +214,13 @@ function agregarProducto(product, categoria) {
                 localStorage.setItem("Productos", JSON.stringify(arrayProductos));
             })
             .catch(error => console.log(error.message));
+        const mensaje = document.getElementById("agregado")
+        mensaje.innerHTML = '¡Producto añadido al carrito!';
+        mensaje.style.display = 'block';
+        mensaje.classList.add('alert');
+        setTimeout(function () {
+            mensaje.style.display = 'none';
+        }, 3000);
     });
 
     agregarImagenes();
