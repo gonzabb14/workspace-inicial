@@ -123,7 +123,7 @@ function relatedProducts() {
 function agregarProducto(product, categoria) {
     let htmlContentToAppend = `
     <div class=" col-sm-12 id="container-product2">
-        <div class="cotainer col-md-4 col-sm-4" id="product-information">
+        <div class="container col-md-4 col-sm-4" id="product-information">
             <h2>${product.name}</h2>
             <hr>
             <div class="test-divs">
