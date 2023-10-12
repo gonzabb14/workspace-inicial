@@ -20,7 +20,7 @@ async function fetchProducts() {
 
         data.products.forEach(product => {
             htmlContentToAppend += `
-            <div class="product" id="${product.id}">
+            <div onclick="setProductID(${product.id})" class="product" id="${product.id}">
                 <p class="vendidos">${product.soldCount}</p>
                 <img src="${product.image}" alt="${product.name}">
                 <div>
@@ -28,8 +28,6 @@ async function fetchProducts() {
                     <p class="descripcion">${product.description}</p>
                     <p>Precio: ${product.currency}${product.cost}</p>
                     <p style="display: none;">${product.cost}</p>
-                    <button class="boton-agregar-carrito">Agregar</button>
-                    <button onclick="setProductID(${product.id})" class="boton-ver-producto">Ver</button>
                 </div>
             </div>
             `;

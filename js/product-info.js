@@ -100,10 +100,9 @@ function relatedProducts() {
                 response.json().then(data => {
                     let related = ``;
                     data.relatedProducts.forEach(element => {
-                        related += `<div class=rProduct>
+                        related += `<div onclick="setProductID(${element.id})" class=rProduct>
                         <img style="width: 150px;" src="${element.image}">
                         <p class="test">${element.name}</p>
-                        <button onclick="setProductID(${element.id})" class="boton-ver-producto">Ver</button>
                         </div>
                         `;
                     });
@@ -161,6 +160,9 @@ function agregarProducto(product, categoria) {
     let htmlContentToAppend = `
     <div id="container-product2">
         <div id="product-information">
+    <div class=" col-sm-12 id="container-product2">
+        <div class="container col-md-4 col-sm-4" id="product-information">
+
             <h2>${product.name}</h2>
             <hr>
             <div class="test-divs">
@@ -181,7 +183,7 @@ function agregarProducto(product, categoria) {
             </div>
             <div class="test-divs">
                 <p class="test"><strong>Imágenes ilustrativas</strong></p>
-                <div id="imagenes" style="display: flex;">
+                <div id="imagenes">
             </div>
             <button id="btn-agregar" class="CartBtn" data-product="${JSON.stringify(product)}">
             <span class="IconContainer" > 
@@ -228,7 +230,40 @@ function agregarProducto(product, categoria) {
     document.getElementById("container-product").innerHTML = htmlContentToAppend;
 
     document.getElementById("btn-agregar").addEventListener("click", function (e) {
+
         añadirProductoAlCarrito();
+
+
+        if (localStorage.getItem("Productos") === null) {
+            localStorage.setItem("Productos", JSON.stringify([]));
+        };
+        fetch("https://japceibal.github.io/emercado-api/products/" + localStorage.ProductID + ".json")
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                let arrayProductos = JSON.parse(localStorage.getItem("Productos"));
+                let nodo = {
+                    "name" : data.name,
+                    "image" : data.images[0],
+                    "count" : 1,
+                    "currency" : data.currency,
+                    "unitCost" : data.cost,
+                    "costo": 12,
+                    "cantidad": 1
+                };
+                arrayProductos.push(nodo);
+                console.log(arrayProductos);
+                localStorage.setItem("Productos", JSON.stringify(arrayProductos));
+            })
+            .catch(error => console.log(error.message));
+        const mensaje = document.getElementById("agregado")
+        mensaje.innerHTML = '¡Producto añadido al carrito!';
+        mensaje.style.display = 'block';
+        mensaje.classList.add('alert');
+        setTimeout(function () {
+            mensaje.style.display = 'none';
+        }, 3000);
+
     });
 
     agregarImagenes();
