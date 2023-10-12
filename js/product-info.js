@@ -22,11 +22,11 @@ function agregarImagenes() {
                     });
 
                     imagenes += `</div>
-                        <button style="background-color: lightGray" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                           <span class="visually-hidden">Previous</span>
                         </button>
-                        <button style="background-color: lightGray" class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                           <span class="carousel-control-next-icon" aria-hidden="true"></span>
                           <span class="visually-hidden">Next</span>
                         </button>
@@ -143,7 +143,7 @@ function agregarProducto(product, categoria) {
             </div>
             <div class="test-divs">
                 <p class="test"><strong>Imágenes ilustrativas</strong></p>
-                <div id="imagenes" style="display: flex;">
+                <div id="imagenes">
             </div>
             <button id="btn-agregar" class="CartBtn" data-product="${JSON.stringify(product)}">
             <span class="IconContainer" > 

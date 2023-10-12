@@ -686,3 +686,15 @@ input:checked + .slider:before {
   resize: none;
 }
 
+
+.carousel-inner img {
+  max-width: 300px;
+}
+
+.carousel {
+  width: fit-content;
+}
+
+#imagenes {
+  max-width: 300px;
+}
