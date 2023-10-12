@@ -14,44 +14,53 @@ document.addEventListener("DOMContentLoaded", function () {
             let final_cost = [];
             let appendchild = "";
 
-            data.articles.forEach(product => {
-                const image = product.image;
-                const name = product.name;
-                const count = product.count;
-                const currency = product.currency;
-                const unitCost = product.unitCost;
+            const carrito = JSON.parse(localStorage.getItem("Productos"));
 
-                let nodo = {
-                    "costo" : unitCost,
-                    "cantidad" : count
-                };
+            function listarProductos(arrayDeProductos) {
+                arrayDeProductos.forEach(product => {
+                    const image = product.image;
+                    const name = product.name;
+                    const count = product.count;
+                    const currency = product.currency;
+                    const unitCost = product.unitCost;
+    
+                    let nodo = {
+                        "costo" : unitCost,
+                        "cantidad" : count
+                    };
+    
+                    final_cost.push(nodo);
+    
+                    appendchild += `
+                        <li class="cart_item clearfix">
+                            <div class="cart_item_image"><img src="${image}" alt=""></div>
+                            <div class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
+                                <div class="cart_item_name cart_info_col">
+                                    <div class="cart_item_title">Name</div>
+                                    <div class="cart_item_text">${name}</div>
+                                </div>
+                                <div class="cart_item_quantity cart_info_col">
+                                    <div class="cart_item_title">Cantidad</div>
+                                    <input id="cantidad" data-precio-unitario="${unitCost}" type="number" min="1" value="${count}">
+                                </div>
+                                <div class="cart_item_price cart_info_col">
+                                    <div class="cart_item_title">Subtotal</div>
+                                    <div class="cart_item_text">${currency}${unitCost}</div>
+                                </div>
+                                <div class="cart_item_total cart_info_col">
+                                    <div class="cart_item_title">Total</div>
+                                    <div id="total" class="cart_item_text">${currency}${count * unitCost}</div>
+                                </div>
+                            </div>
+                        </li>
+                        `;
+                });
+            };
 
-                final_cost.push(nodo);
-
-                appendchild = `
-                    <li class="cart_item clearfix">
-                        <div class="cart_item_image"><img src="${image}" alt=""></div>
-                        <div class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
-                            <div class="cart_item_name cart_info_col">
-                                <div class="cart_item_title">Name</div>
-                                <div class="cart_item_text">${name}</div>
-                            </div>
-                            <div class="cart_item_quantity cart_info_col">
-                                <div class="cart_item_title">Cantidad</div>
-                                <input id="cantidad" data-precio-unitario="${unitCost}" type="number" min="1" value="${count}">
-                            </div>
-                            <div class="cart_item_price cart_info_col">
-                                <div class="cart_item_title">Subtotal</div>
-                                <div class="cart_item_text">${currency}${unitCost}</div>
-                            </div>
-                            <div class="cart_item_total cart_info_col">
-                                <div class="cart_item_title">Total</div>
-                                <div id="total" class="cart_item_text">${currency}${count * unitCost}</div>
-                            </div>
-                        </div>
-                    </li>
-                    `;
-            });
+            listarProductos(data.articles);
+            if (!(localStorage.getItem("Productos") === null)){
+                listarProductos(carrito);
+            };
 
             PRODUCT_LIST.innerHTML = appendchild;
 
@@ -102,5 +111,17 @@ document.addEventListener("DOMContentLoaded", function () {
             
         })
         .catch(error => console.log(error.message));
-    
+
+        buy.addEventListener("click", (event) => {
+            event.preventDefault();
+            const mensaje = document.getElementById("mensaje_compra")
+            const formulario = document.getElementById("form_compra")
+            formulario.reset();
+            mensaje.innerHTML = '¡Gracias por su compra!';
+            mensaje.style.display = 'block';
+            mensaje.classList.add('alert');
+            setTimeout(function () {
+                mensaje.style.display = 'none';
+            }, 3000);
+        })
 });
