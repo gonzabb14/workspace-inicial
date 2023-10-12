@@ -24,7 +24,7 @@ function listarProductos(arrayDeProductos) {
                         </div>
                         <div class="cart_item_quantity cart_info_col">
                             <div class="cart_item_title">Cantidad</div>
-                            <input class="cantidad" data-id="${id}" type="number" min="1" value="${count}">
+                            <input class="cantidad" data-id="${id}" type="number" min="0" value="${count}">
                         </div>
                         <div class="cart_item_price cart_info_col">
                             <div class="cart_item_title">Subtotal</div>
@@ -77,40 +77,39 @@ fetch(CART_URL)
                 "unitCost": data.articles[0].unitCost,
                 "id": data.articles[0].id
             };
+
             arrayProductos.push(nodo);
-            //console.log(arrayProductos);
             localStorage.setItem("Productos", JSON.stringify(arrayProductos));
         };
 
         listarProductos(JSON.parse(localStorage.getItem("Productos")));
 
-
         const aumentar_cantidad = document.getElementsByClassName("cantidad");
 
         Array.from(aumentar_cantidad).forEach(input => {
-            input.addEventListener("click", function (e) {
+            input.addEventListener("input", function (e) {
                 let id = input.dataset.id;
-                //console.log(parseInt(id));
-                //console.log(JSON.parse(localStorage.getItem("Productos"))[1].id);
                 let arr = JSON.parse(localStorage.getItem("Productos"));
-                //console.log(arr[0].id === parseInt(id));
+                let indice = 0;
+
                 arr.forEach(element => {
                     if (element.id === parseInt(id)) {
                         element.count = input.value;
-                        //console.log(element.count);
-                    }
+                    } else {
+                        indice++;
+                    };
                 });
-                //localStorage.clear("Productos");
+
+                if (parseInt(input.value) === 0) {
+                    arr.splice(indice, 1);
+                }
+
                 localStorage.setItem("Productos", JSON.stringify(arr));
-                //localStorage.setItem("Productos", JSON.stringify(arr));
                 location.reload();
             });
         })
-        
 
-
-
-
+        CostoFinal();
     })
     .catch(error => console.log(error.message));
 
@@ -138,5 +137,3 @@ buy.addEventListener("click", (event) => {
         mensaje.style.display = 'none';
     }, 3000);
 });
-
-CostoFinal();

@@ -234,28 +234,7 @@ function agregarProducto(product, categoria) {
         añadirProductoAlCarrito();
 
 
-        if (localStorage.getItem("Productos") === null) {
-            localStorage.setItem("Productos", JSON.stringify([]));
-        };
-        fetch("https://japceibal.github.io/emercado-api/products/" + localStorage.ProductID + ".json")
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                let arrayProductos = JSON.parse(localStorage.getItem("Productos"));
-                let nodo = {
-                    "name" : data.name,
-                    "image" : data.images[0],
-                    "count" : 1,
-                    "currency" : data.currency,
-                    "unitCost" : data.cost,
-                    "costo": 12,
-                    "cantidad": 1
-                };
-                arrayProductos.push(nodo);
-                console.log(arrayProductos);
-                localStorage.setItem("Productos", JSON.stringify(arrayProductos));
-            })
-            .catch(error => console.log(error.message));
+        
         const mensaje = document.getElementById("agregado")
         mensaje.innerHTML = '¡Producto añadido al carrito!';
         mensaje.style.display = 'block';
