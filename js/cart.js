@@ -26,7 +26,7 @@ fetch(CART_URL)
                     </div>
                     <div class="cart_item_quantity cart_info_col">
                         <div class="cart_item_title">Cantidad</div>
-                        <input id="cantidad" type="number" style="width:40px; height: 30px; margin-top:30px; margin-left:10px; border: none;" min="0" placeholder="${count}">
+                        <input id="cantidad" type="number" min="0" placeholder="${count}">
                     </div>
                     <div class="cart_item_price cart_info_col">
                         <div class="cart_item_title">Subtotal</div>
