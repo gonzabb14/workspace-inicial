@@ -72,10 +72,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     PrecioFinal = parseInt(PrecioFinal)*0.05 + parseInt(PrecioFinal);
                 };
                 
-                console.log(PrecioFinal);
                 document.getElementsByClassName("costo-final")[0].innerHTML = PrecioFinal;
             };
-        
+            
             const aumentar_cantidad = document.getElementById("cantidad");
             aumentar_cantidad.addEventListener("click", function(e) {
                 precio_unitario = aumentar_cantidad.dataset.precioUnitario;
@@ -88,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 CostoFinal();
             });
 
+            document.getElementsByClassName("tipo-de-moneda")[0].innerHTML = "U$D";
             CostoFinal();
 
             document.getElementById("opcion1").addEventListener("click", function(e) {
