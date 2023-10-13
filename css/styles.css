@@ -685,6 +685,7 @@ input:checked + .slider:before {
 
 .carousel-inner img {
   max-width: 300px;
+  margin-top: 10px;
 }
 
 .carousel {
@@ -698,11 +699,6 @@ input:checked + .slider:before {
 .test {
   font-size: 10px;
 }
-
-/* .fa {
-  normal normal normal 12px/1 FontAwesome
-  font-size: small;
-} */
 
 @media (max-width: 389px) {
 .calificaciones {
