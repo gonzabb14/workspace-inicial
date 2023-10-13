@@ -700,11 +700,6 @@ input:checked + .slider:before {
   font-size: 10px;
 }
 
-/* .fa {
-  normal normal normal 12px/1 FontAwesome
-  font-size: small;
-} */
-
 @media (max-width: 389px) {
 .calificaciones {
   font-size: small;
