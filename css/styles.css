@@ -734,7 +734,3 @@ input:checked + .slider:before {
   font: normal normal normal 14px/1 FontAwesome
   }
 }
-
-
-@media (min-width: 390px) {
-}
