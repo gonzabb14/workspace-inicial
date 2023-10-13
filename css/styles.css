@@ -695,3 +695,46 @@ input:checked + .slider:before {
 #imagenes {
   max-width: 300px;
 }
+
+.test {
+  font-size: 10px;
+}
+
+/* .fa {
+  normal normal normal 12px/1 FontAwesome
+  font-size: small;
+} */
+
+@media (max-width: 389px) {
+.calificaciones {
+  font-size: small;
+    font: normal normal normal 13px/1 FontAwesome
+    
+}
+    #comentario-hecho {
+      width: 280px;
+      height: 100px
+    }
+    .test {
+          max-width: 309px;
+        }
+}
+
+@media (min-width: 390px) {
+  .calificaciones {
+    font-size: inherit;
+    font: normal normal normal 14px/1 FontAwesome
+  }
+  #comentario-hecho {
+  width: 310px;
+  height: 100px
+  }
+  .test {
+  font-size: inherit;
+  font: normal normal normal 14px/1 FontAwesome
+  }
+}
+
+
+@media (min-width: 390px) {
+}
