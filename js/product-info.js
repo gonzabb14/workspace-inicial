@@ -211,7 +211,7 @@ function agregarProducto(product, categoria) {
                     <option value="4">4★</option>
                     <option value="5">5★</option>
                 </select>
-                <button style="width: 60px; margin-top:10px; border-radius:10%;" id="boton-enviar-datos">Enviar</button>
+                <button class="btn btn-primary" style="width: 80px; margin-top:10px; border-radius:10%;" id="boton-enviar-datos">Enviar</button>
             </form>
         </div>
         
