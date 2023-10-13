@@ -297,7 +297,6 @@ color: gold;
 #boton-enviar-datos:hover {
   transform: scale(1.03);
   color: antiquewhite;
-  background-color: #4343ffeb
 }
 #boton-enviar-datos {
   transition: all 0.10s;
@@ -733,8 +732,4 @@ input:checked + .slider:before {
   font-size: inherit;
   font: normal normal normal 14px/1 FontAwesome
   }
-}
-
-
-@media (min-width: 390px) {
 }
