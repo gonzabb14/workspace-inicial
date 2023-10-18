@@ -147,22 +147,24 @@
             <form action="">
             <label for="tarjeta de crédito">
             <input type="radio" name="radio_modal" id="tarjeta" value="tarjeta de crédito"> Tarjeta de crédito</label> <br> <hr style="width: 100%;">
-            <label for="numero_tarjeta">Número de tarjeta <br>
+            <div class="div_modal">
+            <label class="modalL" for="numero_tarjeta">Número de tarjeta <br>
                 <input class="input_modal" type="text" name="numero_tarjeta">
             </label>
 
-            <label for="codigo_seg">Código de seg. <br>
-                <input class="input_modal" type="text" name="codigo_seg">
+            <label class="codigo" for="codigo_seg">Código de seg. <br>
+                <input class="input_modal codigo codigo2" type="text" name="codigo_seg">
             </label>
+            </div> <br>
 
-            <label for="vencimiento">Vencimiento <br>
+            <label class="modalL" for="vencimiento">Vencimiento <br>
               <input class="input_modal" type="text" name="vencimiento">
             </label> <br> <br>
             <label for="transferencia">
               <input id="transferencia" type="radio" name="radio_modal" id="transferencia">
             Transferencia bancaria </label>
             <hr style="width: 100%;">
-            <label for="número_cuenta">Número de cuenta <br>
+            <label class="modalL" for="número_cuenta">Número de cuenta <br>
               <input class="input_modal2" type="text" name="número_cuenta">
             </label>  <hr style="width: 100%;"> <br>
             <button id="confirmarModal" class="btn btn-primary">Confirmar</button>

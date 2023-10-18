@@ -981,3 +981,15 @@ ul {
   line-height: 30px;
   border-width: 1px;
 }
+
+.div_modal {
+  display: inline-block;
+}
+
+.codigo {
+  margin-left: 20px;
+}
+
+.codigo2 {
+  margin-left: -3px;
+}
