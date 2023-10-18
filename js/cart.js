@@ -137,3 +137,44 @@ buy.addEventListener("click", (event) => {
         mensaje.style.display = 'none';
     }, 3000);
 });
+
+// Código para la ventana emergente para seleccionar el tipo de pago pago
+
+const btnMostrarModal = document.getElementById("mostrarModal");
+const modal = document.getElementById("miModal");
+const btnCerrarModal = document.getElementById("confirmarModal");
+
+btnMostrarModal.addEventListener("click", function () {
+    modal.style.display = "block";
+});
+
+btnCerrarModal.addEventListener("click", function () {
+    modal.style.display = "none";
+});
+window.addEventListener("click", function (event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+});
+
+document.getElementById("transferencia").addEventListener("click", function () {
+    const text = document.querySelectorAll('.input_modal');
+    const text2 = document.querySelectorAll('.input_modal2');
+    text.forEach(function (input) {
+        input.disabled = true;
+    });
+    text2.forEach(function (input) {
+        input.disabled = false;
+    });
+});
+
+document.getElementById("tarjeta").addEventListener("click", function () {
+    const text = document.querySelectorAll('.input_modal');
+    const text2 = document.querySelectorAll('.input_modal2');
+    text.forEach(function (input) {
+        input.disabled = false;
+    });
+    text2.forEach(function (input) {
+        input.disabled = true;
+    });
+});
