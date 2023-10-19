@@ -37,7 +37,7 @@ function listarProductos(arrayDeProductos) {
                         <div class="cart_item_remove cart_info_col">
                          <div class="cart_item_title">Eliminar</div>
                             <div class="cart_item_text" style="display:flex;">
-                            <button class="remove-button" data-id="${id}">Eliminar</button>
+                            <button class="remove-button" data-id="${id}">Eliminar del carrito</button>
         </div>
     </div>
                     </div>
@@ -147,10 +147,10 @@ buy.addEventListener("click", (event) => {
 
 
 function removeProduct() {
-    let arr = JSON.parse(localStorage.getItem("Productos"));
+    let array = JSON.parse(localStorage.getItem("Productos"));
     let indice = 0;
-    arr.splice(indice, 1);
-    localStorage.setItem("Productos", JSON.stringify(arr));
+    array.splice(indice, 1);
+    localStorage.setItem("Productos", JSON.stringify(array));
     location.reload();
 }
 PRODUCT_LIST.addEventListener("click", function (event) {
