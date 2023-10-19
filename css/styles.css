@@ -69,8 +69,8 @@ nav a {
 
 @media (min-width: 768px) {
   .jumbotron {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    /* padding-top: 6rem;
+    padding-bottom: 6rem; */
   }
 }
 
@@ -940,4 +940,12 @@ ul {
     font-size: inherit;
     font: normal normal normal 14px/1 FontAwesome
   }
+}
+
+.remove-button {
+  display: flex;
+  align-items: center;
+  border: 1px solid goldenrod;
+  border-radius: 5px;
+  padding: 15px;
 }

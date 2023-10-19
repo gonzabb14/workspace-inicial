@@ -1,5 +1,7 @@
 
 
+
+
 async function fetchProducts() {
     try {
         const response = await fetch('https://japceibal.github.io/emercado-api/cats_products/' + localStorage.catID + '.json');
@@ -20,7 +22,7 @@ async function fetchProducts() {
 
         data.products.forEach(product => {
             htmlContentToAppend += `
-            <div class="product" id="${product.id}">
+            <div onclick="setProductID(${product.id})" class="product" id="${product.id}">
                 <p class="vendidos">${product.soldCount}</p>
                 <img src="${product.image}" alt="${product.name}">
                 <div>
@@ -28,8 +30,6 @@ async function fetchProducts() {
                     <p class="descripcion">${product.description}</p>
                     <p>Precio: ${product.currency}${product.cost}</p>
                     <p style="display: none;">${product.cost}</p>
-                    <button class="boton-agregar-carrito">Agregar</button>
-                    <button onclick="setProductID(${product.id})" class="boton-ver-producto">Ver</button>
                 </div>
             </div>
             `;
@@ -44,7 +44,6 @@ async function fetchProducts() {
         console.error('There was a problem with the fetch operation:', error);
         //window.location.href = "categories.html";
     }
-<<<<<<< Updated upstream
 }
 
 function applySearchFilter() {
@@ -84,51 +83,51 @@ fetchProducts();
 
 //botón precio ascendente
 const button1 = document.getElementById("as");
-button1.addEventListener("click", function(e) {
+button1.addEventListener("click", function (e) {
     const contenedor1 = document.getElementById('container-product');
     const elementos = contenedor1.getElementsByClassName("product");
 
     const elementosArray = Array.from(elementos);
 
-    elementosArray.sort((a,b) => a.id - b.id);
+    elementosArray.sort((a, b) => a.id - b.id);
     contenedor1.innerHTML = "";
 
     elementosArray.forEach(element => {
-       contenedor1.appendChild(element)
+        contenedor1.appendChild(element)
     });
 });
 
 
 //botón precio descendente
 let button2 = document.getElementById("ds");
-button2.addEventListener("click", function(e) {
+button2.addEventListener("click", function (e) {
     const contenedor1 = document.getElementById('container-product');
     const elementos = contenedor1.getElementsByClassName("product");
 
     const elementosArray = Array.from(elementos);
 
-    elementosArray.sort((a,b) => b.id - a.id);
+    elementosArray.sort((a, b) => b.id - a.id);
     contenedor1.innerHTML = "";
 
     elementosArray.forEach(element => {
-       contenedor1.appendChild(element)
+        contenedor1.appendChild(element)
     });
 });
 
 let button3 = document.getElementById("rel");
 
 //botón relevancia
-button3.addEventListener("click", function(e) {
+button3.addEventListener("click", function (e) {
 
     const contenedor1 = document.getElementById('container-product');
     const elementos = contenedor1.getElementsByClassName("product");
     const elementosArray = Array.from(elementos);
 
-    elementosArray.sort((a,b) => b.getElementsByClassName("vendidos")[0].innerHTML - a.getElementsByClassName("vendidos")[0].innerHTML);
+    elementosArray.sort((a, b) => b.getElementsByClassName("vendidos")[0].innerHTML - a.getElementsByClassName("vendidos")[0].innerHTML);
     contenedor1.innerHTML = "";
 
     elementosArray.forEach(element => {
-       contenedor1.appendChild(element)
+        contenedor1.appendChild(element)
     });
 });
 
@@ -192,61 +191,4 @@ document.getElementById("buscar").addEventListener("input", (e) => {
 });
 
 
-=======
-
-    const data = await response.json();
-
-    const container = document.getElementById('container-product');
-
-    data.products.forEach(product => {
-      const productElement = document.createElement('div');
-      productElement.classList.add('product');
-
-      const productImage = document.createElement('img');
-      productImage.src = product.image;
-      productImage.alt = product.name;
-
-      const productName = document.createElement('h2');
-      productName.textContent = product.name;
-
-      const productPrice = document.createElement('p');
-      productPrice.textContent = `Precio: ${product.cost}`;
-
-      const addButton = document.createElement('button');
-      addButton.textContent = 'Agregar';
-      addButton.classList.add('boton-agregar-carrito');
-
-      const viewButton = document.createElement('button');
-      viewButton.textContent = 'Ver';
-      viewButton.classList.add('boton-ver-producto');
-
-      const productDescription = document.createElement('p');
-      productDescription.textContent = product.description;
-
-      const productContainer = document.createElement('div');
-      productContainer.appendChild(productName);
-      productContainer.appendChild(productPrice);
-      productContainer.appendChild(addButton);
-      productContainer.appendChild(viewButton);
-
-      productElement.appendChild(productImage);
-      productElement.appendChild(productContainer);
-      productElement.appendChild(productDescription);
-
-      container.appendChild(productElement);
-
-      addButton.addEventListener('click', () => {
-        // Lógica para agregar el producto al carrito
-      });
-
-      viewButton.addEventListener('click', () => {
-        // Lógica para mostrar más detalles del producto
-      });
-    });
-  } catch (error) {
-    console.error('There was a problem with the fetch operation:', error);
-  }
-}
-
->>>>>>> Stashed changes
 fetchProducts();
