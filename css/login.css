@@ -20,7 +20,11 @@ body {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+<<<<<<< Updated upstream
   background-color: #dfdfdf;
+=======
+  background-color: rgb(248, 249, 250);
+>>>>>>> Stashed changes
   border-radius: 5%;
   padding: 2rem 2rem;
 }
