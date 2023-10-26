@@ -960,20 +960,20 @@ ul {
   margin-left: 80%;
 }
 
- @media (min-width: 411px) {
+@media (min-width: 411px) {
   #confirmarModal {
-  min-width: 90px;
-   margin-left: 80%;
-    }
+    min-width: 90px;
+    margin-left: 80%;
   }
+}
 
 
 @media (max-width: 410px) {
   #confirmarModal {
-      min-width: 90px;
-      margin-left: 60%;
-    }
+    min-width: 90px;
+    margin-left: 60%;
   }
+}
 
 .input_modal,
 .input_modal2 {
@@ -992,4 +992,12 @@ ul {
 
 .codigo2 {
   margin-left: -3px;
+}
+
+#divParaModal {
+  display: inline-flex;
+}
+
+#formaDePago {
+  padding-top: 7px;
 }
