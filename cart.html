@@ -1,135 +1,177 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>eMercado - Todo lo que busques está aquí</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>eMercado - Todo lo que busques está aquí</title>
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/font-awesome.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
-</head>
-
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav w-100 justify-content-between">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
-          </li>
-          <li class="nav-item">
-          </li>
-        </ul>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav w-100 justify-content-between">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="categories.html">Categorías</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sell.html">Vender</a>
+            </li>
+            <li class="nav-item"></li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-  <main>
-    <div class="container_cart">
-      <div id="order-view">
-        <div class="cart_section">
-          <div class="container-fluid">
+    </nav>
+    <main>
+      <div class="container_cart">
+        <div id="order-view">
+          <div class="cart_section">
+            <div class="container-fluid">
               <div class="row">
-                  <div class="col-lg-10 offset-lg-1">
-                      <div class="cart_container">
-                          <div class="cart_title">Shopping Cart<small> (1 item in your cart) </small></div>
-                          <div class="cart_items">
-                              <ul class="cart_list">
-                                  
-                              </ul>
-                          </div>
-                      </div>
+                <div class="col-lg-10 offset-lg-1">
+                  <div class="cart_container">
+                    <div class="cart_title">
+                      Shopping Cart<small> (1 item in your cart) </small>
+                    </div>
+                    <div class="cart_items">
+                      <ul class="cart_list"></ul>
+                    </div>
                   </div>
+                </div>
               </div>
-          </div>
-      </div>
-      </div>
-      <div id="checkout">
-        <form id="form_compra">
-
-          <!-- Text input -->
-          <hr style=" width: 1000px; height: 1px;">
-          <div class="form-outline mb-4 radio-opcion">
-            <div style="margin-bottom: 5px; font-size: 1.5rem; ">Tipo de envío</div>
-            <div>
-              <input type="radio" id="opcion1" name="opcion" class="" checked/>
-              <label class="" for="opcion1">Premium 2 a 5 días (15%)</label>
             </div>
-            <div>
-              <input type="radio" id="opcion2" name="opcion" class="" />
-              <label class="" for="opcion2">Express 5 a 8 días (7%)</label>
-            </div>
-            <div>
-              <input type="radio" id="opcion3" name="opcion" class="" />
-              <label class="" for="opcion3">Standard 12 a 15 días (5%)</label>
-            </div>
-          </div>
-          
-          <!-- Text input -->
-          <div class="form-outline mb-4">
-            <label class="form-label" for="form6Example4">Dirección</label>
-            <input type="text" id="form6Example4" class="form-control" />
-            
-          </div>
-        
-          <!-- Number input -->
-          <div class="form-outline mb-4">
-            <label class="form-label" for="form6Example6">Teléfono</label>
-            <input type="number" id="form6Example6" class="form-control" />
-            
-          </div>
-        
-          <!-- Message input -->
-          <div class="form-outline mb-4">
-            <label class="form-label " for="form6Example7">Información adicional</label>
-            <textarea class="form-control" id="form6Example7" rows="4"></textarea>
-            
-          </div>
-
-          <div class="order_total" style="margin-bottom: 20px;">
-            <div class="order_total_content text-md-right">
-              <div id="order_total_amount" class="order_total_amount" style="display: flex; width: 200px; justify-content: space-around;"><p>Costo Final:</p><p class="tipo-de-moneda"></p><p class="costo-final"></p></div>
           </div>
         </div>
+        <div id="checkout">
+          <form id="form_compra">
+            <!-- Text input -->
+            <hr style="width: 1000px; height: 1px" />
+            <div class="form-outline mb-4 radio-opcion">
+              <div style="margin-bottom: 5px; font-size: 1.5rem">
+                Tipo de envío
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="opcion1"
+                  name="opcion"
+                  class=""
+                  checked
+                />
+                <label class="" for="opcion1">Premium 2 a 5 días (15%)</label>
+              </div>
+              <div>
+                <input type="radio" id="opcion2" name="opcion" class="" />
+                <label class="" for="opcion2">Express 5 a 8 días (7%)</label>
+              </div>
+              <div>
+                <input type="radio" id="opcion3" name="opcion" class="" />
+                <label class="" for="opcion3">Standard 12 a 15 días (5%)</label>
+              </div>
+            </div>
 
-          <!-- Submit button -->
-          <button id="comprar" type="submit" class="btn btn-primary btn-block mb-4">Comprar</button>
-        </form>
-        
+            <!-- Text input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form6Example4">Dirección</label>
+              <input type="text" id="form6Example4" class="form-control" />
+            </div>
+
+            <!-- Number input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form6Example6">Teléfono</label>
+              <input type="number" id="form6Example6" class="form-control" />
+            </div>
+
+            <!-- Message input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form6Example7"
+                >Información adicional</label
+              >
+              <textarea
+                class="form-control"
+                id="form6Example7"
+                rows="4"
+              ></textarea>
+            </div>
+
+            <div class="order_total" style="margin-bottom: 20px">
+              <div class="order_total_content text-md-right">
+                <div
+                  id="order_total_amount"
+                  class="order_total_amount"
+                  style="
+                    display: flex;
+                    width: 200px;
+                    justify-content: space-around;
+                  "
+                >
+                  <p>Costo Final:</p>
+                  <p class="tipo-de-moneda"></p>
+                  <p class="costo-final"></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit button -->
+            <button
+              id="comprar"
+              type="submit"
+              class="btn btn-primary btn-block mb-4"
+            >
+              Comprar
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="alert" id="mensaje_compra" style="display: none"></div>
+    </main>
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-end">
+          <a href="#">Volver arriba</a>
+        </p>
+        <p>
+          Este sitio forma parte de
+          <a href="https://jovenesaprogramar.edu.uy/" target="_blank"
+            >Jovenes a Programar</a
+          >
+        </p>
+      </div>
+    </footer>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     </div>
-    <div class="alert" id="mensaje_compra" style="display: none;"></div>
-  </main>
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-end">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
-    </div>
-  </footer>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/init.js"></script>
-  <script type="module" src="js/cart.js"></script>
-</body>
-
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script type="module" src="js/cart.js"></script>
+  </body>
 </html>
