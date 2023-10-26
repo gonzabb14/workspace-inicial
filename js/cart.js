@@ -37,7 +37,7 @@ function listarProductos(arrayDeProductos) {
                         <div class="cart_item_remove cart_info_col">
                          <div class="cart_item_title">Eliminar</div>
                             <div class="cart_item_text" style="display:flex;">
-                            <button class="remove-button" data-id="${id}">Eliminar del carrito</button>
+                            <button class="remove-button" data-id="${id}"><i class="gg-trash"></i></button>
         </div>
     </div>
                     </div>
