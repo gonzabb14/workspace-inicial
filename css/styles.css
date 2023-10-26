@@ -788,17 +788,16 @@ ul {
 }
 
 .cart_list {
-  background-color: #e0e0e0;
   border: none;
   box-shadow: none;
   margin: 0px;
   padding: 0px;
+  border-radius: 10px;
 }
 
 .cart_item {
-
-  background-color: white;
   border-radius: 10px;
+  background-color: white;
   margin-bottom: 5px;
   margin-top: 5px;
 }
