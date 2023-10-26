@@ -24,7 +24,7 @@ function listarProductos(arrayDeProductos) {
                         </div>
                         <div class="cart_item_quantity cart_info_col">
                             <div class="cart_item_title">Cantidad</div>
-                            <input class="cantidad" data-id="${id}" type="number" min="0" value="${count}" required>
+                            <input class="cantidad" data-id="${id}" type="number" min="0" value="${count}" required min="1">
                         </div>
                         <div class="cart_item_price cart_info_col">
                             <div class="cart_item_title">Subtotal</div>
@@ -209,8 +209,11 @@ document.getElementById("tarjeta").addEventListener("click", function () {
 // })
 
 
+
+const formaDeEnvio = document.querySelector('input[name="opcion"]:checked');
 (() => {
     'use strict'
+
 
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     const forms = document.querySelectorAll('.needs-validation')
@@ -218,23 +221,31 @@ document.getElementById("tarjeta").addEventListener("click", function () {
     // Loop over them and prevent submission
     Array.from(forms).forEach(form => {
         form.addEventListener('submit', event => {
-            if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-            } else {
-                const mensaje = document.getElementById("mensaje_compra")
-                const formulario = document.getElementById("form_compra")
-                formulario.reset();
-                mensaje.innerHTML = '¡Gracias por su compra!';
-                mensaje.style.display = 'block';
-                mensaje.classList.add('alert');
-                setTimeout(function () {
-                    mensaje.style.display = 'none';
-                }, 3000);
-            }
 
-            form.classList.add('was-validated')
-        }, false)
+            if (!form.checkValidity()) {
+
+                if (!formaDeEnvio) {
+                    formaDeEnvio.setCustomValidity("Debes seleccionar una forma de envío.");
+                } else if (parseInt(cantidadArticulo) <= 0 || cantidadArticulo.checkValidity()) {
+                    cantidadArticulo.setCustomValidity("La cantidad para cada artículo debe ser mayor a 0.");
+                } else if (!form.checkValidity()) {
+
+                    event.preventDefault()
+                    event.stopPropagation()
+                } else {
+                    const mensaje = document.getElementById("mensaje_compra")
+                    const formulario = document.getElementById("form_compra")
+                    formulario.reset();
+                    mensaje.innerHTML = '¡Gracias por su compra!';
+                    mensaje.style.display = 'block';
+                    mensaje.classList.add('alert');
+                    setTimeout(function () {
+                        mensaje.style.display = 'none';
+                    }, 3000);
+                }
+
+                form.classList.add('was-validated')
+            }, false)
     })
 })()
 
