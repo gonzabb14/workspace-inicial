@@ -32,7 +32,7 @@ function listarProductos(arrayDeProductos) {
                         </div>
                         <div class="cart_item_total cart_info_col">
                             <div class="cart_item_title">Subtotal</div>
-                            <div id="total" class="cart_item_text" style="display:flex;"> <p>${currency}</p> <p class="costo-total-producto">${count * unitCost}</p> </div>
+                            <div class="total-itemsito" data-id="${id}"  class="cart_item_text" style="display:flex;"> <p>${currency}</p> <p class="costo-total-producto">${count * unitCost}</p> </div>
                         </div>
                     </div>
                 </li>
@@ -62,6 +62,26 @@ function CostoFinal() {
 };
 
 
+function actualizar_subtotal(id) {
+    Array.from(document.getElementsByClassName("total-itemsito")).forEach(element => {
+        //if (element.getElementsByClassName("costo-total-producto")[0].innerHTML)
+        console.log(element.dataset.id === id);
+        if (element.dataset.id === id){
+            let precio_por_unidad = 0;
+            let cantidad = 0;
+            let moneda;
+            JSON.parse(localStorage.getItem("Productos")).forEach(producto => {
+                if (parseInt(producto.id) === parseInt(id)){
+                    precio_por_unidad = producto.unitCost;
+                    cantidad = producto.count;
+                    moneda = producto.currency;
+                }
+            });
+            element.innerHTML = `<p>${moneda}</p> <p class="costo-total-producto">${cantidad*precio_por_unidad}</p>`;
+        }
+    });
+};
+
 fetch(CART_URL)
     .then(response => response.json())
     .then(data => {
@@ -90,13 +110,13 @@ fetch(CART_URL)
             input.addEventListener("input", function (e) {
                 let id = input.dataset.id;
                 let arr = JSON.parse(localStorage.getItem("Productos"));
-                let indice = 0;
+                //let indice = 0;
 
                 arr.forEach(element => {
                     if (element.id === parseInt(id)) {
                         element.count = input.value;
                     } else {
-                        indice++;
+                        //indice++;
                     };
                 });
 
@@ -105,9 +125,11 @@ fetch(CART_URL)
                 }
 
                 localStorage.setItem("Productos", JSON.stringify(arr));
-                location.reload();
+                //listarProductos(JSON.parse(localStorage.getItem("Productos")));
+                actualizar_subtotal(id);
+                CostoFinal();
             });
-        })
+        });
 
         CostoFinal();
     })
