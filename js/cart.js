@@ -143,6 +143,7 @@ document.getElementById("opcion3").addEventListener("click", function (e) {
 const btnMostrarModal = document.getElementById("mostrarModal");
 const modal = document.getElementById("miModal");
 const btnCerrarModal = document.getElementById("confirmarModal");
+const txtPago = document.getElementById("formaDePago");
 
 btnMostrarModal.addEventListener("click", function () {
     modal.style.display = "block";
@@ -153,7 +154,9 @@ btnCerrarModal.addEventListener("click", function () {
     const campoTransferencia = document.getElementById("número_cuenta");
 
     if (campoTarjeta.checkValidity() || campoTransferencia.checkValidity()) {
+        txtPago.classList.remove("is-invalid");
         modal.style.display = "none";
+        txtPago.classList.add("is-valid")
     }
 });
 window.addEventListener("click", function (event) {
@@ -185,20 +188,20 @@ document.getElementById("tarjeta").addEventListener("click", function () {
 });
 
 const formaDeEnvio = document.querySelector('input[name="opcion"]:checked');
-    (() => {
-        'use strict'
 
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        const forms = document.querySelectorAll('.needs-validation')
+(() => {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
 
     // Loop over them and prevent submission
     Array.from(forms).forEach(form => {
         form.addEventListener('submit', event => {
             if (!formaDeEnvio) {
                 formaDeEnvio.setCustomValidity("Debes seleccionar una forma de envío.");
-            } else if (parseInt(cantidadArticulo) <= 0 || cantidadArticulo.checkValidity()) {
-                cantidadArticulo.setCustomValidity("La cantidad para cada artículo debe ser mayor a 0.");
             } else if (!form.checkValidity()) {
+                txtPago.classList.add("is-invalid");
                 event.preventDefault()
                 event.stopPropagation()
             } else {
@@ -213,7 +216,7 @@ const formaDeEnvio = document.querySelector('input[name="opcion"]:checked');
                 }, 3000);
             }
 
-                form.classList.add('was-validated')
-            }, false)
-        })
-    })()
+            form.classList.add('was-validated')
+        }, false)
+    })
+})()
