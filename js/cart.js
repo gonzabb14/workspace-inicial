@@ -220,3 +220,9 @@ const formaDeEnvio = document.querySelector('input[name="opcion"]:checked');
         }, false)
     })
 })()
+
+
+document.getElementById("confirmarModal").addEventListener("click", function () {
+    const forma_pago = document.getElementById('formaDePago')
+    forma_pago.style.display = "none";
+});
