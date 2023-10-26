@@ -20,7 +20,7 @@ function listarProductos(arrayDeProductos) {
                     <div class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
                         <div class="cart_item_name cart_info_col">
                             <div class="cart_item_title">Name</div>
-                            <div class="cart_item_text">${name}</div>
+                            <div class=" p_modoOscuro cart_item_text">${name}</div>
                         </div>
                         <div class="cart_item_quantity cart_info_col">
                             <div class="cart_item_title">Cantidad</div>
@@ -28,11 +28,11 @@ function listarProductos(arrayDeProductos) {
                         </div>
                         <div class="cart_item_price cart_info_col">
                             <div class="cart_item_title">Costo por unidad</div>
-                            <div class="cart_item_text">${currency}${unitCost}</div>
+                            <div class=" p_modoOscuro cart_item_text">${currency}${unitCost}</div>
                         </div>
                         <div class="cart_item_total cart_info_col">
                             <div class="cart_item_title">Subtotal</div>
-                            <div id="total" class="cart_item_text" style="display:flex;"> <p>${currency}</p> <p class="costo-total-producto">${count * unitCost}</p> </div>
+                            <div id="total" class=" p_modoOscuro cart_item_text" style="display:flex;"> <p>${currency}</p> <p class="costo-total-producto">${count * unitCost}</p> </div>
                         </div>
                     </div>
                 </li>

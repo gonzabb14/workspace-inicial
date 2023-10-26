@@ -548,13 +548,33 @@ input:checked+.slider:before {
 }
 
 .dark-mode {
-  background-color: #0e0e0e;
+  background-color: #343a40;
   transition: background-color .5s;
   color: #fff;
 }
 
+.dark-mode .cart_item {
+  background-color: #c8cdd0;
+}
+
+.dark-mode .product {
+  background-color: #c8cdd0;
+}
+
+.dark-mode .list-group-item {
+  background-color: #c8cdd0;
+}
+
+.dark-mode .modal-content {
+  background-color: #373739;
+}
+
+.dark-mode .p_modoOscuro {
+  color: black;
+}
+
 .dark-mode .card {
-  background-color: #1A1C1E;
+  background-color: #c8cdd0;
 }
 
 .dark-mode .btn-mode {
