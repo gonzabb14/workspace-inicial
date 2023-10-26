@@ -209,31 +209,39 @@ document.getElementById("tarjeta").addEventListener("click", function () {
 // })
 
 
-    (() => {
-        'use strict'
+(() => {
+    'use strict'
 
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        const forms = document.querySelectorAll('.needs-validation')
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
 
-        // Loop over them and prevent submission
-        Array.from(forms).forEach(form => {
-            form.addEventListener('submit', event => {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                } else {
-                    const mensaje = document.getElementById("mensaje_compra")
-                    const formulario = document.getElementById("form_compra")
-                    formulario.reset();
-                    mensaje.innerHTML = '¡Gracias por su compra!';
-                    mensaje.style.display = 'block';
-                    mensaje.classList.add('alert');
-                    setTimeout(function () {
-                        mensaje.style.display = 'none';
-                    }, 3000);
-                }
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            } else {
+                const mensaje = document.getElementById("mensaje_compra")
+                const formulario = document.getElementById("form_compra")
+                formulario.reset();
+                mensaje.innerHTML = '¡Gracias por su compra!';
+                mensaje.style.display = 'block';
+                mensaje.classList.add('alert');
+                setTimeout(function () {
+                    mensaje.style.display = 'none';
+                }, 3000);
+            }
 
-                form.classList.add('was-validated')
-            }, false)
-        })
-    })()
+            form.classList.add('was-validated')
+        }, false)
+    })
+})()
+
+
+// Función para desaparecer p de forma de pago
+
+document.getElementById("confirmarModal").addEventListener("click", function () {
+    const forma_pago = document.getElementById('formaDePago')
+    forma_pago.style.display = "none";
+});
