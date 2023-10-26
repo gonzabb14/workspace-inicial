@@ -245,14 +245,15 @@ const formaDeEnvio = document.querySelector('input[name="opcion"]:checked');
                 }
 
                 form.classList.add('was-validated')
-            }, false)
-    })
-})()
+            }
+        })
+    })()
 
 
-// Función para desaparecer p de forma de pago
+    // Función para desaparecer p de forma de pago
 
-document.getElementById("confirmarModal").addEventListener("click", function () {
-    const forma_pago = document.getElementById('formaDePago')
-    forma_pago.style.display = "none";
-});
+    document.getElementById("confirmarModal").addEventListener("click", function () {
+        const forma_pago = document.getElementById('formaDePago')
+        forma_pago.style.display = "none";
+    });
+})
