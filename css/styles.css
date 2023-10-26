@@ -573,6 +573,10 @@ input:checked+.slider:before {
   color: #fff;
 }
 
+.dark-mode .p_modoOscuro {
+  color: black;
+}
+
 .dark-mode h2 {
   color: #fff;
 }
