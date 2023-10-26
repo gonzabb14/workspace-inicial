@@ -191,25 +191,27 @@ const formaDeEnvio = document.querySelector('input[name="opcion"]:checked');
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         const forms = document.querySelectorAll('.needs-validation')
 
-        // Loop over them and prevent submission
-        Array.from(forms).forEach(form => {
-            form.addEventListener('submit', event => {
-                if (!formaDeEnvio) {
-                    formaDeEnvio.setCustomValidity("Debes seleccionar una forma de envío.");
-                } else if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                } else {
-                    const mensaje = document.getElementById("mensaje_compra")
-                    const formulario = document.getElementById("form_compra")
-                    formulario.reset();
-                    mensaje.innerHTML = '¡Gracias por su compra!';
-                    mensaje.style.display = 'block';
-                    mensaje.classList.add('alert');
-                    setTimeout(function () {
-                        mensaje.style.display = 'none';
-                    }, 3000);
-                }
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+            if (!formaDeEnvio) {
+                formaDeEnvio.setCustomValidity("Debes seleccionar una forma de envío.");
+            } else if (parseInt(cantidadArticulo) <= 0 || cantidadArticulo.checkValidity()) {
+                cantidadArticulo.setCustomValidity("La cantidad para cada artículo debe ser mayor a 0.");
+            } else if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            } else {
+                const mensaje = document.getElementById("mensaje_compra")
+                const formulario = document.getElementById("form_compra")
+                formulario.reset();
+                mensaje.innerHTML = '¡Gracias por su compra!';
+                mensaje.style.display = 'block';
+                mensaje.classList.add('alert');
+                setTimeout(function () {
+                    mensaje.style.display = 'none';
+                }, 3000);
+            }
 
                 form.classList.add('was-validated')
             }, false)
