@@ -548,33 +548,41 @@ input:checked+.slider:before {
 }
 
 .dark-mode {
-  background-color: #343a40;
+  background-color: #232628;
   transition: background-color .5s;
   color: #fff;
 }
 
 .dark-mode .cart_item {
-  background-color: #c8cdd0;
+  background-color: #181a1b;
 }
 
 .dark-mode .product {
-  background-color: #c8cdd0;
+  background-color: #181a1b;
 }
 
 .dark-mode .list-group-item {
-  background-color: #c8cdd0;
+  background-color: #181a1b;
+}
+
+.dark-mode p {
+  color: #fff;
+}
+
+.dark-mode .d-flex {
+  color: #fff;
+}
+
+.dark-mode h2 {
+  color: #fff;
 }
 
 .dark-mode .modal-content {
   background-color: #373739;
 }
 
-.dark-mode .p_modoOscuro {
-  color: black;
-}
-
 .dark-mode .card {
-  background-color: #c8cdd0;
+  background-color: #181a1b;
 }
 
 .dark-mode .btn-mode {
@@ -595,7 +603,7 @@ body {
   font-family: 'Rubik', sans-serif;
   font-size: 14px;
   font-weight: 400;
-  background: #E0E0E0;
+  background-color: #E0E0E0;
   color: #000000
 }
 

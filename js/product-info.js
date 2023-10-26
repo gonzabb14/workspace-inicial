@@ -119,7 +119,7 @@ function relatedProducts() {
         });
 }
 
-function añadirProductoAlCarrito(){
+function añadirProductoAlCarrito() {
     if (localStorage.getItem("Productos") === null) {
         localStorage.setItem("Productos", JSON.stringify([]));
     };
@@ -132,26 +132,26 @@ function añadirProductoAlCarrito(){
             let elementoRepetido = false;
 
             arrayProductos.forEach(element => {
-                if(element.id === parseInt(localStorage.ProductID)){
+                if (element.id === parseInt(localStorage.ProductID)) {
                     element.count++;
                     elementoRepetido = true;
                 }
             });
 
-            if (!elementoRepetido){
+            if (!elementoRepetido) {
                 let nodo = {
-                    "name" : data.name,
-                    "image" : data.images[0],
-                    "count" : 1,
-                    "currency" : data.currency,
-                    "unitCost" : data.cost,
-                    "id" : data.id
+                    "name": data.name,
+                    "image": data.images[0],
+                    "count": 1,
+                    "currency": data.currency,
+                    "unitCost": data.cost,
+                    "id": data.id
                 };
                 arrayProductos.push(nodo);
                 console.log(arrayProductos);
             }
             localStorage.setItem("Productos", JSON.stringify(arrayProductos));
-            
+
         })
         .catch(error => console.log(error.message));
 }
@@ -217,7 +217,7 @@ function agregarProducto(product, categoria) {
         
         <br>
         <div class="test-divs">
-        <p class="test"><strong>Productos relacionados:</strong></p>
+        <p class="test"><strong>Productos relacionados:</strong></p> <br>
          <div id="relatedProducts" style="display: flex;" >
          </div>
     </div>
@@ -234,7 +234,7 @@ function agregarProducto(product, categoria) {
         añadirProductoAlCarrito();
 
 
-        
+
         const mensaje = document.getElementById("agregado")
         mensaje.innerHTML = '¡Producto añadido al carrito!';
         mensaje.style.display = 'block';
