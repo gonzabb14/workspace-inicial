@@ -27,11 +27,11 @@ function listarProductos(arrayDeProductos) {
                             <input class="cantidad" data-id="${id}" type="number" min="0" value="${count}" required min="1">
                         </div>
                         <div class="cart_item_price cart_info_col">
-                            <div class="cart_item_title">Subtotal</div>
+                            <div class="cart_item_title">Costo por unidad</div>
                             <div class="cart_item_text">${currency}${unitCost}</div>
                         </div>
                         <div class="cart_item_total cart_info_col">
-                            <div class="cart_item_title">Total</div>
+                            <div class="cart_item_title">Subtotal</div>
                             <div id="total" class="cart_item_text" style="display:flex;"> <p>${currency}</p> <p class="costo-total-producto">${count * unitCost}</p> </div>
                         </div>
                     </div>
