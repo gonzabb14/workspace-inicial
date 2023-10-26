@@ -20,7 +20,7 @@ function listarProductos(arrayDeProductos) {
                     <div class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
                         <div class="cart_item_name cart_info_col">
                             <div class="cart_item_title">Name</div>
-                            <div class=" p_modoOscuro cart_item_text">${name}</div>
+                            <div class="cart_item_text">${name}</div>
                         </div>
                         <div class="cart_item_quantity cart_info_col">
                             <div class="cart_item_title">Cantidad</div>
@@ -28,12 +28,11 @@ function listarProductos(arrayDeProductos) {
                         </div>
                         <div class="cart_item_price cart_info_col">
                             <div class="cart_item_title">Costo por unidad</div>
-                            <div class=" p_modoOscuro cart_item_text">${currency}${unitCost}</div>
+                            <div class=" cart_item_text">${currency}${unitCost}</div>
                         </div>
                         <div class="cart_item_total cart_info_col">
                             <div class="cart_item_title">Subtotal</div>
-                            <div id="total" class=" p_modoOscuro cart_item_text" style="display:flex;"> <p>${currency}</p> <p class="costo-total-producto">${count * unitCost}</p> </div>
-                            <div class="total-itemsito" data-id="${id}"  class="cart_item_text" style="display:flex;"> <p>${currency}</p> <p class="costo-total-producto">${count * unitCost}</p> </div>
+                            <div class="cart_item_text total-itemsito" data-id="${id}" style="display:flex;"> <p>${currency}</p> <p class="costo-total-producto">${count * unitCost}</p> </div>
                         </div>
                     </div>
                 </li>
@@ -67,18 +66,18 @@ function actualizar_subtotal(id) {
     Array.from(document.getElementsByClassName("total-itemsito")).forEach(element => {
         //if (element.getElementsByClassName("costo-total-producto")[0].innerHTML)
         console.log(element.dataset.id === id);
-        if (element.dataset.id === id){
+        if (element.dataset.id === id) {
             let precio_por_unidad = 0;
             let cantidad = 0;
             let moneda;
             JSON.parse(localStorage.getItem("Productos")).forEach(producto => {
-                if (parseInt(producto.id) === parseInt(id)){
+                if (parseInt(producto.id) === parseInt(id)) {
                     precio_por_unidad = producto.unitCost;
                     cantidad = producto.count;
                     moneda = producto.currency;
                 }
             });
-            element.innerHTML = `<p>${moneda}</p> <p class="costo-total-producto">${cantidad*precio_por_unidad}</p>`;
+            element.innerHTML = `<p>${moneda}</p> <p class="costo-total-producto">${cantidad * precio_por_unidad}</p>`;
         }
     });
 };
