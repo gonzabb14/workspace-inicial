@@ -108,18 +108,49 @@
                 <label class="form-label" for="form6Example7">Información adicional</label>
                 <textarea class="form-control" id="form6Example7" rows="3"></textarea>
               </div>
-              <div class="order_total" style="margin-bottom: 20px">
+              <div class="order_total" 
+              style="margin-bottom: 20px;
+              height: auto;
+              ">
                 <div class="order_total_content text-md-right">
                   <div id="order_total_amount" class="order_total_amount" style="
                     display: flex;
-                    width: 250px;
+                    flex-direction: column;
+                    width:250px;
                     justify-content: space-around;
                   ">
-                    <p class="p_modoOscuro">Costo Final:</p>
+                  <div 
+                  style=" 
+                  display: flex;
+                  flex-direction: row;
+                  ">
+                    <p class="p_modoOscuro">Subtotal:</p>
                     <p class="tipo-de-moneda p_modoOscuro"></p>
-                    <p class="costo-final p_modoOscuro"></p>
+                    <p class=" p_modoOscuro"></p>
                     <p class="tipo-de-moneda"></p>
-                    <p class="costo-final"></p>
+                    <p id="consto-sin-envio"></p>
+                    <div class="linea"></div>
+                  </div>
+                  <div
+                  style=" 
+                  display: flex;
+                  flex-direction: row;">
+                    <p class="p_modoOscuro">Envio:</p>
+                    <p class="tipo-de-moneda p_modoOscuro"></p>
+                    <p class=" p_modoOscuro"></p>
+                    <p class="tipo-de-moneda"></p>
+                    <p id="subtotalEnvio"></p>
+                  </div>
+                  <div
+                  style=" 
+                  display: flex;
+                  flex-direction: row;">
+                    <p class="p_modoOscuro">Costo Final: </p>
+                    <p class="tipo-de-moneda p_modoOscuro"></p>
+                    <p class=" p_modoOscuro"></p>
+                    <p class="tipo-de-moneda"></p>
+                    <p id="costo-final"></p>
+                  </div>
                   </div>
                 </div>
               </div>
