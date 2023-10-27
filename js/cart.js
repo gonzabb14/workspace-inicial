@@ -172,7 +172,7 @@ document.getElementById("opcion2").addEventListener("click", function (e) {
 document.getElementById("opcion3").addEventListener("click", function (e) {
     CostoFinal();
 });
-buy.addEventListener("click", (event) => {
+/*buy.addEventListener("click", (event) => {
     event.preventDefault();
     const mensaje = document.getElementById("mensaje_compra")
     const formulario = document.getElementById("form_compra")
@@ -184,6 +184,7 @@ buy.addEventListener("click", (event) => {
         mensaje.style.display = 'none';
     }, 3000);
 });
+*/
 const btnMostrarModal = document.getElementById("mostrarModal");
 const modal = document.getElementById("miModal");
 const btnCerrarModal = document.getElementById("confirmarModal");
@@ -268,6 +269,4 @@ const formaDeEnvio = document.querySelector('input[name="opcion"]:checked');
             form.classList.add('was-validated')
         }, false)
     })
-})()
-
-
+})
