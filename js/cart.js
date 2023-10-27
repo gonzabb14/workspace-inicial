@@ -34,6 +34,13 @@ function listarProductos(arrayDeProductos) {
                             <div class="cart_item_title">Total</div>
                             <div id="total" class="cart_item_text" style="display:flex;"> <p>${currency}</p> <p class="costo-total-producto">${count * unitCost}</p> </div>
                         </div>
+                        <div class="cart_item_remove cart_info_col">
+                         <div class="cart_item_title">Eliminar</div>
+                            <div class="cart_item_text" style="display:flex;">
+                            <button class="remove-button" data-id="${id}"><i class="gg-trash"></i></button>
+        </div>
+    </div>
+
                     </div>
                 </li>
                 `;
@@ -60,6 +67,7 @@ function CostoFinal() {
 
     document.getElementsByClassName("costo-final")[0].innerHTML = PrecioFinal;
 };
+
 
 
 fetch(CART_URL)
@@ -136,4 +144,20 @@ buy.addEventListener("click", (event) => {
     setTimeout(function () {
         mensaje.style.display = 'none';
     }, 3000);
+});
+
+
+function removeProduct() {
+    let array = JSON.parse(localStorage.getItem("Productos"));
+    let indice = 0;
+    array.splice(indice, 1);
+    localStorage.setItem("Productos", JSON.stringify(array));
+    location.reload();
+}
+PRODUCT_LIST.addEventListener("click", function (event) {
+    if (event.target.classList.contains("remove-button")) {
+        removeProduct()
+
+    }
+
 });
