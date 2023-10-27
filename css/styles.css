@@ -438,6 +438,11 @@ html {
   width: 50px;
   height: 24px;
   display: flex;
+  margin-left: 12px;
+}
+
+.textmode {
+  margin-left: 13px;
 }
 
 .switch input {
