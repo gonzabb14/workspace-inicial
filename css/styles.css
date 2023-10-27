@@ -1119,3 +1119,7 @@ Expand Down .container_cart {
   color: black;
   border-width: 1px;
 }
+
+.g-3 {
+  padding: 10px;
+}

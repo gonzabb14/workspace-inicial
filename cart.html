@@ -1,300 +1,378 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>eMercado - Todo lo que busques está aquí</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>eMercado - Todo lo que busques está aquí</title>
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
-  <link href="css/bootstrap.min.css" rel="stylesheet" />
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
-  <link href="css/styles.css" rel="stylesheet" />
-</head>
-
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav w-100 justify-content-between">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
-          </li>
-          <li class="nav-item"></li>
-        </ul>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav w-100 justify-content-between">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="categories.html">Categorías</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sell.html">Vender</a>
+            </li>
+            <li class="nav-item"></li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-  <main>
-    <div class="container_cart">
-      <div id="order-view">
-        <div class="cart_section">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-lg-10 offset-lg-1">
-                <div class="cart_container">
-                  <div class="cart_title">
-                    Shopping Cart<small> (1 item in your cart) </small>
-                  </div>
-                  <div class="cart_items">
-                    <ul class="cart_list"></ul>
+    </nav>
+    <main>
+      <div class="container_cart">
+        <div id="order-view">
+          <div class="cart_section">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                  <div class="cart_container">
+                    <div class="cart_title">
+                      Shopping Cart<small> (1 item in your cart) </small>
+                    </div>
+                    <div class="cart_items">
+                      <ul class="cart_list"></ul>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div id="checkout">
-        <form id="form_compra" action="#" method="get" class="row g-3 needs-validation" novalidate>
-          <div class="form-outline mb-4 radio-opcion" id="TiposEnvios">
-            <div style="margin-bottom: 5px; font-size: 1.5rem">
-              Tipo de envío
+        <div id="checkout">
+          <form
+            id="form_compra"
+            action="#"
+            method="get"
+            class="row g-3 needs-validation"
+            novalidate
+          >
+            <div class="form-outline mb-4 radio-opcion" id="TiposEnvios">
+              <div style="margin-bottom: 5px; font-size: 1.5rem">
+                Tipo de envío
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="opcion1"
+                  name="opcion"
+                  class=""
+                  checked
+                />
+                <label class="" for="opcion1">Premium 2 a 5 días (15%)</label>
+              </div>
+              <div>
+                <input type="radio" id="opcion2" name="opcion" class="" />
+                <label class="" for="opcion2">Express 5 a 8 días (7%)</label>
+              </div>
+              <div>
+                <input type="radio" id="opcion3" name="opcion" class="" />
+                <label class="" for="opcion3">Standard 12 a 15 días (5%)</label>
+              </div>
+              <div class="invalid-feedback">Debe ingresar elegir uno.</div>
             </div>
-            <div>
-              <input type="radio" id="opcion1" name="opcion" class="" checked />
-              <label class="" for="opcion1">Premium 2 a 5 días (15%)</label>
-            </div>
-            <div>
-              <input type="radio" id="opcion2" name="opcion" class="" />
-              <label class="" for="opcion2">Express 5 a 8 días (7%)</label>
-            </div>
-            <div>
-              <input type="radio" id="opcion3" name="opcion" class="" />
-              <label class="" for="opcion3">Standard 12 a 15 días (5%)</label>
-            </div>
-            <div class="invalid-feedback">
-              Debe ingresar elegir uno.
-            </div>
-          </div>
-          <div><a href=""></a></div>
-          <div class="col">
-            <h1 class="mb-2">Dirección de envio</h1>
-            <hr class="my-4">
-            <div class="row g-3">
-              <div class="col-sm-5">
-                <label for="calle" class="form-label">Calle</label>
-                <input type="text" class="form-control" id="calle" required>
-                <div class="invalid-feedback">
-                  Debe ingresar una calle.
+            <div><a href=""></a></div>
+            <div class="col">
+              <h1 class="mb-2">Dirección de envio</h1>
+              <hr class="my-4" />
+              <div class="row g-3">
+                <div class="col-sm-5">
+                  <label for="calle" class="form-label">Calle</label>
+                  <input type="text" class="form-control" id="calle" required />
+                  <div class="invalid-feedback">Debe ingresar una calle.</div>
                 </div>
-              </div>
-              <div class="col-sm-5">
-                <label for="numero" class="form-label">Numero de Puerta</label>
-                <input type="text" class="form-control" id="numero" required>
-                <div class="invalid-feedback">
-                  Debe ingresar un numero de puerta.
-                </div>
-              </div>
-              <div class="col-sm-5">
-                <label for="esquina" class="form-label">Esquina</label>
-                <input type="text" class="form-control" id="esquina" required>
-                <div class="invalid-feedback">
-                  Debe ingresar una esquina.
-                </div>
-              </div>
-              <div class="col-sm-5">
-                <label class="form-label" for="form6Example6">Teléfono</label>
-                <input type="text" id="form6Example6" class="form-control" />
-              </div>
-              <div class="form-outline sb-4">
-                <label class="form-label" for="form6Example7">Información adicional</label>
-                <textarea class="form-control" id="form6Example7" rows="3"></textarea>
-              </div>
-              <div class="order_total" style="margin-bottom: 20px;
-              height: auto;
-              ">
-                <div class="order_total_content text-md-right">
-                  <div id="order_total_amount" class="order_total_amount" style="
-                    display: flex;
-                    flex-direction: column;
-                    width:250px;
-                    justify-content: space-around;
-                  ">
-                  <div 
-                  style=" margin-top: 15px;
-                  display: flex;
-                  flex-direction: row;
-                  ">
-                    <p class="p_modoOscuro">Subtotal:</p>
-                    <p class="tipo-de-moneda p_modoOscuro"></p>
-                    <p class=" p_modoOscuro"></p>
-                    <p class="tipo-de-moneda"></p>
-                    <p class="p_modoOscuro" id="consto-sin-envio"></p>
-                    <div class="linea"></div>
-                  </div> <hr style="width: 475%; color: black;">
-                  <div
-                  style=" 
-                  display: flex;
-                  flex-direction: row;">
-                    <p class="p_modoOscuro">Envio:</p>
-                    <p class="tipo-de-moneda p_modoOscuro"></p>
-                    <p class=" p_modoOscuro"></p>
-                    <p class="tipo-de-moneda"></p>
-                    <p class="p_modoOscuro" id="subtotalEnvio"></p>
-                  </div> <hr style="width: 475%; color: black;">
-                  <div
-                  style=" 
-                  display: flex;
-                  flex-direction: row;">
-                    <p class="p_modoOscuro">Costo Final: </p>
-                    <p class="tipo-de-moneda p_modoOscuro"></p>
-                    <p class=" p_modoOscuro"></p>
-                    <p class="tipo-de-moneda"></p>
-                    <p class="p_modoOscuro" id="costo-final"></p>
+                <div class="col-sm-5">
+                  <label for="numero" class="form-label"
+                    >Numero de Puerta</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="numero"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Debe ingresar un numero de puerta.
                   </div>
-                    <div style=" 
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;">
-                      <p class="p_modoOscuro">Subtotal:</p>
-                      <div style="display: flex; justify-content: space-between;  min-width: 100px;">
+                </div>
+                <div class="col-sm-5">
+                  <label for="esquina" class="form-label">Esquina</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="esquina"
+                    required
+                  />
+                  <div class="invalid-feedback">Debe ingresar una esquina.</div>
+                </div>
+                <div class="col-sm-5">
+                  <label class="form-label" for="form6Example6">Teléfono</label>
+                  <input type="text" id="form6Example6" class="form-control" />
+                </div>
+                <div class="form-outline sb-4">
+                  <label class="form-label" for="form6Example7"
+                    >Información adicional</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="form6Example7"
+                    rows="3"
+                  ></textarea>
+                </div>
+                <div
+                  class="order_total"
+                  style="margin-bottom: 20px; height: auto"
+                >
+                  <div class="order_total_content text-md-right">
+                    <div
+                      id="order_total_amount"
+                      class="order_total_amount"
+                      style="
+                        display: flex;
+                        flex-direction: column;
+                        width: 250px;
+                        justify-content: space-around;
+                      "
+                    >
+                      <div
+                        style="
+                          margin-top: 15px;
+                          display: flex;
+                          flex-direction: row;
+                        "
+                      >
+                        <p class="p_modoOscuro">Subtotal:</p>
                         <p class="tipo-de-moneda p_modoOscuro"></p>
-                        <p class=" p_modoOscuro"></p>
-                        <p id="consto-sin-envio"></p>
+                        <p class="p_modoOscuro"></p>
+                        <p class="p_modoOscuro" id="consto-sin-envio"></p>
+                        <div class="linea"></div>
                       </div>
-                    </div>
-                    <div style=" 
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;">
-                      <p class="p_modoOscuro">Envio:</p>
-                      <div style="display: flex; justify-content: space-between;  min-width: 100px;">
+                      <hr style="width: 475%; color: black" />
+                      <div style="display: flex; flex-direction: row">
+                        <p class="p_modoOscuro">Envio:</p>
                         <p class="tipo-de-moneda p_modoOscuro"></p>
-                        <p class="costo-final p_modoOscuro"></p>
-                        <p id="subtotalEnvio"></p>
+                        <p class="p_modoOscuro"></p>
+                        <p class="p_modoOscuro" id="subtotalEnvio"></p>
                       </div>
-                    </div>
-                    <div style=" 
-                  display: flex;
-                  flex-direction: row;
-                  justify-content: space-between;">
-                      <p class="p_modoOscuro">Costo Final: </p>
-                      <div style="display: flex; justify-content: space-between; min-width: 100px;">
+                      <hr style="width: 475%; color: black" />
+                      <div style="display: flex; flex-direction: row">
+                        <p class="p_modoOscuro">Costo Final:</p>
                         <p class="tipo-de-moneda p_modoOscuro"></p>
-                        <p class="costo-final p_modoOscuro"></p>
-                        <p style="margin-left: 5px;" id="costo-final"></p>
+                        <p class="p_modoOscuro"></p>
+                        <p class="p_modoOscuro" id="costo-final"></p>
                       </div>
+                      <p class="costo-final p_modoOscuro"></p>
+                      <p style="margin-left: 5px" id="costo-final"></p>
                     </div>
                   </div>
                 </div>
               </div>
-              <hr style="width: 100%;"> <br>
-              <h2>Forma de pago</h2> <br>
-              <div id="divParaModal">
-                <p id="formaDePago" class="is-invalid">No se ha seleccionado.</p>
-                <p><a style="text-decoration: none;" class="btn btn-link " data-bs-toggle="miModal"
-                    href="#modalTerminos" id="mostrarModal"> Seleccionar</a></p>
-              </div>
-              <div class="invalid-feedback">
-                Debe elegir una forma de pago.
-              </div>
+            </div>
+            <hr style="width: 100%" />
+            <br />
+            <h2>Forma de pago</h2>
+            <br />
+            <div id="divParaModal">
+              <p id="formaDePago" class="is-invalid">No se ha seleccionado.</p>
+              <p>
+                <a
+                  style="text-decoration: none"
+                  class="btn btn-link"
+                  data-bs-toggle="miModal"
+                  href="#modalTerminos"
+                  id="mostrarModal"
+                >
+                  Seleccionar</a
+                >
+              </p>
+            </div>
+            <div class="invalid-feedback">Debe elegir una forma de pago.</div>
 
-              <div id="miModal" class="modal">
-                <div class="modal-content">
-                  <h2>Forma de pago</h2>
+            <div id="miModal" class="modal">
+              <div class="modal-content">
+                <h2>Forma de pago</h2>
 
-                  <form action="" class="needs-validation" id="MPago">
-                    <label for="tarjeta">
-                      <input type="radio" name="radio_modal" id="tarjeta" value="tarjeta de crédito"> Tarjeta de
-                      crédito</label>
-                    <hr style="width: 100%;">
-                    <div class="row g-3">
-                      <div class="col-sm-5 div_modal">
-                        <label for="numero_tarjeta" class="form-label modalL">Número de tarjeta</label>
-                        <input pattern="[0-9]+" type="text" class="form-control input_modal" name="radio_modal"
-                          id="numero_tarjeta" required>
-                        <div class="invalid-feedback">
-                          Debe ingresar un numero de tarjeta.
-                        </div>
-                      </div>
-
-                      <div class="col-sm-5">
-                        <label for="codigo_seg" class="form-label codigo">Código de seg.</label>
-                        <input type="text" class="form-control input_modal codigo codigo2" id="codigo_seg"
-                          id="codigo_seg" required>
-                        <div class="invalid-feedback">
-                          Debe ingresar el numero de seguridad de su tarjeta.
-                        </div>
-                      </div>
-
-                      <div class="col-sm-5 div_modal">
-                        <label for="vencimiento" class="form-label modalL">Vencimiento</label>
-                        <input type="month" class="form-control input_modal" name="vencimiento" id="vencimiento"
-                          required>
-                        <div class="invalid-feedback">
-                          Debe ingresar un numero de tarjeta válido.
-                        </div>
-                      </div>
-                    </div>
-                    <br> <br>
-
-
-                    <label for="transferencia">
-                      <input type="radio" name="radio_modal" id="transferencia">
-                      Transferencia bancaria </label>
-                    <hr style="width: 100%;">
-
-
-                    <label for="número_cuenta" class="form-label modalL">Número de cuenta</label>
-                    <div id="div_modal2" class="col-sm-5 div_modal">
-                      <input style="min-width: 200px;" type="text" class="form-control input_modal2" minlength="9"
-                        maxlength="9" pattern="[0-9]+" name="número_cuenta" id="número_cuenta" required>
-                      <hr style="min-width: 10px; color: transparent;">
-                      <p> _</p>
-                      <hr style="min-width: 10px; color: transparent;">
-                      <input style="min-width: 60px;" type="text" class="form-control input_modal2" minlength="1"
-                        maxlength="1" pattern="[0-1]" name="número_cuenta" id="número_cuenta" required>
-                      <hr style="min-width: 10px; color: transparent;">
-                      <div style="min-width: 190px;" class="invalid-feedback" id="número_cuenta">
-                        Debe ingresar un numero de cuenta válido.
+                <form action="" class="needs-validation" id="MPago">
+                  <label for="tarjeta">
+                    <input
+                      type="radio"
+                      name="radio_modal"
+                      id="tarjeta"
+                      value="tarjeta de crédito"
+                    />
+                    Tarjeta de crédito</label
+                  >
+                  <hr style="width: 100%" />
+                  <div class="row g-3">
+                    <div class="col-sm-5 div_modal">
+                      <label for="numero_tarjeta" class="form-label modalL"
+                        >Número de tarjeta</label
+                      >
+                      <input
+                        pattern="[0-9]+"
+                        type="text"
+                        class="form-control input_modal"
+                        name="radio_modal"
+                        id="numero_tarjeta"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Debe ingresar un numero de tarjeta.
                       </div>
                     </div>
 
-                    <hr style="width: 100%;"> <br>
-                    <button id="confirmarModal" type="button" class="btn btn-primary">Confirmar</button>
-                  </form>
-                </div>
-              </div> <br> <br>
-              <button id="comprar" type="submit" class="btn btn-primary mb-4">
-                Comprar
-              </button>
-        </form>
+                    <div class="col-sm-5">
+                      <label for="codigo_seg" class="form-label codigo"
+                        >Código de seg.</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control input_modal codigo codigo2"
+                        id="codigo_seg"
+                        id="codigo_seg"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Debe ingresar el numero de seguridad de su tarjeta.
+                      </div>
+                    </div>
+
+                    <div class="col-sm-5 div_modal">
+                      <label for="vencimiento" class="form-label modalL"
+                        >Vencimiento</label
+                      >
+                      <input
+                        type="month"
+                        class="form-control input_modal"
+                        name="vencimiento"
+                        id="vencimiento"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Debe ingresar un numero de tarjeta válido.
+                      </div>
+                    </div>
+                  </div>
+                  <br />
+                  <br />
+
+                  <label for="transferencia">
+                    <input type="radio" name="radio_modal" id="transferencia" />
+                    Transferencia bancaria
+                  </label>
+                  <hr style="width: 100%" />
+
+                  <label for="número_cuenta" class="form-label modalL"
+                    >Número de cuenta</label
+                  >
+                  <div id="div_modal2" class="col-sm-5 div_modal">
+                    <input
+                      style="min-width: 200px"
+                      type="text"
+                      class="form-control input_modal2"
+                      minlength="9"
+                      maxlength="9"
+                      pattern="[0-9]+"
+                      name="número_cuenta"
+                      id="número_cuenta"
+                      required
+                    />
+                    <hr style="min-width: 10px; color: transparent" />
+                    <p>_</p>
+                    <hr style="min-width: 10px; color: transparent" />
+                    <input
+                      style="min-width: 60px"
+                      type="text"
+                      class="form-control input_modal2"
+                      minlength="1"
+                      maxlength="1"
+                      pattern="[0-1]"
+                      name="número_cuenta"
+                      id="número_cuenta"
+                      required
+                    />
+                    <hr style="min-width: 10px; color: transparent" />
+                    <div
+                      style="min-width: 190px"
+                      class="invalid-feedback"
+                      id="número_cuenta"
+                    >
+                      Debe ingresar un numero de cuenta válido.
+                    </div>
+                  </div>
+
+                  <hr style="width: 100%" />
+                  <br />
+                  <button
+                    id="confirmarModal"
+                    type="button"
+                    class="btn btn-primary"
+                  >
+                    Confirmar
+                  </button>
+                </form>
+              </div>
+            </div>
+            <br />
+            <br />
+            <button id="comprar" type="submit" class="btn btn-primary mb-4">
+              Comprar
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="alert" id="mensaje_compra" style="display: none"></div>
+    </main>
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-end">
+          <a href="#">Volver arriba</a>
+        </p>
+        <p>
+          Este sitio forma parte de
+          <a href="https://jovenesaprogramar.edu.uy/" target="_blank"
+            >Jovenes a Programar</a
+          >
+        </p>
+      </div>
+    </footer>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     </div>
-    <div class="alert" id="mensaje_compra" style="display: none"></div>
-  </main>
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-end">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>
-        Este sitio forma parte de
-        <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
-      </p>
-    </div>
-  </footer>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/init.js"></script>
-  <script type="module" src="js/cart.js"></script>
-</body>
-
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script type="module" src="js/cart.js"></script>
+  </body>
 </html>
