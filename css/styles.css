@@ -1114,3 +1114,8 @@ Expand Down .container_cart {
   left: -2px
 }
 
+.order_total_content {
+  border: solid;
+  color: black;
+  border-width: 1px;
+}
