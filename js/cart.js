@@ -2,6 +2,31 @@ const USER_ID = "25801";
 const CART_URL = CART_INFO_URL + USER_ID + ".json";
 const PRODUCT_LIST = document.getElementsByClassName("cart_list")[0];
 const buy = document.getElementById('comprar')
+
+function eliminar_producto(id) {
+    let indice = 0;
+
+    while (parseInt(Array.from(JSON.parse(localStorage.getItem("Productos")))[indice].id) !== parseInt(id)){
+        indice++;
+    }
+
+    let productos = JSON.parse(localStorage.getItem("Productos"));
+
+    productos.splice(indice, 1);
+    
+    localStorage.setItem("Productos", JSON.stringify(productos));
+
+    PRODUCT_LIST.removeChild(document.getElementsByClassName("cart_item")[indice]);
+
+};  
+
+Array.from(document.getElementsByClassName("remove-button")).forEach(element => {
+    element.addEventListener("click", function(e){
+        console.log(1);
+    });
+});
+
+
 function listarProductos(arrayDeProductos) {
     PRODUCT_LIST.innerHTML = "";
     let appendchild = "";
@@ -13,7 +38,7 @@ function listarProductos(arrayDeProductos) {
         const unitCost = product.unitCost;
         const id = product.id;
         appendchild += `
-                <li class="cart_item clearfix">
+                <li class="cart_item clearfix" data-id="${id}">
                     <div class="cart_item_image"><img src="${image}" alt=""></div>
                     <div class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
                         <div class="cart_item_name cart_info_col">
@@ -31,6 +56,12 @@ function listarProductos(arrayDeProductos) {
                         <div class="cart_item_total cart_info_col">
                             <div class="cart_item_title">Subtotal</div>
                             <div class="cart_item_text total-itemsito" data-id="${id}" style="display:flex;"> <p>${currency}</p> <p class="costo-total-producto">${count * unitCost}</p> </div>
+                        </div>
+                        <div class="cart_item_remove cart_info_col">
+                         <div class="cart_item_title">Eliminar</div>
+                            <div class="cart_item_text" style="display:flex;">
+                                <button class="remove-button" data-id="${id}"><i class="gg-trash"></i></button>
+                            </div>
                         </div>
                     </div>
                 </li>
@@ -114,6 +145,11 @@ fetch(CART_URL)
                 CostoFinal();
             });
         });
+        Array.from(document.getElementsByClassName("remove-button")).forEach(element => {
+            element.addEventListener("click", function(e){
+                eliminar_producto(element.dataset.id);
+            });
+        });
         CostoFinal();
     })
     .catch(error => console.log(error.message));
@@ -150,25 +186,14 @@ btnMostrarModal.addEventListener("click", function () {
 btnCerrarModal.addEventListener("click", function () {
     const campoTarjeta = document.getElementById("numero_tarjeta");
     const campoTransferencia = document.getElementById("número_cuenta");
-    const radioTarjeta = document.getElementById("tarjeta");
-    const radioTransferencia = document.getElementById("transferencia")
+
     if (campoTarjeta.checkValidity() || campoTransferencia.checkValidity()) {
         txtPago.classList.remove("is-invalid");
         modal.style.display = "none";
         txtPago.classList.add("is-valid")
-    } else {
-        txtPago.classList.remove("is-valid");
-        txtPago.classList.add("is-invalid");
-    }
-
-    if (radioTarjeta.checked) {
-        txtPago.innerHTML = "Tarjeta de Credito"
-    } else if (radioTransferencia.checked) {
-        txtPago.innerHTML = "Transferencia bancaria"
     }
 });
 window.addEventListener("click", function (event) {
-
     const formaDeEnvio = document.querySelector('input[name="opcion"]:checked');
 
     if (event.target === modal) {
@@ -206,17 +231,16 @@ const formaDeEnvio = document.querySelector('input[name="opcion"]:checked');
             if (!formaDeEnvio) {
                 formaDeEnvio.setCustomValidity("Debes seleccionar una forma de envío.");
             } else if (!form.checkValidity()) {
+                txtPago.classList.add("is-invalid");
                 event.preventDefault()
                 event.stopPropagation()
             } else {
                 const mensaje = document.getElementById("mensaje_compra")
                 const formulario = document.getElementById("form_compra")
                 formulario.reset();
-                txtPago.innerHTML = "No se ha seleccionado."
                 mensaje.innerHTML = '¡Gracias por su compra!';
                 mensaje.style.display = 'block';
                 mensaje.classList.add('alert');
-
                 const formaDeEnvio = document.querySelector('input[name="opcion"]:checked');
 
                 setTimeout(function () {
@@ -227,3 +251,10 @@ const formaDeEnvio = document.querySelector('input[name="opcion"]:checked');
         }, false)
     })
 })()
+
+
+document.getElementById("confirmarModal").addEventListener("click", function () {
+    const forma_pago = document.getElementById('formaDePago')
+    forma_pago.style.display = "none";
+});
+
