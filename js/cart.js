@@ -70,21 +70,28 @@ function listarProductos(arrayDeProductos) {
     PRODUCT_LIST.innerHTML = appendchild;
 };
 function CostoFinal() {
-    let PrecioFinal = 0;
+    let costoSinEnvio = 0;
+    let subtotalEnvio = 0;
     const arrayProductos = JSON.parse(localStorage.getItem("Productos"));
     arrayProductos.forEach(producto => {
-        PrecioFinal += producto.count * producto.unitCost;
+        costoSinEnvio += producto.count * producto.unitCost;
     })
     if (document.getElementById("opcion1").checked) {
-        PrecioFinal = parseInt(PrecioFinal) * 0.15 + parseInt(PrecioFinal);
+       /* costoSinEnvio =  parseInt(costoSinEnvio); */
+        subtotalEnvio = parseInt(costoSinEnvio) * 0.15;
     };
     if (document.getElementById("opcion2").checked) {
-        PrecioFinal = parseInt(PrecioFinal) * 0.07 + parseInt(PrecioFinal);
+        // costoSinEnvio =  parseInt(costoSinEnvio);
+        subtotalEnvio = parseInt(costoSinEnvio) * 0.07;
     };
     if (document.getElementById("opcion3").checked) {
-        PrecioFinal = parseInt(PrecioFinal) * 0.05 + parseInt(PrecioFinal);
+       // costoSinEnvio = parseInt(costoSinEnvio);
+        subtotalEnvio = parseInt(costoSinEnvio) * 0.05;
     };
-    document.getElementsByClassName("costo-final")[0].innerHTML = PrecioFinal;
+    document.getElementById("consto-sin-envio").innerHTML = costoSinEnvio;
+    document.getElementById("subtotalEnvio").innerHTML = subtotalEnvio;
+    document.getElementById("costo-final").innerHTML = costoSinEnvio + subtotalEnvio;
+
 };
 function actualizar_subtotal(id) {
     Array.from(document.getElementsByClassName("total-itemsito")).forEach(element => {
