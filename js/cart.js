@@ -172,19 +172,18 @@ document.getElementById("opcion2").addEventListener("click", function (e) {
 document.getElementById("opcion3").addEventListener("click", function (e) {
     CostoFinal();
 });
-// buy.addEventListener("click", (event) => {
-//     event.preventDefault();
-//     // const mensaje = document.getElementById("mensaje_compra")
-//     const formulario = document.getElementById("form_compra")
-//     formulario.reset();
-//     // mensaje.innerHTML = '¡Gracias por su compra!';
-//     // mensaje.style.display = 'block';
-//     // mensaje.classList.add('alert');
-//     // setTimeout(function () {
-//     //     mensaje.style.display = 'none';
-//     // }, 3000);
-// });
-// Código para la ventana emergente para seleccionar el tipo de pago pago
+buy.addEventListener("click", (event) => {
+    event.preventDefault();
+    const mensaje = document.getElementById("mensaje_compra")
+    const formulario = document.getElementById("form_compra")
+    formulario.reset();
+    mensaje.innerHTML = '¡Gracias por su compra!';
+    mensaje.style.display = 'block';
+    mensaje.classList.add('alert');
+    setTimeout(function () {
+        mensaje.style.display = 'none';
+    }, 3000);
+});
 const btnMostrarModal = document.getElementById("mostrarModal");
 const modal = document.getElementById("miModal");
 const btnCerrarModal = document.getElementById("confirmarModal");
