@@ -6,22 +6,22 @@ const buy = document.getElementById('comprar')
 function eliminar_producto(id) {
     let indice = 0;
 
-    while (parseInt(Array.from(JSON.parse(localStorage.getItem("Productos")))[indice].id) !== parseInt(id)){
+    while (parseInt(Array.from(JSON.parse(localStorage.getItem("Productos")))[indice].id) !== parseInt(id)) {
         indice++;
     }
 
     let productos = JSON.parse(localStorage.getItem("Productos"));
 
     productos.splice(indice, 1);
-    
+
     localStorage.setItem("Productos", JSON.stringify(productos));
 
     PRODUCT_LIST.removeChild(document.getElementsByClassName("cart_item")[indice]);
 
-};  
+};
 
 Array.from(document.getElementsByClassName("remove-button")).forEach(element => {
-    element.addEventListener("click", function(e){
+    element.addEventListener("click", function (e) {
         console.log(1);
     });
 });
@@ -47,7 +47,7 @@ function listarProductos(arrayDeProductos) {
                         </div>
                         <div class="cart_item_quantity cart_info_col">
                             <div class="cart_item_title">Cantidad</div>
-                            <input class="cantidad" data-id="${id}" type="number" min="0" value="${count}" required min="1">
+                            <input class="cantidad" data-id="${id}" type="number" value="${count}" required min="1">
                         </div>
                         <div class="cart_item_price cart_info_col">
                             <div class="cart_item_title">Costo por unidad</div>
@@ -146,7 +146,7 @@ fetch(CART_URL)
             });
         });
         Array.from(document.getElementsByClassName("remove-button")).forEach(element => {
-            element.addEventListener("click", function(e){
+            element.addEventListener("click", function (e) {
                 eliminar_producto(element.dataset.id);
             });
         });
@@ -180,17 +180,27 @@ const btnMostrarModal = document.getElementById("mostrarModal");
 const modal = document.getElementById("miModal");
 const btnCerrarModal = document.getElementById("confirmarModal");
 const txtPago = document.getElementById("formaDePago");
+const divModal = document.getElementById("divParaModal")
 btnMostrarModal.addEventListener("click", function () {
     modal.style.display = "block";
 });
 btnCerrarModal.addEventListener("click", function () {
     const campoTarjeta = document.getElementById("numero_tarjeta");
     const campoTransferencia = document.getElementById("número_cuenta");
+    const radioTarjeta = document.getElementById("tarjeta");
+    const radioTransferencia = document.getElementById("transferencia")
 
     if (campoTarjeta.checkValidity() || campoTransferencia.checkValidity()) {
-        txtPago.classList.remove("is-invalid");
+        divModal.classList.remove("is-invalid");
         modal.style.display = "none";
-        txtPago.classList.add("is-valid")
+        divModal.classList.add("is-valid")
+
+    }
+
+    if (radioTarjeta.checked) {
+        txtPago.innerHTML = "Tarjeta de Credito"
+    } else if (radioTransferencia.checked) {
+        txtPago.innerHTML = "Transferencia bancaria"
     }
 });
 window.addEventListener("click", function (event) {
@@ -231,7 +241,7 @@ const formaDeEnvio = document.querySelector('input[name="opcion"]:checked');
             if (!formaDeEnvio) {
                 formaDeEnvio.setCustomValidity("Debes seleccionar una forma de envío.");
             } else if (!form.checkValidity()) {
-                txtPago.classList.add("is-invalid");
+                divModal.classList.add("is-invalid");
                 event.preventDefault()
                 event.stopPropagation()
             } else {
@@ -252,9 +262,4 @@ const formaDeEnvio = document.querySelector('input[name="opcion"]:checked');
     })
 })()
 
-
-document.getElementById("confirmarModal").addEventListener("click", function () {
-    const forma_pago = document.getElementById('formaDePago')
-    forma_pago.style.display = "none";
-});
 
