@@ -7,53 +7,54 @@ const CART_INFO_URL = "https://japceibal.github.io/emercado-api/user_cart/";
 const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
 const EXT_TYPE = ".json";
 
-let showSpinner = function(){
+let showSpinner = function () {
   document.getElementById("spinner-wrapper").style.display = "block";
 }
 
-let hideSpinner = function(){
+let hideSpinner = function () {
   document.getElementById("spinner-wrapper").style.display = "none";
 }
 
-let getJSONData = function(url){
-    let result = {};
-    showSpinner();
-    return fetch(url)
+let getJSONData = function (url) {
+  let result = {};
+  showSpinner();
+  return fetch(url)
     .then(response => {
       if (response.ok) {
         return response.json();
-      }else{
+      } else {
         throw Error(response.statusText);
       }
     })
-    .then(function(response) {
-          result.status = 'ok';
-          result.data = response;
-          hideSpinner();
-          return result;
+    .then(function (response) {
+      result.status = 'ok';
+      result.data = response;
+      hideSpinner();
+      return result;
     })
-    .catch(function(error) {
-        result.status = 'error';
-        result.data = error;
-        hideSpinner();
-        return result;
+    .catch(function (error) {
+      result.status = 'error';
+      result.data = error;
+      hideSpinner();
+      return result;
     });
 }
 
 const usuarioLogueado = localStorage.getItem('usuarioLogueado') === 'true';
 if (!usuarioLogueado) {
-    window.location.href = 'login.html';
+  window.location.href = 'login.html';
 } else {
-    //alert("logueado");
-    let barraNavegacion = document.getElementsByClassName("navbar navbar-expand-lg navbar-dark bg-dark p-1");
-    let usuarioLogin = document.createElement("a");
-    usuarioLogin.classList += "userlogged";
-    // usuarioLogin.href = "my-profile.html"
-    let dropdownbutton =    `<div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+  //alert("logueado");
+  let barraNavegacion = document.getElementsByClassName("navbar navbar-expand-lg navbar-dark bg-dark p-1");
+  let usuarioLogin = document.createElement("a");
+  usuarioLogin.classList += "userlogged";
+  // usuarioLogin.href = "my-profile.html"
+  let dropdownbutton = `<div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
     <ul class="navbar-nav">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          ${JSON.parse(localStorage.getItem("registroUsuario")).email}
+          ${JSON.parse(localStorage.getItem("registroUsuario")).nombre}
+          ${JSON.parse(localStorage.getItem("registroUsuario")).apellido}
         </a>
         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
           <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
@@ -75,10 +76,10 @@ if (!usuarioLogueado) {
     </ul>
   </div>`
   usuarioLogin.innerHTML = dropdownbutton
-    barraNavegacion[0].appendChild(usuarioLogin);
+  barraNavegacion[0].appendChild(usuarioLogin);
 }
-function setProductID(id){
-  localStorage.setItem("ProductID",id);
+function setProductID(id) {
+  localStorage.setItem("ProductID", id);
   window.location.href = "product-info.html";
 }
 const colorSwitch = document.querySelector('.switch input[type="checkbox"]');
@@ -86,22 +87,22 @@ const textMode = document.querySelector(".textmode");
 
 // Función para cambiar el tema
 function cambiaTema(ev) {
-    if (ev.target.checked) {
-        document.body.classList.add('dark-mode');
-        // Guardar la preferencia en el localStorage
-        localStorage.setItem('modoNoche', 'true');
-    } else {
-        document.body.classList.remove('dark-mode');
-        // Guardar la preferencia en el localStorage
-        localStorage.setItem('modoNoche', 'false');
-    }
+  if (ev.target.checked) {
+    document.body.classList.add('dark-mode');
+    // Guardar la preferencia en el localStorage
+    localStorage.setItem('modoNoche', 'true');
+  } else {
+    document.body.classList.remove('dark-mode');
+    // Guardar la preferencia en el localStorage
+    localStorage.setItem('modoNoche', 'false');
+  }
 }
 
 // Recuperar la preferencia del localStorage al cargar la página
 const modoNocheGuardado = localStorage.getItem('modoNoche');
 if (modoNocheGuardado === 'true') {
-    colorSwitch.checked = true;
-    cambiaTema({ target: colorSwitch }); // Llamar a la función para aplicar el tema
+  colorSwitch.checked = true;
+  cambiaTema({ target: colorSwitch }); // Llamar a la función para aplicar el tema
 }
 
 colorSwitch.addEventListener('change', cambiaTema);
