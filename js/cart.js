@@ -46,6 +46,29 @@ function listarProductos(arrayDeProductos) {
     </div>
                          </div>
                      
+                            <div class="cart_item_title">Name</div>
+                            <div class="cart_item_text">${name}</div>
+                        </div>
+                        <div class="cart_item_quantity cart_info_col">
+                            <div class="cart_item_title">Cantidad</div>
+                            <input class="cantidad" data-id="${id}" type="number" min="0" value="${count}">
+                        </div>
+                        <div class="cart_item_price cart_info_col">
+                            <div class="cart_item_title">Subtotal</div>
+                            <div class="cart_item_text">${currency}${unitCost}</div>
+                        </div>
+                        <div class="cart_item_total cart_info_col">
+                            <div class="cart_item_title">Total</div>
+                            <div id="total" class="cart_item_text" style="display:flex;"> <p>${currency}</p> <p class="costo-total-producto">${count * unitCost}</p> </div>
+                        </div>
+                        <div class="cart_item_remove cart_info_col">
+                         <div class="cart_item_title">Eliminar</div>
+                            <div class="cart_item_text" style="display:flex;">
+                            <button class="remove-button" data-id="${id}"><i class="gg-trash"></i></button>
+        </div>
+    </div>
+
+                    </div>
                 </li>
                 `;
     });
@@ -94,6 +117,7 @@ function actualizar_subtotal(id) {
         }
     );
 }
+
 
 fetch(CART_URL)
     .then((response) => response.json())
@@ -268,3 +292,31 @@ const formaDeEnvio = document.querySelector('input[name="opcion"]:checked');
         );
     });
 })();
+buy.addEventListener("click", (event) => {
+    event.preventDefault();
+    const mensaje = document.getElementById("mensaje_compra")
+    const formulario = document.getElementById("form_compra")
+    formulario.reset();
+    mensaje.innerHTML = '¡Gracias por su compra!';
+    mensaje.style.display = 'block';
+    mensaje.classList.add('alert');
+    setTimeout(function () {
+        mensaje.style.display = 'none';
+    }, 3000);
+});
+
+
+function removeProduct() {
+    let array = JSON.parse(localStorage.getItem("Productos"));
+    let indice = 0;
+    array.splice(indice, 1);
+    localStorage.setItem("Productos", JSON.stringify(array));
+    location.reload();
+}
+PRODUCT_LIST.addEventListener("click", function (event) {
+    if (event.target.classList.contains("remove-button")) {
+        removeProduct()
+
+    }
+
+});
