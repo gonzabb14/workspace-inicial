@@ -40,6 +40,7 @@ function listarProductos(arrayDeProductos) {
                             <button class="remove-button" data-id="${id}"><i class="gg-trash"></i></button>
         </div>
     </div>
+
                     </div>
                 </li>
                 `;
@@ -158,4 +159,5 @@ PRODUCT_LIST.addEventListener("click", function (event) {
         removeProduct()
 
     }
+
 });
