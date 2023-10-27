@@ -136,46 +136,50 @@
               </div>
               <hr style="width: 100%;"> <br>
               <h2>Forma de pago</h2> <br>
-              <div id="divParaModal"><p id="formaDePago">No se ha seleccionado.</p> <p><a style="text-decoration: none;" class="btn btn-link " data-bs-toggle="miModal" href="#modalTerminos"
-                  id="mostrarModal"> Seleccionar</a></p></div>
-                  <div class="invalid-feedback">
-                    Debe elegir una forma de pago.
-                  </div>
+              <div id="divParaModal">
+                <p id="formaDePago" class="is-invalid">No se ha seleccionado.</p>
+                <p><a style="text-decoration: none;" class="btn btn-link " data-bs-toggle="miModal"
+                    href="#modalTerminos" id="mostrarModal"> Seleccionar</a></p>
+              </div>
+              <div class="invalid-feedback">
+                Debe elegir una forma de pago.
+              </div>
 
               <div id="miModal" class="modal">
                 <div class="modal-content">
                   <h2>Forma de pago</h2>
 
                   <form action="" class="needs-validation" id="MPago">
-                    <label for="tarjeta">
-                      <input type="radio" name="radio_modal" id="tarjeta" value="tarjeta de crédito"> Tarjeta de
-                      crédito</label>
-                    <hr style="width: 100%;">
-                    <div class="row g-3">
-                      <div class="col-sm-5 div_modal">
-                        <label for="numero_tarjeta" class="form-label modalL">Número de tarjeta</label>
-                        <input pattern="[0-9]+" type="text" class="form-control input_modal" name="radio_modal" id="numero_tarjeta"
-                          required>
-                        <div class="invalid-feedback">
-                          Debe ingresar un numero de tarjeta.
+                      <label for="tarjeta">
+                        <input type="radio" name="radio_modal" id="tarjeta" value="tarjeta de crédito"> Tarjeta de
+                        crédito</label>
+                      <hr style="width: 100%;">
+                      <div class="row g-3">
+                        <div class="col-sm-5 div_modal">
+                          <label for="numero_tarjeta" class="form-label modalL">Número de tarjeta</label>
+                          <input pattern="[0-9]+" type="text" class="form-control input_modal" name="radio_modal"
+                            id="numero_tarjeta" required>
+                          <div class="invalid-feedback">
+                            Debe ingresar un numero de tarjeta.
+                          </div>
                         </div>
-                      </div>
 
-                      <div class="col-sm-5">
-                        <label for="codigo_seg" class="form-label codigo">Código de seg.</label>
-                        <input type="text" class="form-control input_modal codigo codigo2" id="codigo_seg"
-                          id="codigo_seg" required>
-                        <div class="invalid-feedback">
-                          Debe ingresar el numero de seguridad de su tarjeta.
+                        <div class="col-sm-5">
+                          <label for="codigo_seg" class="form-label codigo">Código de seg.</label>
+                          <input type="text" class="form-control input_modal codigo codigo2" id="codigo_seg"
+                            id="codigo_seg" required>
+                          <div class="invalid-feedback">
+                            Debe ingresar el numero de seguridad de su tarjeta.
+                          </div>
                         </div>
-                      </div>
 
-                      <div class="col-sm-5 div_modal">
-                        <label for="vencimiento" class="form-label modalL">Vencimiento</label>
-                        <input type="text" class="form-control input_modal" name="vencimiento" id="vencimiento"
-                          required>
-                        <div class="invalid-feedback">
-                          Debe ingresar un numero de tarjeta.
+                        <div class="col-sm-5 div_modal">
+                          <label for="vencimiento" class="form-label modalL">Vencimiento</label>
+                          <input type="text" class="form-control input_modal" name="vencimiento" id="vencimiento"
+                            required>
+                          <div class="invalid-feedback">
+                            Debe ingresar un numero de tarjeta.
+                          </div>
                         </div>
                       </div>
                       <br> <br>
@@ -186,13 +190,13 @@
 
                       <div class="col-sm-5 div_modal">
                         <label for="número_cuenta" class="form-label modalL">Número de cuenta</label>
-                        <input type="text" class="form-control input_modal2" pattern="[0-9]+" name="número_cuenta" id="número_cuenta"
-                          required>
+                        <input type="text" class="form-control input_modal2" pattern="[0-9]+" name="número_cuenta"
+                          id="número_cuenta" required>
                         <div class="invalid-feedback">
                           Debe ingresar un numero de cuenta.
                         </div>
                       </div>
-                    </div>
+                    
                     <hr style="width: 100%;"> <br>
                     <button id="confirmarModal" type="button" class="btn btn-primary">Confirmar</button>
                   </form>
