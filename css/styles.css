@@ -673,7 +673,6 @@ ul {
 .cart_list {
   border: solid 1px #e8e8e8;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
-  background-color: #fff
 }
 
 .cart_item {
@@ -1117,4 +1116,10 @@ Expand Down .container_cart {
 
 .g-3 {
   padding: 10px;
+}
+
+.cart_item {
+  border: solid;
+  border-width: 0.1px;
+  color: white;
 }
