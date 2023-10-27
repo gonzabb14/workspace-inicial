@@ -198,27 +198,29 @@
                           <input type="text" class="form-control input_modal" name="vencimiento" id="vencimiento"
                             required>
                           <div class="invalid-feedback">
-                            Debe ingresar un numero de tarjeta.
+                            Debe ingresar un numero de tarjeta válido.
                           </div>
                         </div>
                       </div>
                       <br> <br>
 
-                      <h2>Forma de pago</h2>
   
                       <label for="transferencia">
                         <input type="radio" name="radio_modal" id="transferencia">
                         Transferencia bancaria </label>
                       <hr style="width: 100%;">
 
-                      <div class="col-sm-5 div_modal">
+                      
                         <label for="número_cuenta" class="form-label modalL">Número de cuenta</label>
-                        <input type="text" class="form-control input_modal2" pattern="[0-9]+" name="número_cuenta"
-                          id="número_cuenta" required>
-                        <div class="invalid-feedback">
-                          Debe ingresar un numero de cuenta.
-                        </div>
+                        <div id="div_modal2" class="col-sm-5 div_modal">
+                        <input style="min-width: 200px;" type="text" class="form-control input_modal2" minlength="9" maxlength="9" pattern="[0-9]+" name="número_cuenta"
+                          id="número_cuenta" required> <hr style="min-width: 10px; color: transparent;">
+                          <p> _</p> <hr style="min-width: 10px; color: transparent;">
+                          <input style="min-width: 60px;" type="text" class="form-control input_modal2" minlength="1" maxlength="1" pattern="[0-1]" name="número_cuenta" id="número_cuenta" required> <hr style="min-width: 10px; color: transparent;">
+                          <div style="min-width: 190px;" class="invalid-feedback" id="número_cuenta">
+                          Debe ingresar un numero de cuenta válido.
                       </div>
+                          </div>
 
                     <hr style="width: 100%;"> <br>
                     <button id="confirmarModal" type="button" class="btn btn-primary">Confirmar</button>
