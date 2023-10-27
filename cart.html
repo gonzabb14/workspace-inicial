@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -9,6 +10,7 @@
   <link href="css/font-awesome.min.css" rel="stylesheet" />
   <link href="css/styles.css" rel="stylesheet" />
 </head>
+
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
     <div class="container">
@@ -108,8 +110,7 @@
                 <label class="form-label" for="form6Example7">Información adicional</label>
                 <textarea class="form-control" id="form6Example7" rows="3"></textarea>
               </div>
-              <div class="order_total" 
-              style="margin-bottom: 20px;
+              <div class="order_total" style="margin-bottom: 20px;
               height: auto;
               ">
                 <div class="order_total_content text-md-right">
@@ -119,38 +120,39 @@
                     width:250px;
                     justify-content: space-around;
                   ">
-                  <div 
-                  style=" 
+                    <div style=" 
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;">
+                      <p class="p_modoOscuro">Subtotal:</p>
+                      <div style="display: flex; justify-content: space-between;  min-width: 100px;">
+                        <p class="tipo-de-moneda p_modoOscuro"></p>
+                        <p class=" p_modoOscuro"></p>
+                        <p id="consto-sin-envio"></p>
+                      </div>
+                    </div>
+                    <div style=" 
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;">
+                      <p class="p_modoOscuro">Envio:</p>
+                      <div style="display: flex; justify-content: space-between;  min-width: 100px;">
+                        <p class="tipo-de-moneda p_modoOscuro"></p>
+                        <p class="costo-final p_modoOscuro"></p>
+                        <p id="subtotalEnvio"></p>
+                      </div>
+                    </div>
+                    <div style=" 
                   display: flex;
                   flex-direction: row;
-                  ">
-                    <p class="p_modoOscuro">Subtotal:</p>
-                    <p class="tipo-de-moneda p_modoOscuro"></p>
-                    <p class=" p_modoOscuro"></p>
-                    <p class="tipo-de-moneda"></p>
-                    <p id="consto-sin-envio"></p>
-                    <div class="linea"></div>
-                  </div>
-                  <div
-                  style=" 
-                  display: flex;
-                  flex-direction: row;">
-                    <p class="p_modoOscuro">Envio:</p>
-                    <p class="tipo-de-moneda p_modoOscuro"></p>
-                    <p class=" p_modoOscuro"></p>
-                    <p class="tipo-de-moneda"></p>
-                    <p id="subtotalEnvio"></p>
-                  </div>
-                  <div
-                  style=" 
-                  display: flex;
-                  flex-direction: row;">
-                    <p class="p_modoOscuro">Costo Final: </p>
-                    <p class="tipo-de-moneda p_modoOscuro"></p>
-                    <p class=" p_modoOscuro"></p>
-                    <p class="tipo-de-moneda"></p>
-                    <p id="costo-final"></p>
-                  </div>
+                  justify-content: space-between;">
+                      <p class="p_modoOscuro">Costo Final: </p>
+                      <div style="display: flex; justify-content: space-between; min-width: 100px;">
+                        <p class="tipo-de-moneda p_modoOscuro"></p>
+                        <p class="costo-final p_modoOscuro"></p>
+                        <p style="margin-left: 5px;" id="costo-final"></p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -170,57 +172,61 @@
                   <h2>Forma de pago</h2>
 
                   <form action="" class="needs-validation" id="MPago">
-                      <label for="tarjeta">
-                        <input type="radio" name="radio_modal" id="tarjeta" value="tarjeta de crédito"> Tarjeta de
-                        crédito</label>
-                      <hr style="width: 100%;">
-                      <div class="row g-3">
-                        <div class="col-sm-5 div_modal">
-                          <label for="numero_tarjeta" class="form-label modalL">Número de tarjeta</label>
-                          <input pattern="[0-9]+" type="text" class="form-control input_modal" name="radio_modal"
-                            id="numero_tarjeta" required>
-                          <div class="invalid-feedback">
-                            Debe ingresar un numero de tarjeta.
-                          </div>
-                        </div>
-
-                        <div class="col-sm-5">
-                          <label for="codigo_seg" class="form-label codigo">Código de seg.</label>
-                          <input type="text" class="form-control input_modal codigo codigo2" id="codigo_seg"
-                            id="codigo_seg" required>
-                          <div class="invalid-feedback">
-                            Debe ingresar el numero de seguridad de su tarjeta.
-                          </div>
-                        </div>
-
-                        <div class="col-sm-5 div_modal">
-                          <label for="vencimiento" class="form-label modalL">Vencimiento</label>
-                          <input type="month" class="form-control input_modal" name="vencimiento" id="vencimiento"
-                            required>
-                          <div class="invalid-feedback">
-                            Debe ingresar un numero de tarjeta válido.
-                          </div>
+                    <label for="tarjeta">
+                      <input type="radio" name="radio_modal" id="tarjeta" value="tarjeta de crédito"> Tarjeta de
+                      crédito</label>
+                    <hr style="width: 100%;">
+                    <div class="row g-3">
+                      <div class="col-sm-5 div_modal">
+                        <label for="numero_tarjeta" class="form-label modalL">Número de tarjeta</label>
+                        <input pattern="[0-9]+" type="text" class="form-control input_modal" name="radio_modal"
+                          id="numero_tarjeta" required>
+                        <div class="invalid-feedback">
+                          Debe ingresar un numero de tarjeta.
                         </div>
                       </div>
-                      <br> <br>
 
-  
-                      <label for="transferencia">
-                        <input type="radio" name="radio_modal" id="transferencia">
-                        Transferencia bancaria </label>
-                      <hr style="width: 100%;">
-
-                      
-                        <label for="número_cuenta" class="form-label modalL">Número de cuenta</label>
-                        <div id="div_modal2" class="col-sm-5 div_modal">
-                        <input style="min-width: 200px;" type="text" class="form-control input_modal2" minlength="9" maxlength="9" pattern="[0-9]+" name="número_cuenta"
-                          id="número_cuenta" required> <hr style="min-width: 10px; color: transparent;">
-                          <p> _</p> <hr style="min-width: 10px; color: transparent;">
-                          <input style="min-width: 60px;" type="text" class="form-control input_modal2" minlength="1" maxlength="1" pattern="[0-1]" name="número_cuenta" id="número_cuenta" required> <hr style="min-width: 10px; color: transparent;">
-                          <div style="min-width: 190px;" class="invalid-feedback" id="número_cuenta">
-                          Debe ingresar un numero de cuenta válido.
+                      <div class="col-sm-5">
+                        <label for="codigo_seg" class="form-label codigo">Código de seg.</label>
+                        <input type="text" class="form-control input_modal codigo codigo2" id="codigo_seg"
+                          id="codigo_seg" required>
+                        <div class="invalid-feedback">
+                          Debe ingresar el numero de seguridad de su tarjeta.
+                        </div>
                       </div>
-                          </div>
+
+                      <div class="col-sm-5 div_modal">
+                        <label for="vencimiento" class="form-label modalL">Vencimiento</label>
+                        <input type="month" class="form-control input_modal" name="vencimiento" id="vencimiento"
+                          required>
+                        <div class="invalid-feedback">
+                          Debe ingresar un numero de tarjeta válido.
+                        </div>
+                      </div>
+                    </div>
+                    <br> <br>
+
+
+                    <label for="transferencia">
+                      <input type="radio" name="radio_modal" id="transferencia">
+                      Transferencia bancaria </label>
+                    <hr style="width: 100%;">
+
+
+                    <label for="número_cuenta" class="form-label modalL">Número de cuenta</label>
+                    <div id="div_modal2" class="col-sm-5 div_modal">
+                      <input style="min-width: 200px;" type="text" class="form-control input_modal2" minlength="9"
+                        maxlength="9" pattern="[0-9]+" name="número_cuenta" id="número_cuenta" required>
+                      <hr style="min-width: 10px; color: transparent;">
+                      <p> _</p>
+                      <hr style="min-width: 10px; color: transparent;">
+                      <input style="min-width: 60px;" type="text" class="form-control input_modal2" minlength="1"
+                        maxlength="1" pattern="[0-1]" name="número_cuenta" id="número_cuenta" required>
+                      <hr style="min-width: 10px; color: transparent;">
+                      <div style="min-width: 190px;" class="invalid-feedback" id="número_cuenta">
+                        Debe ingresar un numero de cuenta válido.
+                      </div>
+                    </div>
 
                     <hr style="width: 100%;"> <br>
                     <button id="confirmarModal" type="button" class="btn btn-primary">Confirmar</button>
@@ -258,4 +264,5 @@
   <script src="js/init.js"></script>
   <script type="module" src="js/cart.js"></script>
 </body>
+
 </html>

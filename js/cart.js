@@ -77,7 +77,7 @@ function CostoFinal() {
         costoSinEnvio += producto.count * producto.unitCost;
     })
     if (document.getElementById("opcion1").checked) {
-       /* costoSinEnvio =  parseInt(costoSinEnvio); */
+        /* costoSinEnvio =  parseInt(costoSinEnvio); */
         subtotalEnvio = parseInt(costoSinEnvio) * 0.15;
     };
     if (document.getElementById("opcion2").checked) {
@@ -85,7 +85,7 @@ function CostoFinal() {
         subtotalEnvio = parseInt(costoSinEnvio) * 0.07;
     };
     if (document.getElementById("opcion3").checked) {
-       // costoSinEnvio = parseInt(costoSinEnvio);
+        // costoSinEnvio = parseInt(costoSinEnvio);
         subtotalEnvio = parseInt(costoSinEnvio) * 0.05;
     };
     document.getElementById("consto-sin-envio").innerHTML = costoSinEnvio;
@@ -160,7 +160,9 @@ fetch(CART_URL)
         CostoFinal();
     })
     .catch(error => console.log(error.message));
-document.getElementsByClassName("tipo-de-moneda")[0].innerHTML = "U$D";
+
+Array.from(document.getElementsByClassName("tipo-de-moneda")).forEach(elemento => { elemento.innerHTML = "U$D"; });
+
 document.getElementById("opcion1").addEventListener("click", function (e) {
     CostoFinal();
 });
