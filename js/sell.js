@@ -29,19 +29,6 @@ function updateTotalCosts(){
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
 
-    const usuarioLogueado = localStorage.getItem('usuarioLogueado') === 'true';
-    if (!usuarioLogueado) {
-        window.location.href = 'login.html';
-    } else {
-        //alert("logueado");
-        let barraNavegacion = document.getElementsByClassName("navbar navbar-expand-lg navbar-dark bg-dark p-1");
-        let usuarioLogin = document.createElement("a");
-        usuarioLogin.classList = "userlogged";
-        usuarioLogin.href = "my-profile.html"
-        usuarioLogin.innerHTML = JSON.parse(localStorage.getItem("registroUsuario")).email;
-        barraNavegacion[0].appendChild(usuarioLogin);
-    }
-
     document.getElementById("productCountInput").addEventListener("change", function(){
         productCount = this.value;
         updateTotalCosts();
