@@ -278,10 +278,6 @@ a.custom-card:hover {
   text-decoration: inherit;
 }
 
-img,
-svg {
-  padding-left: 5px;
-}
 
 .checked {
   color: gold;
@@ -390,9 +386,6 @@ html {
   color: aliceblue;
 }
 
-img {
-  padding-left: 5px;
-}
 
 #calificacion-dada {
   color: grey;
@@ -549,6 +542,10 @@ input:checked+.slider:before {
 
 .dark-mode .product {
   background-color: #343a40;
+}
+
+.product {
+  background-color: #eeeeee;
 }
 
 .dark-mode .list-group-item {

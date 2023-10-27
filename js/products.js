@@ -23,7 +23,6 @@ async function fetchProducts() {
         data.products.forEach(product => {
             htmlContentToAppend += `
             <div onclick="setProductID(${product.id})" class="product" id="${product.id}">
-                <p class="vendidos">${product.soldCount}</p>
                 <img src="${product.image}" alt="${product.name}">
                 <div>
                     <h2 class="titulo">${product.name}</h2>
