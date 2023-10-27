@@ -54,61 +54,63 @@
           </div>
         </div>
       </div>
-      <div id="checkout">
-        <form id="form_compra" action="#" method="get" class="row g-3 needs-validation" novalidate>
-          <div class="form-outline mb-4 radio-opcion" id="TiposEnvios">
-            <div style="margin-bottom: 5px; font-size: 1.5rem">
-              Tipo de envío
-            </div>
-            <div>
-              <input type="radio" id="opcion1" name="opcion" class="" checked />
-              <label class="" for="opcion1">Premium 2 a 5 días (15%)</label>
-            </div>
-            <div>
-              <input type="radio" id="opcion2" name="opcion" class="" />
-              <label class="" for="opcion2">Express 5 a 8 días (7%)</label>
-            </div>
-            <div>
-              <input type="radio" id="opcion3" name="opcion" class="" />
-              <label class="" for="opcion3">Standard 12 a 15 días (5%)</label>
-            </div>
-            <div class="invalid-feedback">
-              Debe ingresar elegir uno.
-            </div>
-          </div>
+      <div id="checkout" style="margin: 1.5rem; display: flex; justify-content: center;">
+        <form id="form_compra" action="#" method="get" class="row g-3 needs-validation"
+          style="display: flex; justify-content: center;" novalidate>
+
           <div><a href=""></a></div>
-          <div class="col">
+          <div class="col" style="max-width: 850px;">
             <h1 class="mb-2">Dirección de envio</h1>
             <hr class="my-4">
-            <div class="row g-3">
-              <div class="col-sm-5">
+            <div class="row g-3" style="display: flex; justify-content: center;">
+              <div class="col-sm-6">
                 <label for="calle" class="form-label">Calle</label>
                 <input type="text" class="form-control" id="calle" required>
                 <div class="invalid-feedback">
                   Debe ingresar una calle.
                 </div>
               </div>
-              <div class="col-sm-5">
+              <div class="col-sm-6">
                 <label for="numero" class="form-label">Numero de Puerta</label>
                 <input type="text" class="form-control" id="numero" required>
                 <div class="invalid-feedback">
                   Debe ingresar un numero de puerta.
                 </div>
               </div>
-              <div class="col-sm-5">
+              <div class="col-sm-6">
                 <label for="esquina" class="form-label">Esquina</label>
                 <input type="text" class="form-control" id="esquina" required>
                 <div class="invalid-feedback">
                   Debe ingresar una esquina.
                 </div>
               </div>
-              <div class="col-sm-5">
+              <div class="col-sm-6">
                 <label class="form-label" for="form6Example6">Teléfono</label>
                 <input type="text" id="form6Example6" class="form-control" />
               </div>
               <div class="form-outline sb-4">
                 <label class="form-label" for="form6Example7">Información adicional</label>
                 <textarea class="form-control" id="form6Example7" rows="3"></textarea>
+              </div>
+              <div class="form-outline mb-4 radio-opcion" id="TiposEnvios">
+                <div style="margin-bottom: 5px; font-size: 1.5rem">
+                  Tipo de envío
+                </div>
+                <div>
+                  <input type="radio" id="opcion1" name="opcion" class="" checked />
+                  <label class="" for="opcion1">Premium 2 a 5 días (15%)</label>
+                </div>
+                <div>
+                  <input type="radio" id="opcion2" name="opcion" class="" />
+                  <label class="" for="opcion2">Express 5 a 8 días (7%)</label>
+                </div>
+                <div>
+                  <input type="radio" id="opcion3" name="opcion" class="" />
+                  <label class="" for="opcion3">Standard 12 a 15 días (5%)</label>
+                </div>
+                <div class="invalid-feedback">
+                  Debe ingresar elegir uno.
+                </div>
               </div>
               <div class="order_total" style="margin-bottom: 20px;
               height: auto;
@@ -232,8 +234,8 @@
                     <button id="confirmarModal" type="button" class="btn btn-primary">Confirmar</button>
                   </form>
                 </div>
-              </div> <br> <br>
-              <button id="comprar" type="submit" class="btn btn-primary mb-4">
+              </div>
+              <button id="comprar" type="submit" class="btn btn-primary mb-4" style="width: 100px;">
                 Comprar
               </button>
         </form>
