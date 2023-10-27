@@ -269,4 +269,4 @@ const formaDeEnvio = document.querySelector('input[name="opcion"]:checked');
             form.classList.add('was-validated')
         }, false)
     })
-})
+})()
