@@ -1,3 +1,5 @@
+
+
 function agregarImagenes() {
     fetch("https://japceibal.github.io/emercado-api/products/" + localStorage.ProductID + ".json")
         .then(response => {
@@ -17,7 +19,7 @@ function agregarImagenes() {
                     // Agregar cada imagen al carrusel
                     data.images.forEach((element, index) => {
                         imagenes += `<div class="carousel-item${index === 0 ? ' active' : ''}">
-                            <img src="${element}" alt="Imagen ${index + 1}">
+                            <img style="width: 400px;" src="${element}" alt="Imagen ${index + 1}">
                         </div>`;
                     });
 
@@ -31,7 +33,7 @@ function agregarImagenes() {
                           <span class="visually-hidden">Next</span>
                         </button>
                       </div>`;
-
+                      
                     document.getElementById("imagenes").innerHTML = imagenes;
                 });
             } else {
@@ -100,9 +102,10 @@ function relatedProducts() {
                 response.json().then(data => {
                     let related = ``;
                     data.relatedProducts.forEach(element => {
-                        related += `<div onclick="setProductID(${element.id})" class=rProduct>
+                        related += `<div class=rProduct>
                         <img style="width: 150px;" src="${element.image}">
                         <p class="test">${element.name}</p>
+                        <button onclick="setProductID(${element.id})" class="boton-ver-producto">Ver</button>
                         </div>
                         `;
                     });
@@ -119,51 +122,11 @@ function relatedProducts() {
         });
 }
 
-function añadirProductoAlCarrito() {
-    if (localStorage.getItem("Productos") === null) {
-        localStorage.setItem("Productos", JSON.stringify([]));
-    };
-    fetch("https://japceibal.github.io/emercado-api/products/" + localStorage.ProductID + ".json")
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            let arrayProductos = JSON.parse(localStorage.getItem("Productos"));
-
-            let elementoRepetido = false;
-
-            arrayProductos.forEach(element => {
-                if (element.id === parseInt(localStorage.ProductID)) {
-                    element.count++;
-                    elementoRepetido = true;
-                }
-            });
-
-            if (!elementoRepetido) {
-                let nodo = {
-                    "name": data.name,
-                    "image": data.images[0],
-                    "count": 1,
-                    "currency": data.currency,
-                    "unitCost": data.cost,
-                    "id": data.id
-                };
-                arrayProductos.push(nodo);
-                console.log(arrayProductos);
-            }
-            localStorage.setItem("Productos", JSON.stringify(arrayProductos));
-
-        })
-        .catch(error => console.log(error.message));
-}
-
   
 function agregarProducto(product, categoria) {
     let htmlContentToAppend = `
-    <div class=" col-sm-12 id="container-product2">
-        <div class="cotainer col-md-4 col-sm-4" id="product-information">
-    <div class=" col-sm-12 id="container-product2">
-        <div class="container col-md-4 col-sm-4" id="product-information">
-
+    <div id="container-product2">
+        <div id="product-information">
             <h2>${product.name}</h2>
             <hr>
             <div class="test-divs">
@@ -184,12 +147,18 @@ function agregarProducto(product, categoria) {
             </div>
             <div class="test-divs">
                 <p class="test"><strong>Imágenes ilustrativas</strong></p>
-                <div id="imagenes">
+                <div id="imagenes" style="display: flex;">
             </div>
+            <button class="CartBtn" data-product="${JSON.stringify(product)}">
+            <span class="IconContainer" > 
+              <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" fill="rgb(17, 17, 17)" class="cart"><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"></path></svg>
+            </span>
+            <p class="text">Añadir al carrito</p>
+          </button>   
         </div>
         <div class="test-divs" style="margin-top: 30px;" >
             <p style="font-size:1.4rem;">Comentarios</p>
-            <div style="display: flex; min-width: 320px; flex-direction: column;" id="comentarios">
+            <div style="display: flex; flex-direction: column; justify-content: space-;" id="comentarios">
 
             </div>
         </div>
@@ -197,7 +166,7 @@ function agregarProducto(product, categoria) {
             <p style="font-size:1.4rem;">Comentar</p>
             <form style="display:flex; flex-direction:column;">
                 <p>Tu opinión:</p>
-                <textarea id="comentario-hecho"></textarea>
+                <textarea style="width:500px; height:100px;" id="comentario-hecho"></textarea>
                 <p>Tu puntuación:</p>
                 <select id="calificacion-dada" style="width:50px;">
                     <option value="1">1★</option>
@@ -206,39 +175,24 @@ function agregarProducto(product, categoria) {
                     <option value="4">4★</option>
                     <option value="5">5★</option>
                 </select>
-                <button class="btn btn-primary" style="width: 80px; margin-top:10px; border-radius:10%;" id="boton-enviar-datos">Enviar</button>
+                <button style="width: 60px; margin-top:10px; border-radius:10%;" id="boton-enviar-datos">Enviar</button>
             </form>
         </div>
-        
         <br>
         <div class="test-divs">
-        <p class="test"><strong>Productos relacionados:</strong></p> <br>
+        <p class="test"><strong>Productos relacionados:</strong></p>
          <div id="relatedProducts" style="display: flex;" >
          </div>
     </div>
     `;
-
+    z
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('.CartBtn').addEventListener('click', agregarAlCarrito);
+      });
 
     // console.log(comments);
 
     document.getElementById("container-product").innerHTML = htmlContentToAppend;
-
-    document.getElementById("btn-agregar").addEventListener("click", function (e) {
-
-        añadirProductoAlCarrito();
-
-
-
-        const mensaje = document.getElementById("agregado")
-        mensaje.innerHTML = '¡Producto añadido al carrito!';
-        mensaje.style.display = 'block';
-        mensaje.classList.add('alert');
-        setTimeout(function () {
-            mensaje.style.display = 'none';
-        }, 3000);
-
-    });
-
     agregarImagenes();
     agregarComentarios();
     relatedProducts();
