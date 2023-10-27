@@ -55,7 +55,7 @@
         </div>
       </div>
       <div id="checkout">
-        <form id="form_compra" action="#" method="get" class="row g-3 needs-validation" novalidate>
+        <form id="form_compra" action="#" method="get" class="row g-3 needs-validation" novalidate style="margin-right: 0;">
           <!-- Text input -->
           <div class="form-outline mb-4 radio-opcion" id="TiposEnvios">
             <div style="margin-bottom: 5px; font-size: 1.5rem">
@@ -81,12 +81,13 @@
 
           <!-- Text input -->
           <div class="col">
-            <h1 class="mb-2">Dirección de envio</h1>
+            <h1 class="adress-send">Dirección de envio</h1>
+            <div  class="container-form">
             <hr class="my-4">
-            <div class="row g-3">
+            <div class="row g-3 inputs">
               <div class="col-sm-5">
                 <label for="calle" class="form-label">Calle</label>
-                <input type="text" class="form-control" id="calle" required>
+                <input type="text" class="form-control input-adress" id="calle" required>
                 <div class="invalid-feedback">
                   Debe ingresar una calle.
                 </div>
@@ -94,14 +95,14 @@
 
               <div class="col-sm-5">
                 <label for="numero" class="form-label">Numero de Puerta</label>
-                <input type="text" class="form-control" id="numero" required>
+                <input type="text" class="form-control input-adress" id="numero" required>
                 <div class="invalid-feedback">
                   Debe ingresar un numero de puerta.
                 </div>
               </div>
               <div class="col-sm-5">
                 <label for="esquina" class="form-label">Esquina</label>
-                <input type="text" class="form-control" id="esquina" required>
+                <input type="text" class="form-control input-adress" id="esquina" required>
                 <div class="invalid-feedback">
                   Debe ingresar una esquina.
                 </div>
@@ -109,28 +110,25 @@
               <!-- Number input -->
               <div class="col-sm-5">
                 <label class="form-label" for="form6Example6">Teléfono</label>
-                <input type="text" id="form6Example6" class="form-control" />
+                <input type="text" id="form6Example6" class="form-control input-adress" />
               </div>
-
+          
               <!-- Message input -->
-              <div class="form-outline sb-4">
+              <div >
                 <label class="form-label" for="form6Example7">Información adicional</label>
-                <textarea class="form-control" id="form6Example7" rows="3"></textarea>
+                <textarea class="form-control input-adress" id="form6Example7" rows="3"></textarea>
               </div>
-
+              </div>
+              
+<div class="container-costo">
               <div class="order_total" style="margin-bottom: 20px">
-                <div class="order_total_content text-md-right">
-                  <div id="order_total_amount" class="order_total_amount" style="
-                    display: flex;
-                    width: 250px;
-                    justify-content: space-around;
-                  ">
+              
                     <p >Costo Final:</p>
                     <p class="tipo-de-moneda"></p>
                     <p class="costo-final"></p>
-                  </div>
-                </div>
+                  
               </div>
+            </div>
               <hr style="width: 100%;"> <br>
               <h2>Forma de pago</h2> <br>
               <div id="divParaModal"><p id="formaDePago">No se ha seleccionado.</p> <p><a style="text-decoration: none;" class="btn btn-link " data-bs-toggle="miModal" href="#modalTerminos"
@@ -143,7 +141,7 @@
                 <div class="modal-content">
                   <h2>Forma de pago</h2>
 
-                  <form action="" class="needs-validation" id="MPago">
+                  <form action="" class="needs-validation" id="MPago" >
                     <label for="tarjeta">
                       <input type="radio" name="radio_modal" id="tarjeta" value="tarjeta de crédito"> Tarjeta de
                       crédito</label>
@@ -197,10 +195,11 @@
               </div> <br> <br>
 
               <!-- Submit button -->
-              <button id="comprar" type="submit" class="btn btn-primary mb-4">
+              <button id="comprar" type="submit" class="btn btn-primary mb-4 btn-buy">
                 Comprar
               </button>
         </form>
+      </div>
       </div>
     </div>
     <div class="alert" id="mensaje_compra" style="display: none"></div>
