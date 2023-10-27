@@ -150,14 +150,25 @@ btnMostrarModal.addEventListener("click", function () {
 btnCerrarModal.addEventListener("click", function () {
     const campoTarjeta = document.getElementById("numero_tarjeta");
     const campoTransferencia = document.getElementById("número_cuenta");
-
+    const radioTarjeta = document.getElementById("tarjeta");
+    const radioTransferencia = document.getElementById("transferencia")
     if (campoTarjeta.checkValidity() || campoTransferencia.checkValidity()) {
         txtPago.classList.remove("is-invalid");
         modal.style.display = "none";
         txtPago.classList.add("is-valid")
+    } else {
+        txtPago.classList.remove("is-valid");
+        txtPago.classList.add("is-invalid");
+    }
+
+    if (radioTarjeta.checked) {
+        txtPago.innerHTML = "Tarjeta de Credito"
+    } else if (radioTransferencia.checked) {
+        txtPago.innerHTML = "Transferencia bancaria"
     }
 });
 window.addEventListener("click", function (event) {
+
     const formaDeEnvio = document.querySelector('input[name="opcion"]:checked');
 
     if (event.target === modal) {
@@ -195,16 +206,17 @@ const formaDeEnvio = document.querySelector('input[name="opcion"]:checked');
             if (!formaDeEnvio) {
                 formaDeEnvio.setCustomValidity("Debes seleccionar una forma de envío.");
             } else if (!form.checkValidity()) {
-                txtPago.classList.add("is-invalid");
                 event.preventDefault()
                 event.stopPropagation()
             } else {
                 const mensaje = document.getElementById("mensaje_compra")
                 const formulario = document.getElementById("form_compra")
                 formulario.reset();
+                txtPago.innerHTML = "No se ha seleccionado."
                 mensaje.innerHTML = '¡Gracias por su compra!';
                 mensaje.style.display = 'block';
                 mensaje.classList.add('alert');
+
                 const formaDeEnvio = document.querySelector('input[name="opcion"]:checked');
 
                 setTimeout(function () {
@@ -215,9 +227,3 @@ const formaDeEnvio = document.querySelector('input[name="opcion"]:checked');
         }, false)
     })
 })()
-
-
-document.getElementById("confirmarModal").addEventListener("click", function () {
-    const forma_pago = document.getElementById('formaDePago')
-    forma_pago.style.display = "none";
-});
