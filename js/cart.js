@@ -5,26 +5,15 @@ const buy = document.getElementById('comprar')
 
 function eliminar_producto(id) {
     let indice = 0;
-
     while (parseInt(Array.from(JSON.parse(localStorage.getItem("Productos")))[indice].id) !== parseInt(id)) {
         indice++;
     }
-
-    let productos = JSON.parse(localStorage.getItem("Productos"));
-
-    productos.splice(indice, 1);
-
-    localStorage.setItem("Productos", JSON.stringify(productos));
-
     PRODUCT_LIST.removeChild(document.getElementsByClassName("cart_item")[indice]);
 
+    let productos = JSON.parse(localStorage.getItem("Productos"));
+    productos.splice(indice, 1);
+    localStorage.setItem("Productos", JSON.stringify(productos));
 };
-
-Array.from(document.getElementsByClassName("remove-button")).forEach(element => {
-    element.addEventListener("click", function (e) {
-        console.log(1);
-    });
-});
 
 
 function listarProductos(arrayDeProductos) {
@@ -88,9 +77,9 @@ function CostoFinal() {
         // costoSinEnvio = parseInt(costoSinEnvio);
         subtotalEnvio = parseInt(costoSinEnvio) * 0.05;
     };
-    document.getElementById("consto-sin-envio").innerHTML = costoSinEnvio;
-    document.getElementById("subtotalEnvio").innerHTML = subtotalEnvio;
-    document.getElementById("costo-final").innerHTML = costoSinEnvio + subtotalEnvio;
+    document.getElementById("consto-sin-envio").innerHTML = parseInt(costoSinEnvio);
+    document.getElementById("subtotalEnvio").innerHTML = parseInt(subtotalEnvio);
+    document.getElementById("costo-final").innerHTML = parseInt(costoSinEnvio + subtotalEnvio);
 
 };
 function actualizar_subtotal(id) {
