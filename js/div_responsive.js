@@ -149,24 +149,20 @@ function setProductID(id) {
 const colorSwitch = document.querySelector('.switch input[type="checkbox"]');
 const textMode = document.querySelector(".textmode");
 
-// Función para cambiar el tema
 function cambiaTema(ev) {
     if (ev.target.checked) {
         document.body.classList.add('dark-mode');
-        // Guardar la preferencia en el localStorage
         localStorage.setItem('modoNoche', 'true');
     } else {
         document.body.classList.remove('dark-mode');
-        // Guardar la preferencia en el localStorage
         localStorage.setItem('modoNoche', 'false');
     }
 }
 
-// Recuperar la preferencia del localStorage al cargar la página
 const modoNocheGuardado = localStorage.getItem('modoNoche');
 if (modoNocheGuardado === 'true') {
     colorSwitch.checked = true;
-    cambiaTema({ target: colorSwitch }); // Llamar a la función para aplicar el tema
+    cambiaTema({ target: colorSwitch });
 }
 
 colorSwitch.addEventListener('change', cambiaTema);
