@@ -8,48 +8,48 @@ const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
 const EXT_TYPE = ".json";
 
 let showSpinner = function () {
-    document.getElementById("spinner-wrapper").style.display = "block";
+  document.getElementById("spinner-wrapper").style.display = "block";
 }
 
 let hideSpinner = function () {
-    document.getElementById("spinner-wrapper").style.display = "none";
+  document.getElementById("spinner-wrapper").style.display = "none";
 }
 
 let getJSONData = function (url) {
-    let result = {};
-    showSpinner();
-    return fetch(url)
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                throw Error(response.statusText);
-            }
-        })
-        .then(function (response) {
-            result.status = 'ok';
-            result.data = response;
-            hideSpinner();
-            return result;
-        })
-        .catch(function (error) {
-            result.status = 'error';
-            result.data = error;
-            hideSpinner();
-            return result;
-        });
+  let result = {};
+  showSpinner();
+  return fetch(url)
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw Error(response.statusText);
+      }
+    })
+    .then(function (response) {
+      result.status = 'ok';
+      result.data = response;
+      hideSpinner();
+      return result;
+    })
+    .catch(function (error) {
+      result.status = 'error';
+      result.data = error;
+      hideSpinner();
+      return result;
+    });
 }
 
 const usuarioLogueado = localStorage.getItem('usuarioLogueado') === 'true';
 if (!usuarioLogueado) {
-    window.location.href = 'login.html';
+  window.location.href = 'login.html';
 } else {
-    //alert("logueado");
-    let barraNavegacion = document.getElementsByClassName("navbar navbar-expand-lg navbar-dark bg-dark p-1");
-    let usuarioLogin = document.createElement("a");
-    usuarioLogin.classList += "userlogged";
-    // usuarioLogin.href = "my-profile.html"
-    let dropdownbutton = `<div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+  //alert("logueado");
+  let barraNavegacion = document.getElementsByClassName("navbar navbar-expand-lg navbar-dark bg-dark p-1");
+  let usuarioLogin = document.createElement("a");
+  usuarioLogin.classList += "userlogged";
+  // usuarioLogin.href = "my-profile.html"
+  let dropdownbutton = `<div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
     <ul class="navbar-nav">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -75,8 +75,8 @@ if (!usuarioLogueado) {
       </li>
     </ul>
   </div>`
-    usuarioLogin.innerHTML = dropdownbutton
-    barraNavegacion[0].appendChild(usuarioLogin);
+  usuarioLogin.innerHTML = dropdownbutton
+  barraNavegacion[0].appendChild(usuarioLogin);
 }
 
 
@@ -87,7 +87,7 @@ if (!usuarioLogueado) {
 
 
 
-
+// Segundo botón de usuario
 
 const divToggler2 = document.getElementById("div_toggler2");
 
@@ -143,28 +143,32 @@ divToggler2.appendChild(div_responsive2);
 
 
 function setProductID(id) {
-    localStorage.setItem("ProductID", id);
-    window.location.href = "product-info.html";
+  localStorage.setItem("ProductID", id);
+  window.location.href = "product-info.html";
 }
+
+
+// *****Modo oscuro*****
+
 const colorSwitch = document.querySelector('.switch input[type="checkbox"]');
 const colorSwitch2 = document.querySelector('.switch2 input[type="checkbox"]');
 const textMode = document.querySelector(".textmode");
 const textMode2 = document.querySelector(".textmode2");
 
 function cambiaTema(ev) {
-    if (ev.target.checked) {
-        document.body.classList.add('dark-mode');
-        localStorage.setItem('modoNoche', 'true');
-    } else {
-        document.body.classList.remove('dark-mode');
-        localStorage.setItem('modoNoche', 'false');
-    }
+  if (ev.target.checked) {
+    document.body.classList.add('dark-mode');
+    localStorage.setItem('modoNoche', 'true');
+  } else {
+    document.body.classList.remove('dark-mode');
+    localStorage.setItem('modoNoche', 'false');
+  }
 }
 
 const modoNocheGuardado = localStorage.getItem('modoNoche');
 if (modoNocheGuardado === 'true') {
-    colorSwitch.checked = true; colorSwitch2.checked = true;
-    cambiaTema({ target: colorSwitch });
+  colorSwitch.checked = true; colorSwitch2.checked = true;
+  cambiaTema({ target: colorSwitch });
 }
 
 colorSwitch.addEventListener('change', cambiaTema);
