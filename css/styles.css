@@ -1132,7 +1132,9 @@ Expand Down .container_cart {
 }
 
 @media(min-width:992px) {
-  #div_toggler {
+
+  #div_toggler,
+  #div_toggler2 {
     display: none;
   }
 }
