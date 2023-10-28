@@ -439,7 +439,8 @@ html {
   background-color: #d1e7dd;
 }
 
-.switch {
+.switch,
+.switch2 {
   position: relative;
   display: inline-block;
   width: 50px;
