@@ -546,9 +546,14 @@ input:checked+.slider:before {
 }
 
 .dark-mode {
-  background-color: #141e24;
+  background-color: #222426;
   transition: background-color .5s;
   color: #fff;
+}
+
+.dark-mode .rProduct {
+  border-color: wheat;
+  background-color: #181a1b;
 }
 
 .dark-mode .cart_item_title {
@@ -556,31 +561,42 @@ input:checked+.slider:before {
 }
 
 .dark-mode input {
-  background-color: #f0f0f0;
+  background-color: #181a1b;
+  border-color: wheat;
+  color: white;
 }
 
 .dark-mode .form-control {
-  background-color: #f0f0f0;
+  background-color: #181a1b;
+  color: white;
+  border-color: wheat;
 }
 
 .dark-mode .order_total {
-  background-color: #f0f0f0;
+  background-color: #181a1b;
+  border-color: wheat;
+}
+
+.dark-mode #bg-light {
+  background-color: #222426;
+}
+
+.dark-mode .btn-light {
+  background-color: #343a40;
+  color: white;
+  border-color: transparent;
 }
 
 .dark-mode p {
   color: #fff;
 }
 
-.dark-mode .text {
-  color: black;
-}
-
 .dark-mode .cart_item {
-  background-color: #343a40;
+  background-color: #181a1b;
 }
 
 .dark-mode .product {
-  background-color: #343a40;
+  background-color: #181a1b;
 }
 
 .product {
@@ -588,15 +604,12 @@ input:checked+.slider:before {
 }
 
 .dark-mode .list-group-item {
-  background-color: #343a40;
+  background-color: #181a1b;
+  border-color: white;
 }
 
 .dark-mode .d-flex {
   color: #fff;
-}
-
-.dark-mode .p_modoOscuro {
-  color: black;
 }
 
 .dark-mode h2 {
@@ -604,7 +617,7 @@ input:checked+.slider:before {
 }
 
 .dark-mode .modal-content {
-  background-color: #373739;
+  background-color: #222426;
 }
 
 .dark-mode .card {
