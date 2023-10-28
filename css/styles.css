@@ -184,6 +184,12 @@ footer p {
   background: white;
 }
 
+@media (max-width:990px) {
+  .navbar-nav {
+    display: block;
+  }
+}
+
 .img-fit {
   max-height: 100%;
 }
@@ -315,6 +321,7 @@ a.custom-card:hover {
     top: 35%;
   }
 }
+
 
 .userlogged {
   text-decoration: none;
@@ -1122,4 +1129,10 @@ Expand Down .container_cart {
   border: solid;
   border-width: 0.1px;
   color: white;
+}
+
+@media(min-width:992px) {
+  #div_toggler {
+    display: none;
+  }
 }
