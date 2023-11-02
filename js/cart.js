@@ -70,7 +70,8 @@ function listarProductos(arrayDeProductos) {
     PRODUCT_LIST.innerHTML = appendchild;
 };
 function CostoFinal() {
-    let PrecioFinal = 0;
+    let costoSinEnvio = 0;
+    let subtotalEnvio = 0;
     const arrayProductos = JSON.parse(localStorage.getItem("Productos"));
     arrayProductos.forEach(producto => {
         PrecioFinal += producto.count * producto.unitCost;

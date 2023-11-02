@@ -184,6 +184,12 @@ footer p {
   background: white;
 }
 
+@media (max-width:990px) {
+  .navbar-nav {
+    display: block;
+  }
+}
+
 .img-fit {
   max-height: 100%;
 }
@@ -316,6 +322,7 @@ a.custom-card:hover {
   }
 }
 
+
 .userlogged {
   text-decoration: none;
   color: white;
@@ -432,7 +439,8 @@ html {
   background-color: #d1e7dd;
 }
 
-.switch {
+.switch,
+.switch2 {
   position: relative;
   display: inline-block;
   width: 50px;
@@ -444,6 +452,12 @@ html {
 .textmode {
   margin-left: 13px;
 }
+
+.textmode,
+.textmode2 {
+  margin-left: 13px;
+}
+
 
 .switch input {
   opacity: 0;
@@ -648,7 +662,6 @@ ul {
 .cart_list {
   border: solid 1px #e8e8e8;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
-  background-color: #fff
 }
 
 .cart_item {
@@ -717,7 +730,7 @@ ul {
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
   padding-right: 46px;
   padding-left: 15px;
-  background-color: #fff
+  background-color: #fff;
 }
 
 .order_total_title {
@@ -969,7 +982,7 @@ Expand Down .container_cart {
 }
 
 .modal-content {
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -1008,6 +1021,11 @@ Expand Down .container_cart {
   border-radius: 5px;
   line-height: 30px;
   border-width: 1px;
+  max-width: 200px;
+}
+
+#div_modal2 {
+  display: inline-flex;
 }
 
 .div_modal {
