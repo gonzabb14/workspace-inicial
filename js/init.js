@@ -69,7 +69,7 @@ if (!usuarioLogueado) {
           <p class="textmode">Apariencia</p>
           </div>
           <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" onclick="localStorage.clear();
+          <li><a href="#" class="dropdown-item" onclick="localStorage.clear();
           location.reload();">Cerrar sesión</a></li>
         </ul>
       </li>
@@ -116,7 +116,7 @@ div_responsive2.innerHTML = `
             <p class="textmode2">Apariencia</p>
           </div>
           <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" onclick="localStorage.clear(); location.reload();">Cerrar sesión</a></li>
+          <li><a href="#" class="dropdown-item" onclick="localStorage.clear(); location.reload();">Cerrar sesión</a></li>
         </ul>
       </li>
     </ul>
