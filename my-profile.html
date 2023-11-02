@@ -1,122 +1,166 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <title>eMercado - Todo lo que busques está aquí</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
-      rel="stylesheet"
-    />
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
-    <link href="css/responsive.css" rel="stylesheet">
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-  </head>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>eMercado - Perfil de usuario</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/styles.css" rel="stylesheet" />
 
-  <body>
-    <nav id="asd" class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
-      <div class="container">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse"
-          id="navbarNav"
-          style="justify-content: center"
-        >
-          <ul
-            class="navbar-nav w-100 justify-content-between"
-            style="max-width: 50vw"
-          >
-            <li class="nav-item">
-              <a
-                style="color: #9b9d8c"
-                class="nav-link active"
-                href="index.html"
-                >Inicio</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="categories.html">Categorías</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="sell.html">Vender</a>
-              <div id="div_toggler2"></div>
-            </li>
-          </ul>
-          <ul
-            id="inicio-sesion"
-            style="
+  <!-- CDN BOOstrap-->
+
+
+</head>
+
+<body>
+
+  <nav id="asd" class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100" style="max-width: 50vw">
+          <li class="nav-item">
+            <a style="color: #9b9d8c" class="nav-link active" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+            <div id="div_toggler2"></div>
+          </li>
+        </ul>
+        <ul id="inicio-sesion" style="
               position: absolute;
               margin: 0 auto;
               min-width: 200px;
               right: 0;
-            "
-          ></ul>
+            "></ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card mb-4">
+          <div class="card-body text-center">
+            <img src="" id="imgPreview" alt="profile"
+              class="rounded-circle img-fluid"  style="width: 150px;">
+            <h5 class="my-3">Nombre</h5>
+            <p class="text-muted mb-1"></p>
+            <p class="text-muted mb-4"></p>
+            <div class="d-flex justify-content-center mb-2">
+
+            </div>
+          </div>
+        </div>
+        <div class="card mb-4 mb-lg-0">
+
         </div>
       </div>
-    </nav>
-    <main style="display: flex; align-items: center">
-      <div
-        class="container"
-        style="
-          border: 2px solid black;
-          border-radius: 20px;
-          height: 60vh;
-          width: 40vw;
-          justify-content: center;
-          align-items: center;
-          display: flex;
-          flex-direction: column;
-        "
-      >
-        <p id="nombre"></p>
-        <p id="email"></p>
-        <input type="submit" value="Cerrar Sesion" id="cerrar-sesion" />
+      <div class="col-lg-8 mt-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <form action="#" method="get" class="needs-validation" novalidate>
+              <div class="row">
+                <div class="col-sm-3">
+                  <label for="first-name" class="mb-0">Nombre*</label>
+                </div>
+                <div class="col-sm-9">
+                  <input type="text" class="mb-0 form-control form-control-sm" name="first-name" required>
+                  <div class="invalid-feedback">
+                    Debe ingresar su nombre.
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <label for="middel-name" class="mb-0 ">Segundo Nombre</label>
+                </div>
+                <div class="col-sm-9">
+                  <input style="width: 100%;" type="text" class="mb-0 " name="middel-name">
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <label for="surname" class="mb-0 ">Apellido*</label>
+                </div>
+                <div class="col-sm-9">
+                  <input type="text" class="mb-0 form-control form-control-sm" name="surname " required>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <label for="email" class="mb-0 ">Email</label>
+                </div>
+                <div class="col-sm-9">
+                  <input style="width: 100%;" type="text" class="mb-0" name="email">
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <label for="phone" class="mb-0 ">Telefono*</label>
+                </div>
+                <div class="col-sm-9">
+                  <input type="text" class="mb-0 form-control form-control-sm" name="phone" required>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <label for="profilePic" class="mb-0">Foto de perfil</label>
+                </div>
+                <div class="col-sm-9">
+                  <input type="file" id="file-input" class="mb-0 " name="profilePic">
+                </div>-
+              </div>
+              <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Guardar
+                  cambios</button>
+              </div>
+            </form>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card mb-4 mb-md-0">
+
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card mb-4 mb-md-0">
+
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </main>
-    <footer class="text-muted">
-      <div class="container">
-        <p class="float-end">
-          <a href="#">Volver arriba</a>
-        </p>
-        <p>
-          Este sitio forma parte de
-          <a href="https://jovenesaprogramar.edu.uy/" target="_blank"
-            >Jovenes a Programar</a
-          >
-        </p>
-      </div>
-    </footer>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/my-profile.js"></script>
-  </body>
+    </div>
+    </section>
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-end">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>
+        Este sitio forma parte de
+        <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+      </p>
+    </div>
+  </footer>
+  <!-- CDN BOOSTRAP-->
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/my-profile.js"></script>
+</body>
+
 </html>
