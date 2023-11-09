@@ -8,6 +8,7 @@ if (localStorage.getItem("usuarioLogueado") === "true") {
     document.getElementById("user-resecsurname").value = user.segundo_apellido;
     document.getElementById("user-rephone").value = user.telefono;
     document.getElementById("inputemail").value = user.email;
+    document.getElementById("nombre").innerHTML = user.primer_nombre + " " + user.segundo_nombre + " " + user.primer_apellido + " " + user.segundo_apellido;
 
     if (localStorage.getItem("imagenPerfil")) {
         document.getElementById("imgplace").src = localStorage.getItem("imagenPerfil");
