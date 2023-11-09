@@ -1,121 +1,120 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <title>eMercado - Todo lo que busques está aquí</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
-      rel="stylesheet"
-    />
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-  </head>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/styles.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
 
-  <body>
-    <nav id="asd" class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
-      <div class="container">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse"
-          id="navbarNav"
-          style="justify-content: center"
-        >
-          <ul
-            class="navbar-nav w-100 justify-content-between"
-            style="max-width: 50vw"
-          >
-            <li class="nav-item">
-              <a
-                style="color: #9b9d8c"
-                class="nav-link active"
-                href="index.html"
-                >Inicio</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="categories.html">Categorías</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="sell.html">Vender</a>
-              <div id="div_toggler2"></div>
-            </li>
-          </ul>
-          <ul
-            id="inicio-sesion"
-            style="
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav id="asd" class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav" style="justify-content: center">
+        <ul class="navbar-nav w-100 justify-content-between" style="max-width: 50vw">
+          <li class="nav-item">
+            <a style="color: #9b9d8c" class="nav-link active" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+            <div id="div_toggler2"></div>
+          </li>
+        </ul>
+        <ul id="inicio-sesion" style="
               position: absolute;
               margin: 0 auto;
               min-width: 200px;
               right: 0;
-            "
-          ></ul>
+            "></ul>
+      </div>
+    </div>
+  </nav>
+  <main style="display: flex; align-items: center">
+
+    <div class="container rounded bg mt-5 mb-5 ">
+      <div class="row justify-content-md-center">
+        <div class="col-md-3 border-right">
+          <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5"
+              width="150px"
+              src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"
+              id="imgplace"><span class="font-weight-bold" id="imgplace">
+              <span class="text-50" id="nombre"></span>
+            </span><span class="text-black-50" id="email"></span><span>
+            </span></div>
         </div>
-      </div>
-    </nav>
-    <main style="display: flex; align-items: center">
-      <div
-        class="container"
-        style="
-          border: 2px solid black;
-          border-radius: 20px;
-          height: 60vh;
-          width: 40vw;
-          justify-content: center;
-          align-items: center;
-          display: flex;
-          flex-direction: column;
-        "
-      >
-        <p id="nombre"></p>
-        <p id="email"></p>
-        <input type="submit" value="Cerrar Sesion" id="cerrar-sesion" />
-      </div>
-    </main>
-    <footer class="text-muted">
-      <div class="container">
-        <p class="float-end">
-          <a href="#">Volver arriba</a>
-        </p>
-        <p>
-          Este sitio forma parte de
-          <a href="https://jovenesaprogramar.edu.uy/" target="_blank"
-            >Jovenes a Programar</a
-          >
-        </p>
-      </div>
-    </footer>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/my-profile.js"></script>
-  </body>
+        <div class="col-md-5 border-right">
+          <div class="p-3 py-5">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h4 class="text-right">Perfil</h4>
+            </div>
+            <form class="needs-validation" novalidate>
+              <div class="row mt-2">
+                <div class="col-md-6"><label class="labels">Primer nombre*</label><input id="user-rename" type="text"
+                    class="form-control" value="" required></div>
+                <div class="col-md-6"><label class="labels">Segundo nombre</label><input id="user-resecname" type="text"
+                    class="form-control" value=""></div>
+                <div class="col-md-6"><label class="labels">Primer apellido*</label><input id="user-resurname"
+                    type="text" class="form-control" value="" required></div>
+                <div class="col-md-6"><label class="labels">Segundo apellido</label><input id="user-resecsurname"
+                    type="text" class="form-control" value=""></div>
+                <div class="col-md-6"><label class="labels">Telefono de contacto*</label><input id="user-rephone"
+                    type="text" class="form-control" value="" required></div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-12"><label class="labels">Email</label><input id="inputemail" type="text"
+                    class="form-control" value=""></div>
+                <div class="col-md-12"><label class="labels">Imagen de perfil</label><input accept="image/*"
+                    id="inportImg" type="file" class="form-control"></div>
+              </div>
+              <div class="mt-5 text-center"><button id="saveprof" class="btn btn-primary profile-button"
+                  type="submit">Guardar
+                  cambios</button>
+              </div>
+            </form>
+          </div>
+        </div>
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-end">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>
+        Este sitio forma parte de
+        <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+      </p>
+    </div>
+  </footer>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/my-profile.js"></script>
+</body>
+
 </html>

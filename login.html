@@ -1,142 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <title>eMercado - Todo lo que busques está aquí</title>
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
-      rel="stylesheet"
-    />
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <!-- <link href="css/styles.css" rel="stylesheet" /> -->
-    <link rel="stylesheet" href="./css/login.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <div id="inicio-de-sesion" class="container">
-      <form id="formulario" action="./index.html">
-        <div style="padding-bottom: 10px ;" class="formulario">
-          <img src="./img/backgroundLogin.jpg" alt="" />
-          <h3>Iniciar Sesión</h3>
-          <input
-            type="email"
-            placeholder="Email*"
-            required
-            name="email"
-            id="email"
-          />
-          <div class="eye-password">
-            <input
-              type="password"
-              placeholder="Contraseña*"
-              required
-              name="contraseña"
-              id="password"
-            />
-            <i class="fas fa-eye" id="togglePassword"></i>
-          </div>
-          <input id="btnIniciarSesion" type="submit" value="Iniciar Sesión" />
-          <a id="btnRecuperar" style="
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>eMercado - Todo lo que busques está aquí</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <!-- <link href="css/styles.css" rel="stylesheet" /> -->
+  <link rel="stylesheet" href="./css/login.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="inicio-de-sesion" class="container">
+    <form id="formulario" action="./index.html">
+      <div style="padding-bottom: 10px ;" class="formulario">
+        <img src="./img/backgroundLogin.jpg" alt="" />
+        <h3>Iniciar Sesión</h3>
+        <input type="email" placeholder="Email*" required name="email" id="email" />
+        <div class="eye-password">
+          <input type="password" placeholder="Contraseña*" required name="contraseña" id="password" />
+          <i class="fas fa-eye" id="togglePassword"></i>
+        </div>
+        <input id="btnIniciarSesion" type="submit" value="Iniciar Sesión" />
+        <a id="btnRecuperar" style="
                   display: flex;
                   justify-content: end;
 
                   color: black;
                   text-decoration: none;
-        " href=""><p  class="registroRestablecer" style="margin: 0px;">¿No recuerdas tu contraseña?</p></a>
+        " href="">
+          <p class="registroRestablecer" style="margin: 0px;">¿No recuerdas tu contraseña?</p>
+        </a>
         <a id="btnRegistro" class="registroRestablecer" style="
                   display: flex;
                   justify-content: end;
                   color: black;
                   text-decoration: none;
         " href="">Registrarse</a>
-        </div>
-      </form>
-    </div>
-    <div id="recuperarContraseña" class="container">
-      <form id="formulario-recuperar" action="">
-        <div style="padding-bottom: 10px ;" class="formulario">
-          <img src="./img/backgroundLogin.jpg" alt="" />
-          <h3>Mandar mail de recuperación</h3>
-          <input
-            type="email"
-            placeholder="Email*"
-            required
-            name="email"
-            id="email"
-          />
-          <input id="recuperar" type="submit" value="Recuperar" />
-          <a id="Volver" class="Volver" style="
+      </div>
+    </form>
+  </div>
+  <div id="recuperarContraseña" class="container">
+    <form id="formulario-recuperar" action="">
+      <div style="padding-bottom: 10px ;" class="formulario">
+        <img src="./img/backgroundLogin.jpg" alt="" />
+        <h3>Mandar mail de recuperación</h3>
+        <input type="email" placeholder="Email*" required name="email" id="email" />
+        <input id="recuperar" type="submit" value="Recuperar" />
+        <a id="Volver" class="Volver" style="
           display: flex;
           justify-content: end;
           color: black;
           text-decoration: none;
 " href="">Volver al inicio de sesión</a>
-          <h1></h1>
-        </div>
-      </form>
-    </div>
-    <div id="register" class="container">
-      <form id="formulario-registrar" action="">
-        <div style="padding-bottom: 10px ;" class="formulario">
-          <img src="./img/backgroundLogin.jpg" alt="" />
-          <h3>Registrarse</h3>
-          <input id="nombreLogin"
-            type="text"
-            placeholder="Nombre*"
-            required
-            name="usuario-nombre"
-          />
-          <input
-            type="text"
-            placeholder="Apellido*"
-            required
-            name="usuario-apellido"
-          />
-          <input
-            type="email"
-            placeholder="Email*"
-            required
-            name="usuario-email"
-          />
-          <input
-            type="email"
-            placeholder="Repetir Email*"
-            required
-            name="usuario-repetirEmail"
-          />
-          <input
-            type="password"
-            placeholder="Contraseña*"
-            required
-            name="usuario-contraseña"
-          />
-          <input
-            type="password"
-            placeholder="Repetir Contraseña*"
-            required
-            name="usuario-repetirContraseña"
-          />
-          <input id="registro" type="submit" value="Registrarse" />
-          <a id="Volver" class="Volver" style="
+        <h1></h1>
+      </div>
+    </form>
+  </div>
+  <div id="register" class="container">
+    <form id="formulario-registrar" action="">
+      <div style="padding-bottom: 10px ;" class="formulario">
+        <img src="./img/backgroundLogin.jpg" alt="" />
+        <h3>Registrarse</h3>
+        <input type="email" placeholder="Email*" required name="usuario-email" />
+        <input type="email" placeholder="Repetir Email*" required name="usuario-repetirEmail" />
+        <input type="password" placeholder="Contraseña*" required name="usuario-contraseña" />
+        <input type="password" placeholder="Repetir Contraseña*" required name="usuario-repetirContraseña" />
+        <input id="registro" type="submit" value="Registrarse" />
+        <a id="Volver" class="Volver" style="
           display: flex;
           justify-content: end;
           color: black;
           text-decoration: none;
 " href="">Volver al inicio de sesión</a>
-          <h1></h1>
-        </div>
-      </form>
-    </div>
-    
-    <!-- <footer class="text-muted">
+        <h1></h1>
+      </div>
+    </form>
+  </div>
+
+  <!-- <footer class="text-muted">
       <div class="container">
         <p class="float-end">
           <a href="#">Volver arriba</a>
@@ -149,6 +95,7 @@
         </p>
       </div>
     </footer> -->
-    <script src="js/login.js"></script>
-  </body>
+  <script src="js/login.js"></script>
+</body>
+
 </html>
