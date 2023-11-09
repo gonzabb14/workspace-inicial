@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -8,7 +9,10 @@
   <link href="css/bootstrap.min.css" rel="stylesheet" />
   <link href="css/font-awesome.min.css" rel="stylesheet" />
   <link href="css/styles.css" rel="stylesheet" />
+  <link href="css/cart.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
 </head>
+
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
     <div class="container">
@@ -140,55 +144,55 @@
                   <h2>Forma de pago</h2>
 
                   <form action="" class="needs-validation" id="MPago">
-                      <label for="tarjeta">
-                        <input type="radio" name="radio_modal" id="tarjeta" value="tarjeta de crédito"> Tarjeta de
-                        crédito</label>
-                      <hr style="width: 100%;">
-                      <div class="row g-3">
-                        <div class="col-sm-5 div_modal">
-                          <label for="numero_tarjeta" class="form-label modalL">Número de tarjeta</label>
-                          <input pattern="[0-9]+" type="text" class="form-control input_modal" name="radio_modal"
-                            id="numero_tarjeta" required>
-                          <div class="invalid-feedback">
-                            Debe ingresar un numero de tarjeta.
-                          </div>
-                        </div>
-
-                        <div class="col-sm-5">
-                          <label for="codigo_seg" class="form-label codigo">Código de seg.</label>
-                          <input type="text" class="form-control input_modal codigo codigo2" id="codigo_seg"
-                            id="codigo_seg" required>
-                          <div class="invalid-feedback">
-                            Debe ingresar el numero de seguridad de su tarjeta.
-                          </div>
-                        </div>
-
-                        <div class="col-sm-5 div_modal">
-                          <label for="vencimiento" class="form-label modalL">Vencimiento</label>
-                          <input type="month" class="form-control input_modal" name="vencimiento" id="vencimiento"
-                            required>
-                          <div class="invalid-feedback">
-                            Debe ingresar un numero de tarjeta.
-                          </div>
+                    <label for="tarjeta">
+                      <input type="radio" name="radio_modal" id="tarjeta" value="tarjeta de crédito"> Tarjeta de
+                      crédito</label>
+                    <hr style="width: 100%;">
+                    <div class="row g-3">
+                      <div class="col-sm-5 div_modal">
+                        <label for="numero_tarjeta" class="form-label modalL">Número de tarjeta</label>
+                        <input pattern="[0-9]+" type="text" class="form-control input_modal" name="radio_modal"
+                          id="numero_tarjeta" required>
+                        <div class="invalid-feedback">
+                          Debe ingresar un numero de tarjeta.
                         </div>
                       </div>
-                      <br> <br>
 
-                      <h2>Forma de pago</h2>
-  
-                      <label for="transferencia">
-                        <input type="radio" name="radio_modal" id="transferencia">
-                        Transferencia bancaria </label>
-                      <hr style="width: 100%;">
+                      <div class="col-sm-5">
+                        <label for="codigo_seg" class="form-label codigo">Código de seg.</label>
+                        <input type="text" class="form-control input_modal codigo codigo2" id="codigo_seg"
+                          id="codigo_seg" required>
+                        <div class="invalid-feedback">
+                          Debe ingresar el numero de seguridad de su tarjeta.
+                        </div>
+                      </div>
 
                       <div class="col-sm-5 div_modal">
-                        <label for="número_cuenta" class="form-label modalL">Número de cuenta</label>
-                        <input type="text" class="form-control input_modal2" pattern="[0-9]+" name="número_cuenta"
-                          id="número_cuenta" required>
+                        <label for="vencimiento" class="form-label modalL">Vencimiento</label>
+                        <input type="month" class="form-control input_modal" name="vencimiento" id="vencimiento"
+                          required>
                         <div class="invalid-feedback">
-                          Debe ingresar un numero de cuenta.
+                          Debe ingresar un numero de tarjeta.
                         </div>
                       </div>
+                    </div>
+                    <br> <br>
+
+                    <h2>Forma de pago</h2>
+
+                    <label for="transferencia">
+                      <input type="radio" name="radio_modal" id="transferencia">
+                      Transferencia bancaria </label>
+                    <hr style="width: 100%;">
+
+                    <div class="col-sm-5 div_modal">
+                      <label for="número_cuenta" class="form-label modalL">Número de cuenta</label>
+                      <input type="text" class="form-control input_modal2" pattern="[0-9]+" name="número_cuenta"
+                        id="número_cuenta" required>
+                      <div class="invalid-feedback">
+                        Debe ingresar un numero de cuenta.
+                      </div>
+                    </div>
 
                     <hr style="width: 100%;"> <br>
                     <button id="confirmarModal" type="button" class="btn btn-primary">Confirmar</button>
@@ -226,4 +230,5 @@
   <script src="js/init.js"></script>
   <script type="module" src="js/cart.js"></script>
 </body>
+
 </html>
