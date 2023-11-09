@@ -87,15 +87,14 @@ if (!usuarioLogueado) {
 
 
 // Segundo botón de usuario
-/*
+
 const divToggler2 = document.getElementById("div_toggler2");
 
 const div_responsive2 = document.createElement("div");
 
 div_responsive2.innerHTML = `
-<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          ${JSON.parse(localStorage.getItem("registroUsuario")).nombre}
-          ${JSON.parse(localStorage.getItem("registroUsuario")).apellido}
+<a id="userButton" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+${JSON.parse(localStorage.getItem("registroUsuario")).email}
         </a>
         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
           <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
@@ -122,9 +121,6 @@ div_responsive2.innerHTML = `
   </div>`;
 
 divToggler2.appendChild(div_responsive2);
-
-
-*/
 
 
 
@@ -171,4 +167,4 @@ if (modoNocheGuardado === 'true') {
 }
 
 colorSwitch.addEventListener('change', cambiaTema);
-//colorSwitch2.addEventListener('change', cambiaTema);
+colorSwitch2.addEventListener('change', cambiaTema);
