@@ -40,19 +40,16 @@ document.getElementById("user-rephone").addEventListener("input", validarNumero)
             if (!form.checkValidity()) {
                 event.preventDefault();
                 event.stopPropagation();
-                console.log(1);
+
             } else {
                 //event.preventDefault()
                 event.stopPropagation()
-                console.log(2);
                 const primerNombre = document.getElementById("user-rename").value;
                 const segundoNombre = document.getElementById("user-resecname").value;
                 const primerApellido = document.getElementById("user-resurname").value;
                 const segundoApellido = document.getElementById("user-resecsurname").value;
                 const telefono = document.getElementById("user-rephone").value;
                 const email = document.getElementById("inputemail").value;
-
-
 
                 let user = {
                     "primer_nombre": primerNombre,
@@ -67,8 +64,8 @@ document.getElementById("user-rephone").addEventListener("input", validarNumero)
                 localStorage.setItem("registroUsuario", JSON.stringify(user));
 
                 const input = document.getElementById("inportImg");
-                const file = input.files[0];
 
+                const file = input.files[0];
                 const reader = new FileReader();
 
                 if (file) {
@@ -82,58 +79,9 @@ document.getElementById("user-rephone").addEventListener("input", validarNumero)
                 } else {
                     console.error('Por favor, selecciona una imagen.');
                 }
-
-
-
-                /*let primer_nombre = document.getElementById("user-rename");
-                let segundo_nombre = document.getElementById("user-resecname");
-                let primer_apellido = document.getElementById("user-resurname");
-                let segundo_apellido = document.getElementById("user-resecsurname");
-                let email = document.getElementById("inputemail");
-                let telefono = document.getElementById("user-rephone");
-
-
-
-                let userchanges = {
-                    "primer_nombre": primer_nombre.value,
-                    "segundo_nombre": segundo_nombre.value,
-                    "primer_apellido": primer_apellido.value,
-                    "segundo_apellido": segundo_apellido.value,
-                    "email": email.value,
-                    "Telefono": telefono.value,
-
-                }
-
-                localStorage.setItem("userChanges", JSON.stringify(userchanges));
-*/
             }
 
             form.classList.add('was-validated')
         }, false)
     })
 })()
-
-/*function changesDone() {
-    let primer_nombre = document.getElementById("user-rename");
-    let segundo_nombre = document.getElementById("user-resecname");
-    let primer_apellido = document.getElementById("user-resurname");
-    let segundo_apellido = document.getElementById("user-resecsurname");
-    let email = document.getElementById("inputemail");
-    let telefono = document.getElementById("user-rephone");
-    let userchanged = JSON.parse(localStorage.getItem("userChanges"));
-
-    let nombre = document.getElementById("nombre");
-    let inputemail = document.getElementById("inputemail");
-    nombre.innerHTML = userchanged.primer_nombre + " " + userchanged.primer_apellido + " " + userchanged.segundo_apellido;
-    email.innerHTML = userchanged.email;
-    inputemail.value = userchanged.email;
-    primer_nombre.value = userchanged.primer_nombre;
-    segundo_nombre.value = userchanged.segundo_nombre;
-    primer_apellido.value = userchanged.primer_apellido
-    segundo_apellido.value = userchanged.segundo_apellido;
-    telefono.value = userchanged.Telefono;
-}
-
-changesDone();
-*/
-
