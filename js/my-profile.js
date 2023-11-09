@@ -29,7 +29,7 @@
 
 // });
 
-// const input = document.getElementById("inportImg");
+const input = document.getElementById("inportImg");
 
 input.addEventListener('change', (e) => {
     const files = e.target.files;
@@ -45,8 +45,6 @@ input.addEventListener('change', (e) => {
 
     reader.readAsDataURL(file);
 });
-
-
 
 
 // document.addEventListener("DOMContentLoaded", () => {
@@ -81,6 +79,7 @@ input.addEventListener('change', (e) => {
                 let telefono = document.getElementById("user-rephone");
 
 
+
                 let userchanges = {
                     "primer_nombre": primer_nombre.value,
                     "segundo_nombre": segundo_nombre.value,
@@ -93,22 +92,12 @@ input.addEventListener('change', (e) => {
 
                 localStorage.setItem("userChanges", JSON.stringify(userchanges));
 
-                let user = JSON.parse(localStorage.getItem("registroUsuario"));
-                user.nombre = primer_nombre.value + " " + segundo_nombre.value;
-                user.apellido = primer_apellido.value + " " + segundo_apellido.value;
-
-                localStorage.setItem("registroUsuario", JSON.stringify(user));
-
             }
 
             form.classList.add('was-validated')
         }, false)
     })
 })()
-
-const input = document.getElementById("inportImg");
-
-
 
 function changesDone() {
     let primer_nombre = document.getElementById("user-rename");
@@ -118,7 +107,6 @@ function changesDone() {
     let email = document.getElementById("inputemail");
     let telefono = document.getElementById("user-rephone");
     let userchanged = JSON.parse(localStorage.getItem("userChanges"));
-
 
     let nombre = document.getElementById("nombre");
     let inputemail = document.getElementById("inputemail");
