@@ -1,60 +1,32 @@
+if (localStorage.getItem("usuarioLogueado") === "true") {
+    let user = JSON.parse(localStorage.getItem("registroUsuario"));
 
-// if (usuarioLogueado) {
-//     let user = JSON.parse(localStorage.getItem("registroUsuario"));
+    console.log(user);
+    document.getElementById("user-rename").value = user.primer_nombre;
+    document.getElementById("user-resecname").value = user.segundo_nombre;
+    document.getElementById("user-resurname").value = user.primer_apellido;
+    document.getElementById("user-resecsurname").value = user.segundo_apellido;
+    document.getElementById("user-rephone").value = user.telefono;
+    document.getElementById("inputemail").value = user.email;
 
-//     let nombre = document.getElementById("nombre");
-//     let apellido = document.getElementById("apellido");
-//     let email = document.getElementById("email");
-//     let inputemail = document.getElementById("inputemail")
-//     nombre.innerHTML = user.nombre + " " + user.apellido;
-//     email.innerHTML = user.email;
-//     inputemail.value = user.email;
+    if (localStorage.getItem("imagenPerfil")) {
+        document.getElementById("imgplace").src = localStorage.getItem("imagenPerfil");
+    }
 
-//     document.getElementById("cerrar-sesion").addEventListener("click", function (e) {
-//         localStorage.clear();
-//         location.reload(); //refresca la web así te manda al login
-//     })
+} else {
+    window.location.href = 'login.html';
+}
 
-// } else {
-//     window.location.href = 'login.html';
-// }
+function validarNumero(event) {
+    const input = event.target;
+    const valor = input.value;
 
-// document.getElementById("inportImg").addEventListener("Change", function () {
-//     const reader = new FileReader;
-//     reader.adddEventListener("load", () => {
-//         localStorage.setItem("recent-image", reader.result);
-//     });
-//     document.getElementById("imgplace").src = reader.readAsDataURL(this.files[0]);
-//     reader.readAsDataURL(this.files[0]);
+    // Reemplaza no números con una cadena vacía
+    input.value = valor.replace(/\D/g, '');
 
-// });
+}
 
-const input = document.getElementById("inportImg");
-
-input.addEventListener('change', (e) => {
-    const files = e.target.files;
-    const file = files[0];
-
-    const reader = new FileReader();
-    reader.onload = () => {
-        const dataURL = reader.result;
-
-        const image = document.getElementById("imgplace");
-        image.src = dataURL;
-    };
-
-    reader.readAsDataURL(file);
-});
-
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     const recentImageDataUrl = localStorage.getItem('recent-image');
-
-//     if (recentImageDataUrl) {
-//         document.querySelector("#imgPreview").setAttribute("src", recentImageDataUrl);
-//     }
-// })
-
+document.getElementById("user-rephone").addEventListener("input", validarNumero);
 
 (() => {
     'use strict'
@@ -66,12 +38,54 @@ input.addEventListener('change', (e) => {
     Array.from(forms).forEach(form => {
         form.addEventListener('submit', event => {
             if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
+                event.preventDefault();
+                event.stopPropagation();
+                console.log(1);
             } else {
-                event.preventDefault()
+                //event.preventDefault()
                 event.stopPropagation()
-                let primer_nombre = document.getElementById("user-rename");
+                console.log(2);
+                const primerNombre = document.getElementById("user-rename").value;
+                const segundoNombre = document.getElementById("user-resecname").value;
+                const primerApellido = document.getElementById("user-resurname").value;
+                const segundoApellido = document.getElementById("user-resecsurname").value;
+                const telefono = document.getElementById("user-rephone").value;
+                const email = document.getElementById("inputemail").value;
+
+
+
+                let user = {
+                    "primer_nombre": primerNombre,
+                    "segundo_nombre": segundoNombre,
+                    "primer_apellido": primerApellido,
+                    "segundo_apellido": segundoApellido,
+                    "telefono": telefono,
+                    "email": email,
+                    "contraseña": JSON.parse(localStorage.getItem("registroUsuario")).contraseña
+                }
+                localStorage.removeItem("registroUsuario");
+                localStorage.setItem("registroUsuario", JSON.stringify(user));
+
+                const input = document.getElementById("inportImg");
+                const file = input.files[0];
+
+                const reader = new FileReader();
+
+                if (file) {
+                    reader.onload = function (e) {
+
+                        const imageData = e.target.result;
+
+                        localStorage.setItem('imagenPerfil', imageData);
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    console.error('Por favor, selecciona una imagen.');
+                }
+
+
+
+                /*let primer_nombre = document.getElementById("user-rename");
                 let segundo_nombre = document.getElementById("user-resecname");
                 let primer_apellido = document.getElementById("user-resurname");
                 let segundo_apellido = document.getElementById("user-resecsurname");
@@ -91,7 +105,7 @@ input.addEventListener('change', (e) => {
                 }
 
                 localStorage.setItem("userChanges", JSON.stringify(userchanges));
-
+*/
             }
 
             form.classList.add('was-validated')
@@ -99,7 +113,7 @@ input.addEventListener('change', (e) => {
     })
 })()
 
-function changesDone() {
+/*function changesDone() {
     let primer_nombre = document.getElementById("user-rename");
     let segundo_nombre = document.getElementById("user-resecname");
     let primer_apellido = document.getElementById("user-resurname");
@@ -121,5 +135,5 @@ function changesDone() {
 }
 
 changesDone();
-
+*/
 

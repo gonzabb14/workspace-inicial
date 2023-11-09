@@ -53,8 +53,7 @@ if (!usuarioLogueado) {
     <ul class="navbar-nav">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          ${JSON.parse(localStorage.getItem("registroUsuario")).nombre}
-          ${JSON.parse(localStorage.getItem("registroUsuario")).apellido}
+          ${JSON.parse(localStorage.getItem("registroUsuario")).email}
         </a>
         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
           <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
@@ -88,7 +87,7 @@ if (!usuarioLogueado) {
 
 
 // Segundo botón de usuario
-
+/*
 const divToggler2 = document.getElementById("div_toggler2");
 
 const div_responsive2 = document.createElement("div");
@@ -125,7 +124,7 @@ div_responsive2.innerHTML = `
 divToggler2.appendChild(div_responsive2);
 
 
-
+*/
 
 
 
@@ -172,4 +171,4 @@ if (modoNocheGuardado === 'true') {
 }
 
 colorSwitch.addEventListener('change', cambiaTema);
-colorSwitch2.addEventListener('change', cambiaTema);
+//colorSwitch2.addEventListener('change', cambiaTema);
