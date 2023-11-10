@@ -17,7 +17,7 @@ function eliminar_producto(id) {
     localStorage.setItem("Productos", JSON.stringify(productos));
 
     PRODUCT_LIST.removeChild(document.getElementsByClassName("cart_item")[indice]);
-
+    CostoFinal();
 };
 
 Array.from(document.getElementsByClassName("remove-button")).forEach(element => {
@@ -74,18 +74,24 @@ function CostoFinal() {
     let subtotalEnvio = 0;
     const arrayProductos = JSON.parse(localStorage.getItem("Productos"));
     arrayProductos.forEach(producto => {
-        PrecioFinal += producto.count * producto.unitCost;
+        costoSinEnvio += producto.count * producto.unitCost;
     })
     if (document.getElementById("opcion1").checked) {
-        PrecioFinal = parseInt(PrecioFinal) * 0.15 + parseInt(PrecioFinal);
+        /* costoSinEnvio =  parseInt(costoSinEnvio); */
+        subtotalEnvio = parseInt(costoSinEnvio) * 0.15;
     };
     if (document.getElementById("opcion2").checked) {
-        PrecioFinal = parseInt(PrecioFinal) * 0.07 + parseInt(PrecioFinal);
+        // costoSinEnvio =  parseInt(costoSinEnvio);
+        subtotalEnvio = parseInt(costoSinEnvio) * 0.07;
     };
     if (document.getElementById("opcion3").checked) {
-        PrecioFinal = parseInt(PrecioFinal) * 0.05 + parseInt(PrecioFinal);
+        // costoSinEnvio = parseInt(costoSinEnvio);
+        subtotalEnvio = parseInt(costoSinEnvio) * 0.05;
     };
-    document.getElementsByClassName("costo-final")[0].innerHTML = PrecioFinal;
+    document.getElementById("consto-sin-envio").innerHTML = parseInt(costoSinEnvio);
+    document.getElementById("subtotalEnvio").innerHTML = parseInt(subtotalEnvio);
+    document.getElementById("costo-final").innerHTML = parseInt(costoSinEnvio + subtotalEnvio);
+
 };
 function actualizar_subtotal(id) {
     Array.from(document.getElementsByClassName("total-itemsito")).forEach(element => {
@@ -129,19 +135,15 @@ fetch(CART_URL)
             input.addEventListener("input", function (e) {
                 let id = input.dataset.id;
                 let arr = JSON.parse(localStorage.getItem("Productos"));
-                //let indice = 0;
                 arr.forEach(element => {
                     if (element.id === parseInt(id)) {
                         element.count = input.value;
-                    } else {
-                        //indice++;
-                    };
+                    }
                 });
                 if (parseInt(input.value) === 0) {
                     arr.splice(indice, 1);
                 }
                 localStorage.setItem("Productos", JSON.stringify(arr));
-                //listarProductos(JSON.parse(localStorage.getItem("Productos")));
                 actualizar_subtotal(id);
                 CostoFinal();
             });
@@ -154,7 +156,11 @@ fetch(CART_URL)
         CostoFinal();
     })
     .catch(error => console.log(error.message));
+
 document.getElementsByClassName("tipo-de-moneda")[0].innerHTML = "U$D";
+document.getElementsByClassName("tipo-de-moneda")[1].innerHTML = "U$D";
+document.getElementsByClassName("tipo-de-moneda")[2].innerHTML = "U$D";
+
 document.getElementById("opcion1").addEventListener("click", function (e) {
     CostoFinal();
 });
@@ -164,19 +170,7 @@ document.getElementById("opcion2").addEventListener("click", function (e) {
 document.getElementById("opcion3").addEventListener("click", function (e) {
     CostoFinal();
 });
-// buy.addEventListener("click", (event) => {
-//     event.preventDefault();
-//     // const mensaje = document.getElementById("mensaje_compra")
-//     const formulario = document.getElementById("form_compra")
-//     formulario.reset();
-//     // mensaje.innerHTML = '¡Gracias por su compra!';
-//     // mensaje.style.display = 'block';
-//     // mensaje.classList.add('alert');
-//     // setTimeout(function () {
-//     //     mensaje.style.display = 'none';
-//     // }, 3000);
-// });
-// Código para la ventana emergente para seleccionar el tipo de pago pago
+
 const btnMostrarModal = document.getElementById("mostrarModal");
 const modal = document.getElementById("miModal");
 const btnCerrarModal = document.getElementById("confirmarModal");
@@ -239,13 +233,21 @@ const formaDeEnvio = document.querySelector('input[name="opcion"]:checked');
     // Loop over them and prevent submission
     Array.from(forms).forEach(form => {
         form.addEventListener('submit', event => {
-            if (!formaDeEnvio) {
+            if (JSON.parse(localStorage.getItem("Productos")).length === 0) {
+                alert("Debe ingresar articulos al carrito");
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            else if (!formaDeEnvio) {
+                console.log(1);
                 formaDeEnvio.setCustomValidity("Debes seleccionar una forma de envío.");
             } else if (!form.checkValidity()) {
+                console.log(2);
                 divModal.classList.add("is-invalid");
                 event.preventDefault()
                 event.stopPropagation()
             } else {
+                console.log(3);
                 const mensaje = document.getElementById("mensaje_compra")
                 const formulario = document.getElementById("form_compra")
                 formulario.reset();
@@ -253,7 +255,7 @@ const formaDeEnvio = document.querySelector('input[name="opcion"]:checked');
                 mensaje.style.display = 'block';
                 mensaje.classList.add('alert');
                 const formaDeEnvio = document.querySelector('input[name="opcion"]:checked');
-
+                localStorage.setItem("Productos", JSON.stringify([]));
                 setTimeout(function () {
                     mensaje.style.display = 'none';
                 }, 3000);
